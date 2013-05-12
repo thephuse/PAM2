@@ -1,0 +1,85 @@
+<html>
+<head>
+  <title>NODE BITCHES</title>
+
+</head>
+<body>
+
+  <ul id="users">
+    
+  <script type="text/template" id="person-template">
+    <li class="person">
+      <strong><%- name %></strong> <%- department%>
+    </li>
+  </script>
+  </ul>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://documentcloud.github.io/underscore/underscore-min.js" type="text/javascript"></script>
+  <script src="http://documentcloud.github.io/backbone/backbone-min.js" type="text/javascript"></script>
+  <script>
+
+  var app = app || {}; 
+
+  app.User = Backbone.Model.extend ({
+    defaults: {
+      name: '',
+      department: ''
+    }
+  });
+
+  var UserList = Backbone.Collection.extend ({
+    model: app.User    
+  });
+
+  app.Users = new UserList(); 
+
+   app.Users.add([
+      {name: "tessa", department: "development"},
+      {name: "flip", department: "development"}
+    ]);
+
+  app.AppView = Backbone.View.extend ({
+    el: '#users',
+    initialize: function() {
+      this.listenTo(app.Users, 'reset', this.addAll);
+      this.listenTo(app.Users, 'reset', function(){
+        console.log("reset");
+      });
+      app.Users.fetch();
+     
+      this.addAll();
+      this.render();
+    },
+    addOne: function(user) {
+      var view = new app.UserView({model: user});
+      $("#users").append(view.render().el);
+    },
+    addAll: function() {
+      this.$("#users").html('');
+      app.Users.each(this.addOne, this);
+    }
+  });
+
+  app.UserView = Backbone.View.extend ({
+    tagname: 'li',
+    template: _.template($('#person-template').html()),
+    initialize: function() {
+      this.listenTo(this.model, 'change', this.render);
+      this.listenTo(this.model, 'all', this.render);
+      this.render();
+    },
+    render: function() {
+      this.$el.html(this.template(this.model.toJSON()));
+      return this;
+    }
+  });
+
+  $(function() {
+    new app.AppView();
+  });
+
+  </script>
+</body>
+</html>
