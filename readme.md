@@ -8,7 +8,7 @@ Phuse Activity Monitor (PAM) v.2.0
 - open at localhost:1234
 
 ##config.json
-Get creds from password archive or ask James
+Required to run locally (uses env vars on heroku). Get creds from password archive or ask James. 
 
     {
       "username" : //james' username,
@@ -31,7 +31,7 @@ Get creds from password archive or ask James
 - add total stats for whole team
 - get rid of CDN scripts 
 - figure out how to split up into multiple files
-- set up secure way to store config info (env vars probably)
-- see what happens with heroku
+- ~~set up secure way to store config info (env vars probably)~~
+- ~~see what happens with heroku~~
 - design and styling and stuff
 
