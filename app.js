@@ -11,7 +11,14 @@ var express = require('express'),
 
 var appConfig = JSON.parse(fs.readFileSync("config.json"));
 
-var app = express();
+var app = module.exports = express.createServer();
+
+app.configure(function(){
+  app.use(allowCrossDomain);
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  app.use(express.methodOverride());
+  app.use(app.router);
+});
 
 var headers = {
   'Authorization': 'Basic ' + new Buffer(appConfig.username + ':' + appConfig.password).toString('base64'),
@@ -21,11 +28,6 @@ var headers = {
 
 // all environments
 app.set('port', process.env.PORT || 1234);
-
-// development only
-if ('development' == app.get('env')) {
-}
-  app.use(express.errorHandler());
 
 app.get('/', function(req,res){
   res.sendfile('index.html');
