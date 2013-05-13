@@ -35,6 +35,9 @@ app.get('/users/:id/:start/:end', function(req, res) {
     headers: headers
   }, function(error, response, body){
     res.send(body);
+    if (error) {
+      console.log(error);
+    }
   })
 });
 
@@ -43,6 +46,9 @@ app.get('/users/:id/billable/:start/:end', function(req, res) {
     headers: headers
   }, function(error, response, body){
     res.send(body);
+    if (error) {
+      console.log(error);
+    }
   })
 });
 
@@ -51,6 +57,9 @@ app.get('/users', function(req, res){
     headers: headers
   }, function(error, response, body) {
     res.send(body);
+    if (error) {
+      console.log(error);
+    }
   })
 });
 
