@@ -2,8 +2,8 @@ Phuse Activity Monitor (PAM) v.2.0
 ====================================
 
 ##Setup: 
-- 'npm install'
-- 'node app.js'
+- `npm install`
+- `node app.js`
 - create a config.json file (see below)
 - open at localhost/1234
 
