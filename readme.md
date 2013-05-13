@@ -24,6 +24,7 @@ Get creds from password archive or ask James
 ##It's a big mess and there are problems but I KNOW
 
 ##To do
+- authentication
 - huge refactor (frontend first)
 - make backend routing a bit more sane
 - add auto-refresh (every 1 min? 2 mins?)
