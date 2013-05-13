@@ -1,4 +1,5 @@
 .DS_Store
 thumbs.db
 *.log
+config.json
 node_modules/
