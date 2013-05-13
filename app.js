@@ -3,9 +3,7 @@
  * Module dependencies.
  */
 
-var express = require('express'), 
-    routes = require('./routes'),
-    user = require('./routes/user') , 
+var express = require('express'),  
     http = require('http'),
     path = require('path'),
     fs = require("fs");
@@ -44,6 +42,14 @@ app.get('/', function(req,res){
 
 app.get('/users/:id/:start/:end', function(req, res) {
   request.get('https://thephuse.harvestapp.com/people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end, {
+    headers: headers
+  }, function(error, response, body){
+    res.send(body);
+  })
+});
+
+app.get('/users/:id/billable/:start/:end', function(req, res) {
+  request.get('https://thephuse.harvestapp.com/people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end + '&billable=yes', {
     headers: headers
   }, function(error, response, body){
     res.send(body);

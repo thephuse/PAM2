@@ -13,7 +13,7 @@
     
   <script type="text/template" id="person-template">
     <li class="person">
-     <strong><%- name %></strong> <%- department%> | <strong id="hours">0.0</strong>
+     <strong><%- name %></strong> <%- department%> | <strong id="hours">0.0</strong> | <strong id="billable">0.0</strong>
     </li>
   </script>
   </ul>
@@ -113,7 +113,7 @@
     getStart: function(range) {
       switch (range) {
         case "day": 
-          return moment().subtract('days', 1).format("YYYYMMDD");
+          return moment().format("YYYYMMDD");
           break;
         case "month": 
           return moment().startOf("month").format("YYYYMMDD");
@@ -154,7 +154,20 @@
           self.model.set({hours: totalHours});
           self.$el.find("#hours").html(self.model.get("hours"));
         }
-      });     
+      });  
+      var Billable = new EntryList({});
+      Billable.url = '/users/' + this.model.get("id") + "/billable/" + this.start + "/" + this.end;
+      Billable.fetch(
+        {success: function(){
+          var billableHours = 0;
+          Billable.each(function(entry){
+            billableHours += parseFloat(entry.get("hours"));
+          });
+          billableHours = billableHours.toFixed(2);
+          self.model.set({hours: billableHours});
+          self.$el.find("#billable").html(self.model.get("hours"));
+        }
+      }); 
     },
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
