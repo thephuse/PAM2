@@ -193,7 +193,7 @@
           });
           billableHours = billableHours.toFixed(2);
           self.model.set({billableHours: billableHours});
-          self.$el.find("#billable").html(self.model.get("hours"));
+          self.$el.find("#billable").html(self.model.get("billableHours"));
           billableHoursDfd.resolve();
         }
       }); 
