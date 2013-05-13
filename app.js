@@ -13,7 +13,7 @@ app.configure(function(){
 var appConfig = JSON.parse(fs.readFileSync("config.json"));
 
 var headers = {
-  'Authorization': 'Basic ' + new Buffer(appConfig.username + ':' + appConfig.password).toString('base64'),
+  'Authorization': 'Basic ' + new Buffer(process.env.HARVEST_USERNAME + ':' + process.env.HARVEST_PASSWORD).toString('base64'),
   'Content-Type': 'application/xml',
   'Accept': 'application/xml'
 };
