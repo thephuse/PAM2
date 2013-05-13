@@ -11,13 +11,13 @@ app.configure(function(){
 });
 
 
-if (process.env.DEVELOPMENT) {
+if (process.env.PRODUCTION) {
+  var harvestUsername = process.env.HARVEST_USERNAME;
+  var harvestPassword = process.env.HARVEST_PASSWORD;
+} else {
   var appConfig = JSON.parse(fs.readFileSync("config.json"));
   var harvestUsername = appConfig.username;
   var harvestPassword = appConfig.password;
-} else {
-  var harvestUsername = process.env.HARVEST_USERNAME;
-  var harvestPassword = process.env.HARVEST_PASSWORD;
 }
 
 var headers = {

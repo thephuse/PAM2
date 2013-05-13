@@ -29,6 +29,8 @@ Get creds from password archive or ask James
 - make backend routing a bit more sane
 - add auto-refresh (every 1 min? 2 mins?)
 - add total stats for whole team
+- get rid of CDN scripts 
+- figure out how to split up into multiple files
 - set up secure way to store config info (env vars probably)
 - see what happens with heroku
 - design and styling and stuff
