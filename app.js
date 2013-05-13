@@ -32,38 +32,38 @@ app.get('/', function(req,res){
   res.sendfile('index.html');
 });
 
-app.get('/users/:id/:start/:end', function(req, res) {
-  request.get('https://thephuse.harvestapp.com/people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end, {
-    headers: headers
-  }, function(error, response, body){
-    res.send(body);
-    if (error) {
-      console.log(error);
-    }
-  })
-});
+// app.get('/users/:id/:start/:end', function(req, res) {
+//   request.get('https://thephuse.harvestapp.com/people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end, {
+//     headers: headers
+//   }, function(error, response, body){
+//     res.send(body);
+//     if (error) {
+//       console.log(error);
+//     }
+//   })
+// });
 
-app.get('/users/:id/billable/:start/:end', function(req, res) {
-  request.get('https://thephuse.harvestapp.com/people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end + '&billable=yes', {
-    headers: headers
-  }, function(error, response, body){
-    res.send(body);
-    if (error) {
-      console.log(error);
-    }
-  })
-});
+// app.get('/users/:id/billable/:start/:end', function(req, res) {
+//   request.get('https://thephuse.harvestapp.com/people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end + '&billable=yes', {
+//     headers: headers
+//   }, function(error, response, body){
+//     res.send(body);
+//     if (error) {
+//       console.log(error);
+//     }
+//   })
+// });
 
-app.get('/users', function(req, res){
-  request.get('https://thephuse.harvestapp.com/people/', {
-    headers: headers
-  }, function(error, response, body) {
-    res.send(body);
-    if (error) {
-      console.log(error);
-    }
-  })
-});
+// app.get('/users', function(req, res){
+//   request.get('https://thephuse.harvestapp.com/people/', {
+//     headers: headers
+//   }, function(error, response, body) {
+//     res.send(body);
+//     if (error) {
+//       console.log(error);
+//     }
+//   })
+// });
 
 app.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
