@@ -10,13 +10,22 @@ app.configure(function(){
   app.use(app.router);
 });
 
-var appConfig = JSON.parse(fs.readFileSync("config.json"));
+
+if (process.env.DEVELOPMENT) {
+  var appConfig = JSON.parse(fs.readFileSync("config.json"));
+  var harvestUsername = appConfig.username;
+  var harvestPassword = appConfig.password;
+} else {
+  var harvestUsername = process.env.HARVEST_USERNAME;
+  var harvestPassword = process.env.HARVEST_PASSWORD;
+}
 
 var headers = {
-  'Authorization': 'Basic ' + new Buffer(process.env.HARVEST_USERNAME + ':' + process.env.HARVEST_PASSWORD).toString('base64'),
+  'Authorization': 'Basic ' + new Buffer(harvestUsername + ':' + harvestPassword).toString('base64'),
   'Content-Type': 'application/xml',
   'Accept': 'application/xml'
 };
+
 
 app.get('/', function(req,res){
   res.sendfile('index.html');
