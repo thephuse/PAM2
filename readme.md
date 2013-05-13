@@ -2,8 +2,8 @@ Phuse Activity Monitor (PAM) v.2.0
 ====================================
 
 ##Setup: 
-- npm install
-- node app.js
+- 'npm install'
+- 'node app.js'
 - create a config.json file (see below)
 - open at localhost/1234
 
@@ -12,7 +12,7 @@ Get creds from password archive or ask James
 
     {
       "username" : //james' username,
-      "password" : /james' password
+      "password" : //james' password
     }
 
 ##Things: 
@@ -26,7 +26,7 @@ This is my first backbone thing and all the code is in one place cause node and 
 
 ##To do
 - fix day filter
-- sort out the whole billable/nonbillable nightmare (must make one API call for each `>_<`_)
+- sort out the whole billable/nonbillable nightmare (must make one API call for each `>_<`)
 - huge refactor (frontend first, backend isn't *that* bad)
 - add total stats for whole team
 
