@@ -54,16 +54,13 @@ app.get('/', function(req,res){
 //   })
 // });
 
-// app.get('/users', function(req, res){
-//   request.get('https://thephuse.harvestapp.com/people/', {
-//     headers: headers
-//   }, function(error, response, body) {
-//     res.send(body);
-//     if (error) {
-//       console.log(error);
-//     }
-//   })
-// });
+app.get('/users', function(req, res){
+  request.get('https://thephuse.harvestapp.com/people/', {
+    headers: headers
+  }, function(error, response, body) {
+    res.send(body);
+  })
+});
 
 app.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
