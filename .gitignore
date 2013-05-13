@@ -1,5 +1,5 @@
-logs
-results
-
-npm-debug.log
-node_modules
+.DS_Store
+thumbs.db
+*.log
+node_modules/
+config.json
