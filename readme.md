@@ -23,20 +23,24 @@ Required to run locally (uses env vars on heroku). Get creds from password archi
 - `heroku open` or go to [phusepam2.herokuapp.com](http://phusepam2.herokuapp.com/)
 
 ###Things: 
-- Node.js with Express.js in the back
+- Node.js (with Express.js) in the back
 - Backbone.js in the front
 - Use express routing to map harvest api
 - consume data from said routes in Backbone 
 
 ###To do
+####Features
 - authentication
-- huge refactor (frontend first)
-- make backend routing a bit more sane
 - add auto-refresh (every 1 min? 2 mins?)
 - add total stats for whole team
-- get rid of CDN scripts 
+
+####Cleanup
+- huge refactor (frontend first)
+- make backend routing a bit more sane
+- figure out how to deal with static assets 
+- get rid of CDN scripts, use package manager for front-end maybe
 - figure out how to split up into multiple files
+- design and styling and stuff
 - ~~set up secure way to store config info (env vars probably)~~
 - ~~see what happens with heroku~~
-- design and styling and stuff
 
