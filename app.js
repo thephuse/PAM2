@@ -23,8 +23,8 @@ app.set('port', process.env.PORT || 1234);
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
 }
+  app.use(express.errorHandler());
 
 app.get('/', function(req,res){
   res.sendfile('index.html');
