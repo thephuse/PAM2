@@ -42,6 +42,14 @@ app.get('/', function(req,res){
   res.sendfile('index.html');
 });
 
+app.get('/users/:id/:start/:end', function(req, res) {
+  request.get('https://thephuse.harvestapp.com/people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end, {
+    headers: headers
+  }, function(error, response, body){
+    res.send(body);
+  })
+});
+
 app.get('/users', function(req, res){
   request.get('https://thephuse.harvestapp.com/people/', {
     headers: headers
