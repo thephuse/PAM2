@@ -11,10 +11,9 @@ var express = require('express'),
 
 var appConfig = JSON.parse(fs.readFileSync("config.json"));
 
-var app = module.exports = express.createServer();
+var app = express();
 
 app.configure(function(){
-  app.use(allowCrossDomain);
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   app.use(express.methodOverride());
   app.use(app.router);
