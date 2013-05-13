@@ -10,6 +10,7 @@ var express = require('express'),
     request = require('request');
 
 var appConfig = JSON.parse(fs.readFileSync("config.json"));
+
 var app = express();
 
 var headers = {
@@ -63,7 +64,7 @@ app.get('/users', function(req, res){
   })
 });
 
-http.createServer(app).listen(app.get('port'), function(){
+app.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
