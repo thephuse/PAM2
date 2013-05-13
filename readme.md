@@ -1,13 +1,13 @@
 Phuse Activity Monitor (PAM) v.2.0
 ====================================
 
-##Setup: 
+###Setup: 
 - `npm install`
 - `node app.js`
 - create a config.json file (see below)
 - open at localhost:1234
 
-##config.json
+###config.json
 Required to run locally (uses env vars on heroku). Get creds from password archive or ask James. 
 
     {
@@ -15,15 +15,20 @@ Required to run locally (uses env vars on heroku). Get creds from password archi
       "password" : //james' password
     }
 
-##Things: 
+###Deployment
+
+- get yourself added as contributor
+- `git@heroku.com:phusepam2.git`
+- `git push heroku master && heroku ps:scale web=1`
+- `heroku open` or go to [phusepam2.herokuapp.com](http://phusepam2.herokuapp.com/)
+
+###Things: 
 - Node.js with Express.js in the back
 - Backbone.js in the front
 - Use express routing to map harvest api
 - consume data from said routes in Backbone 
 
-##It's a big mess and there are problems but I KNOW
-
-##To do
+###To do
 - authentication
 - huge refactor (frontend first)
 - make backend routing a bit more sane
