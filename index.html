@@ -9,14 +9,27 @@
   <a href="#" class="filter" data-range="week">Week</a>
   <a href="#" class="filter" data-range="month">Month</a>
 
-  <ul id="users">
+  <table id="users">
+  <thead>
     
+  <tr>
+    <th>Name</th>
+    <th>Department</th>
+    <th>Total Hours</th>
+    <th>Billable Hours</th>
+    <th>Percent Billable</th>
+  </tr>
+  </thead>
+  <tbody>
   <script type="text/template" id="person-template">
-    <li class="person">
-     <strong><%- name %></strong> <%- department%> | <strong id="hours">0.0</strong> | <strong id="billable">0.0</strong>
-    </li>
+     <td><%- name %></td> 
+     <td><%- department%></td> 
+     <td id="hours">0.0</td>
+     <td id="billable">0.0</td>
+     <td id="percent">0.0</td>
   </script>
-  </ul>
+  </tbody>
+  </table>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -88,7 +101,7 @@
       this.getEnd();
     },
     render: function() {
-      this.$("#users").html('');
+      this.$("#users").find("tbody").html('');
       app.Users.each(this.showActive, this);
     },
     showActive: function(user) {
@@ -136,38 +149,62 @@
   });
 
   app.UserView = Backbone.View.extend ({
-    tagname: 'li',
+    tagName: 'tr',
     template: _.template($('#person-template').html()),    
     initialize: function(attrs) {   
       this.end = attrs.endDate; 
       this.start = attrs.startDate; 
+      var hoursDfd = new $.Deferred();         
+      var billableHoursDfd = new $.Deferred();         
+      this.getTotalHours(hoursDfd);      
+      this.getBillableHours(billableHoursDfd);
       var self = this;
-      var Entries = new EntryList({});
-      Entries.url = '/users/' + this.model.get("id") + "/" + this.start + "/" + this.end;
-      Entries.fetch(
+      $.when(hoursDfd, billableHoursDfd).then(function(){
+        self.calcPercent();
+      });
+    },
+
+    getTotalHours: function(hoursDfd) {
+      var self = this;      
+      var entries = new EntryList({});
+      entries.url = '/users/' + this.model.get("id") + "/" + this.start + "/" + this.end;
+      entries.fetch(
         {success: function(){
           var totalHours = 0;
-          Entries.each(function(entry){
+          entries.each(function(entry){
             totalHours += parseFloat(entry.get("hours"));
           });
           totalHours = totalHours.toFixed(2);
           self.model.set({hours: totalHours});
           self.$el.find("#hours").html(self.model.get("hours"));
+          hoursDfd.resolve();
         }
       });  
-      var Billable = new EntryList({});
-      Billable.url = '/users/' + this.model.get("id") + "/billable/" + this.start + "/" + this.end;
-      Billable.fetch(
+    },
+    getBillableHours: function(billableHoursDfd) {
+      var self = this;
+      var billableEntries = new EntryList({});
+      billableEntries.url = '/users/' + this.model.get("id") + "/billable/" + this.start + "/" + this.end;
+      billableEntries.fetch(
         {success: function(){
           var billableHours = 0;
-          Billable.each(function(entry){
+          billableEntries.each(function(entry){
             billableHours += parseFloat(entry.get("hours"));
           });
           billableHours = billableHours.toFixed(2);
-          self.model.set({hours: billableHours});
+          self.model.set({billableHours: billableHours});
           self.$el.find("#billable").html(self.model.get("hours"));
+          billableHoursDfd.resolve();
         }
       }); 
+    },
+    calcPercent: function() {
+      var total = this.model.get("hours");
+      var billable = this.model.get("billableHours");
+      var percentBillable = (billable/total)*100;
+      if (total > 0) {
+        this.$el.find("#percent").html(percentBillable.toFixed(1));
+      }
     },
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
