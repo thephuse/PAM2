@@ -5,6 +5,8 @@
 </head>
 <body>
 
+<p><a href="#" id="test">TEST</a></p>
+
   <a href="#" class="filter" data-range="day">Day</a>
   <a href="#" class="filter" data-range="week">Week</a>
   <a href="#" class="filter" data-range="month">Month</a>
@@ -115,13 +117,17 @@
     range: "week",
     statsTemplate: _.template($('#stats-template').html()),
     events: {
-      "click .filter" : "filterRange"
+      "click .filter" : "filterRange",
+      "click #test" : 'render'
     },
     initialize: function() {
       app.Users.fetch({reset: true});
       this.listenTo(app.Users, 'reset', this.render);  
-      this.listenTo(app.Users, 'change', this.showStats);
-      this.getEnd();
+      this.listenTo(app.Users, 'change', this.showStats);      
+      this.getEnd();      
+      setInterval(function(){
+        app.Users.fetch({reset:true});
+      }, 60000);
     },
     render: function() {
       this.$("#users").find("tbody").html('');
@@ -136,7 +142,6 @@
           endDate: end, 
           startDate: start
         });
-        var thing = new $.Deferred(); 
         $("#users").append(view.render().el);     
       }
     },
