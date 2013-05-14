@@ -39,7 +39,7 @@ Required to run locally (uses env vars on heroku). Get creds from password archi
 - make backend routing a bit more sane
 - figure out how to deal with static assets 
 - get rid of CDN scripts, use package manager for front-end maybe
-- figure out how to split up into multiple files
+- figure out how to split js into multiple files
 - design and styling and stuff
 - ~~set up secure way to store config info (env vars probably)~~
 - ~~see what happens with heroku~~
