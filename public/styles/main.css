@@ -2,3 +2,15 @@
   margin: 0;
   padding: 0;
 }
+
+td img {
+  padding-right: 15px;
+}
+
+.btn-group {
+  margin: 20px 0;
+}
+
+.navbar .container {
+  width: 940px;
+}

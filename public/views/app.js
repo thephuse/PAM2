@@ -63,8 +63,8 @@ app.AppView = Backbone.View.extend ({
 
   filterRange: function(e){
     this.range = ($(e.currentTarget).data("range"));
-    this.$(".filter").removeClass("active");
-    $(e.currentTarget).addClass("active");
+    this.$("li").removeClass("active");
+    $(e.currentTarget).parent("li").addClass("active");
     this.render();
   },
 

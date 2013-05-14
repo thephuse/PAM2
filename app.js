@@ -44,9 +44,8 @@ passport.use('harvest', new OAuth2Strategy({
   clientSecret: harvestSecret,
   callbackURL: rootUrl + 'auth/harvest/callback'
 },function(accessToken, refreshToken, profile, done) {
-    return done(null, profile);
-  }
-));
+  return done(null, profile);
+}));
 
 var headers = {
   'Authorization': 'Basic ' + new Buffer(harvestUsername + ':' + harvestPassword).toString('base64'),

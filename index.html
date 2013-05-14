@@ -1,20 +1,24 @@
 <html>
 <head>
   <title>PAM 2.0</title>
-  <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="lib/styles/bootstrap.css">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
+<div class="navbar">
+  <div class="navbar-inner">
+  <div class="container">
+    <a class="brand" href="#">Phuse Activity Monitor</a>
+    <ul class="nav pull-right">
+      <li><a href="#" class="filter" data-range="day">Day</a></li>
+      <li class="active"><a href="#" class="filter active" data-range="week">Week</a></li>
+      <li><a href="#" class="filter" data-range="month">Month</a></li>
+    </ul>
+  </div>
+  </div>
+</div>
 <div class="container">
-
-  <h1>Phuse Activity Monitor</h1>
-  
-  <p class="btn-group">
-    <a href="#" class="filter btn" data-range="day">Day</a>
-    <a href="#" class="filter btn active" data-range="week">Week</a>
-    <a href="#" class="filter btn" data-range="month">Month</a>
-  </p>
   
   <table id="users" class="table table-bordered">
     <thead>    
@@ -27,10 +31,14 @@
     </thead>
     <tbody>
       <script type="text/template" id="person-template">
-         <td><%- name %></td> 
-         <td id="hours">0.0</td>
-         <td id="billable">0.0</td>
-         <td id="percent">0.0</td>
+        <td>
+          <% var gravatarUrl  = "http://www.gravatar.com/avatar/" + hex_md5(email); %>
+          <img src=<%- gravatarUrl %> width="40"/>
+          <%- name %>
+        </td> 
+        <td id="hours">0.0</td>
+        <td id="billable">0.0</td>
+        <td id="percent">0.0</td>
       </script>
     </tbody>
   </table>
@@ -45,7 +53,7 @@
 
   <footer id="footer">
     <h2>Team Totals</h2>
-    <table class="table">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th>Total Hours</th>
@@ -63,6 +71,7 @@
   <script src="lib/underscore-min.js"></script>
   <script src="lib/backbone-min.js"></script>
   <script src="lib/moment.min.js"></script>
+  <script src="lib/md5.js"></script>
   
   <script src="models/user.js"></script>
   <script src="models/entry.js"></script>
