@@ -2,46 +2,50 @@
 <head>
   <title>PAM 2.0</title>
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="lib/styles/bootstrap.css">
 </head>
 <body>
 
-  <a href="#" class="filter" data-range="day">Day</a>
-  <a href="#" class="filter" data-range="week">Week</a>
-  <a href="#" class="filter" data-range="month">Month</a>
+<div class="container">
+
+  <h1>Phuse Activity Monitor</h1>
   
-  <table id="users">
-  <thead>
-    
-  <tr>
-    <th>Name</th>
-    <th>Department</th>
-    <th>Total Hours</th>
-    <th>Billable Hours</th>
-    <th>Percent Billable</th>
-  </tr>
-  </thead>
-  <tbody>
-  <script type="text/template" id="person-template">
-     <td><%- name %></td> 
-     <td><%- department%></td> 
-     <td id="hours">0.0</td>
-     <td id="billable">0.0</td>
-     <td id="percent">0.0</td>
-  </script>
-  </tbody>
+  <p class="btn-group">
+    <a href="#" class="filter btn" data-range="day">Day</a>
+    <a href="#" class="filter btn active" data-range="week">Week</a>
+    <a href="#" class="filter btn" data-range="month">Month</a>
+  </p>
+  
+  <table id="users" class="table table-bordered">
+    <thead>    
+      <tr>
+        <th>Name</th>
+        <th>Total Hours</th>
+        <th>Billable Hours</th>
+        <th>Percent Billable</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script type="text/template" id="person-template">
+         <td><%- name %></td> 
+         <td id="hours">0.0</td>
+         <td id="billable">0.0</td>
+         <td id="percent">0.0</td>
+      </script>
+    </tbody>
   </table>
 
   <script type="text/template" id="stats-template">
-      <tr>
-        <td><%- hours %></td>
-        <td><%- billableHours %></td>
-        <td><%- percentBillable %></td>
-      </tr>
+    <tr>
+      <td><%- hours %></td>
+      <td><%- billableHours %></td>
+      <td><%- percentBillable %></td>
+    </tr>
   </script>
 
   <footer id="footer">
-  <h2>Team Totals</h2>
-    <table>
+    <h2>Team Totals</h2>
+    <table class="table">
       <thead>
         <tr>
           <th>Total Hours</th>
@@ -52,6 +56,8 @@
       <tbody></tbody>
     </table>
   </footer>
+
+</div>
   
   <script src="lib/jquery.min.js"></script>
   <script src="lib/underscore-min.js"></script>
