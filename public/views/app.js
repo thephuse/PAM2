@@ -1,6 +1,7 @@
 var app = app || {}; 
 
 app.AppView = Backbone.View.extend ({
+
   el: 'body',
   range: "week",
   statsTemplate: _.template($('#stats-template').html()),
@@ -8,6 +9,7 @@ app.AppView = Backbone.View.extend ({
     "click .filter" : "filterRange",
     "click #test" : 'render'
   },
+
   initialize: function() {
     app.Users.fetch({reset: true});
     this.listenTo(app.Users, 'reset', this.render);  
@@ -17,10 +19,12 @@ app.AppView = Backbone.View.extend ({
       app.Users.fetch({reset:true});
     }, 60000);
   },
+
   render: function() {
     this.$("#users").find("tbody").html('');
     app.Users.each(this.showActive, this);
   },
+
   showActive: function(user) {
     var end = this.getEnd();
     var start = this.getStart(this.range);      
@@ -33,6 +37,7 @@ app.AppView = Backbone.View.extend ({
       $("#users").append(view.render().el);     
     }
   },
+
   showStats: function() {
     var allHours = 0;
     var allBillableHours = 0;
@@ -51,13 +56,18 @@ app.AppView = Backbone.View.extend ({
       percentBillable: (isNaN(percentBillable) ? '0.0' : percentBillable)
     }));
   },
+
   getEnd: function() {
     return moment().format("YYYYMMDD");
   },
+
   filterRange: function(e){
     this.range = ($(e.currentTarget).data("range"));
+    this.$(".filter").removeClass("active");
+    $(e.currentTarget).addClass("active");
     this.render();
   },
+
   getStart: function(range) {
     switch (range) {
       case "day": 
@@ -73,4 +83,5 @@ app.AppView = Backbone.View.extend ({
         return moment().startOf('week').add('days', 1).format("YYYYMMDD");          
     }
   }
+
 });
