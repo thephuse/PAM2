@@ -57,7 +57,7 @@ app.UserView = Backbone.View.extend ({
     var billable = this.model.get("billableHours");
     var percentBillable = (billable/total)*100;
     if (total > 0) {
-      this.$el.find("#percent").html(percentBillable.toFixed(1));
+      this.$el.find("#percent").html(percentBillable.toFixed(0));
     }
   },
 
