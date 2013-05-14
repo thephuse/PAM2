@@ -17,7 +17,7 @@ app.configure(function(){
   app.use(app.router);
 });
 
-if (process.env.PRODUCTION) {
+if (process.env.NODE_ENV === 'production') {
   var harvestUsername = process.env.HARVEST_USERNAME;
   var harvestPassword = process.env.HARVEST_PASSWORD;
   var rootUrl = 'http://phusepam2.herokuapp.com/';
