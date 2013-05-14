@@ -8,7 +8,7 @@
   <a href="#" class="filter" data-range="day">Day</a>
   <a href="#" class="filter" data-range="week">Week</a>
   <a href="#" class="filter" data-range="month">Month</a>
-
+  
   <table id="users">
   <thead>
     
@@ -31,11 +31,32 @@
   </tbody>
   </table>
 
+  <script type="text/template" id="stats-template">
+      <tr>
+        <td><%- hours %></td>
+        <td><%- billableHours %></td>
+        <td><%- percentBillable %></td>
+      </tr>
+  </script>
 
+  <footer id="footer">
+  <h2>Team Totals</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Total Hours</th>
+          <th>Billable Hours</th>
+          <th>Percent Billable</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </footer>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="http://documentcloud.github.io/underscore/underscore-min.js" type="text/javascript"></script>
   <script src="http://documentcloud.github.io/backbone/backbone-min.js" type="text/javascript"></script>
-  <script src="http://cdn.iamwebdeveloper.in/js/moment.js/1.7.0/moment.min.js" type="text/javascript"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js" type="text/javascript"></script>
   <script>
 
   var app = app || {}; 
@@ -92,12 +113,14 @@
   app.AppView = Backbone.View.extend ({
     el: 'body',
     range: "week",
+    statsTemplate: _.template($('#stats-template').html()),
     events: {
       "click .filter" : "filterRange"
     },
     initialize: function() {
       app.Users.fetch({reset: true});
       this.listenTo(app.Users, 'reset', this.render);  
+      this.listenTo(app.Users, 'change', this.showStats);
       this.getEnd();
     },
     render: function() {
@@ -113,8 +136,27 @@
           endDate: end, 
           startDate: start
         });
-        $("#users").append(view.render().el);
+        var thing = new $.Deferred(); 
+        $("#users").append(view.render().el);     
       }
+    },
+    showStats: function() {
+      var allHours = 0;
+      var allBillableHours = 0;
+      app.Users.each(function(user){
+        if (user.get("active") === "true") {
+          var hours = user.get("hours");
+          var billableHours = user.get("billableHours");
+          allHours += parseFloat(hours);
+          allBillableHours += parseFloat(billableHours);
+        }
+      });
+      var percentBillable = (allBillableHours/allHours*100).toFixed(1)
+      this.$("#footer tbody").html(this.statsTemplate({
+        hours: (isNaN(allHours) ? '0.0' : allHours.toFixed(1)),
+        billableHours: (isNaN(allBillableHours) ? '0.0' : allBillableHours.toFixed(1)),
+        percentBillable: (isNaN(percentBillable) ? '0.0' : percentBillable)
+      }));
     },
     getEnd: function() {
       return moment().format("YYYYMMDD");
@@ -131,19 +173,11 @@
         case "month": 
           return moment().startOf("month").format("YYYYMMDD");
           break;
-        case "week": 
-          if (moment().day() === 0) {            
-            return moment().subtract('days', 6).format("YYYYMMDD")
-          } else {
-            return moment().startOf("week").format("YYYYMMDD");
-          }
+        case "week":           
+          return moment().startOf('week').add('days', 1).format("YYYYMMDD");
           break;
-        default: 
-          if (moment().day() === 0) {            
-            return moment().subtract('days', 6).format("YYYYMMDD")
-          } else {
-            return moment().startOf("week").format("YYYYMMDD");
-          }
+        default:          
+          return moment().startOf('week').add('days', 1).format("YYYYMMDD");          
       }
     }
   });

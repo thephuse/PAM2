@@ -30,7 +30,7 @@ Required to run locally (uses env vars on heroku). Get creds from password archi
 
 ###To do
 ####Features
-- authentication
+- ~~authentication~~
 - add auto-refresh (every 1 min? 2 mins?)
 - add total stats for whole team
 
