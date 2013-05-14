@@ -5,7 +5,8 @@
     "express": "3.1.x",
     "request": "~2.21.0",
     "passport": "~0.1.17",
-    "passport-oauth": "~0.1.15"
+    "passport-oauth": "~0.1.15",
+    "ejs": "~0.8.4"
   },
   "engines": {
     "node": "0.10.x",

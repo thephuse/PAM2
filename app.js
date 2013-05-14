@@ -1,12 +1,14 @@
 var express = require("express");
 var app = express();
 var request = require('request');
+var path = require('path');
 var fs = require("fs");
 var passport = require('passport');
 
 app.use(express.logger());
 
 app.configure(function(){
+  app.set('views', __dirname + '/views');
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   app.use(express.methodOverride());
   app.use(express.cookieParser());
@@ -15,6 +17,7 @@ app.configure(function(){
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(app.router);
+  app.use(express.static(__dirname + '/public'));
 });
 
 if (process.env.NODE_ENV === 'production') {
