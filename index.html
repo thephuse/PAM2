@@ -33,8 +33,8 @@
       <script type="text/template" id="person-template">
         <td>
           <% var gravatarUrl  = "http://www.gravatar.com/avatar/" + hex_md5(email); %>
-          <img src=<%- gravatarUrl %> width="40"/>
-          <%- name %>
+          <img src=<%- gravatarUrl %> width="40"/>          
+          <span class="status status-false"><%- name %></span>
         </td> 
         <td id="hours">0.0</td>
         <td id="billable">0.0</td>

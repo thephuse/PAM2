@@ -11,6 +11,7 @@ app.UserView = Backbone.View.extend ({
     var billableHoursDfd = new $.Deferred();         
     this.getTotalHours(hoursDfd);      
     this.getBillableHours(billableHoursDfd);
+    this.getStatus(); 
     $.when(hoursDfd, billableHoursDfd).then(function(){
       self.calcPercent();
     });
@@ -60,6 +61,23 @@ app.UserView = Backbone.View.extend ({
     if (total > 0) {
       this.$el.find("#percent").html(percentBillable.toFixed(0));
     }
+  },
+
+  getStatus: function() {
+    var userId = this.model.get("id");
+    var self = this; 
+    $.get('/daily/' + userId, function(response){
+      if ($(response).find('timer_started_at').length > 0) {
+        self.model.set({isActive: true});
+        self.$el.find(".status").addClass("status-true");
+        self.$el.find(".status").removeClass("status-false");
+      } else {
+        self.model.set({isActive: false});
+        self.$el.find(".status").addClass("status-false");
+        self.$el.find(".status").removeClass("status-true");
+      }      
+    });
+
   },
 
   render: function() {
