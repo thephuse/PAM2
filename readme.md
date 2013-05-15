@@ -37,9 +37,10 @@ Required to run locally (uses env vars on heroku). Get creds from password archi
 ####Cleanup
 - huge refactor (frontend first)
 - make backend routing a bit more sane
-- figure out how to deal with static assets 
-- get rid of CDN scripts, use package manager for front-end maybe
-- figure out how to split js into multiple files
+- some sort of build system to automate sass compilation etc.
+- ~~figure out how to deal with static assets~~
+- ~~get rid of CDN scripts, use package manager for front-end maybe~~
+- ~~figure out how to split js into multiple files~~
 - design and styling and stuff
 - ~~set up secure way to store config info (env vars probably)~~
 - ~~see what happens with heroku~~
