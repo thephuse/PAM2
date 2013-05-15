@@ -14,3 +14,26 @@ td img {
 .navbar .container {
   width: 940px;
 }
+
+.status {
+  position: relative;
+  padding-left: 25px;
+}
+
+.status:before {
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  display: block;
+  left: -6px;
+  top: 0;
+  content: "";
+}
+
+.status-false:before {
+  background: url("../images/inactive.png") no-repeat top left;
+}
+
+.status-true:before {
+  background: url("../images/active.png") no-repeat top left;
+}

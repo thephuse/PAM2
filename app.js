@@ -107,6 +107,14 @@ app.get('/users/:id/:start/:end', ensureAuthenticated, function(req, res) {
   })
 });
 
+app.get('/daily/:id', ensureAuthenticated, function(req,res) {
+  request.get('https://thephuse.harvestapp.com/daily?of_user=' + req.params.id, {
+    headers: headers
+  }, function(error, response, body) {
+    res.send(body);
+  })
+});
+
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
   res.redirect('/auth/harvest');
