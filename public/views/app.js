@@ -6,8 +6,7 @@ app.AppView = Backbone.View.extend ({
   range: "week",
   statsTemplate: _.template($('#stats-template').html()),
   events: {
-    "click .filter" : "filterRange",
-    "click #test" : 'render'
+    "click .filter" : "filterRange"
   },
 
   initialize: function() {

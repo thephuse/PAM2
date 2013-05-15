@@ -4,18 +4,19 @@ app.UserView = Backbone.View.extend ({
   tagName: 'tr',
   template: _.template($('#person-template').html()),    
   initialize: function(attrs) {   
+    var self = this;
     this.end = attrs.endDate; 
     this.start = attrs.startDate; 
     var hoursDfd = new $.Deferred();         
     var billableHoursDfd = new $.Deferred();         
     this.getTotalHours(hoursDfd);      
     this.getBillableHours(billableHoursDfd);
-    var self = this;
     $.when(hoursDfd, billableHoursDfd).then(function(){
       self.calcPercent();
     });
   },
 
+  // these two functions are a mess and there's got to be a better way...
   getTotalHours: function(hoursDfd) {
     var self = this;      
     var entries = new EntryList({});

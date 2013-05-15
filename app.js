@@ -87,6 +87,7 @@ app.get('/users', ensureAuthenticated, function(req, res) {
   });
 });
 
+// this route sucks but haven't figured out how to do query string routes
 app.get('/users/:id/billable/:start/:end', ensureAuthenticated, function(req, res) {
   request.get('https://thephuse.harvestapp.com/people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end + '&billable=yes', {
     headers: headers
