@@ -35,6 +35,7 @@ Required to run locally (uses env vars on heroku). Get creds from password archi
 - ~~add total stats for whole team~~
 
 ####Cleanup
+- client-side routing
 - huge refactor (frontend first)
 - make backend routing a bit more sane
 - some sort of build system to automate sass compilation etc.
