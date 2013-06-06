@@ -1,47 +1,69 @@
 <html>
 <head>
   <title>PAM 2.0</title>
-  <link rel="stylesheet" href="lib/styles/bootstrap.css">
+  <script type="text/javascript" src="//use.typekit.net/pub1ypm.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
 <div class="navbar">
-  <div class="navbar-inner">
   <div class="container">
-    <a class="brand" href="#">Phuse Activity Monitor</a>
-    <ul class="nav pull-right">
+    <a class="brand" href="#"><img src="images/logo.png" /></a>
+    <ul class="nav">
       <li><a href="#" class="filter" data-range="day">Day</a></li>
       <li class="active"><a href="#" class="filter active" data-range="week">Week</a></li>
       <li><a href="#" class="filter" data-range="month">Month</a></li>
     </ul>
   </div>
-  </div>
 </div>
 
 <div class="container">
-  <table id="users" class="table table-bordered">
-    <thead>    
-      <tr>
-        <th>Name</th>
-        <th>Total Hours</th>
-        <th>Billable Hours</th>
-        <th>Percent Billable</th>
-      </tr>
-    </thead>
-    <tbody>
-      <script type="text/template" id="person-template">
-        <td>
-          <% var gravatarUrl  = "http://www.gravatar.com/avatar/" + hex_md5(email); %>
-          <img src=<%- gravatarUrl %> width="40"/>          
-          <span class="status status-false"><%- name %></span>
-        </td> 
-        <td id="hours">0.0</td>
-        <td id="billable">0.0</td>
-        <td id="percent">0.0</td>
-      </script>
-    </tbody>
-  </table>
+
+  <div class="totals module">
+    <h2 class="module-header">Hours</h2>
+    <div class="module-body">
+      <table>
+        <tbody>
+          
+        </tbody>
+        <tfoot>
+          <tr>
+          <th>Total Hours</th>
+          <th>Billable Hours</th>
+          <th>Percent Billable</th>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <div class="users module">
+    <div class="module-body">
+      <table id="users">
+        <thead>    
+          <tr>
+            <th>Name</th>
+            <th>Total Hours</th>
+            <th>Billable Hours</th>
+            <th>Percent Billable</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script type="text/template" id="person-template">
+            <td>
+              <% var gravatarUrl  = "http://www.gravatar.com/avatar/" + hex_md5(email); %>
+              <img src=<%- gravatarUrl %> width="40"/>          
+              <span class="status status-false"><%- name %></span>
+            </td> 
+            <td id="hours">0.0</td>
+            <td id="billable">0.0</td>
+            <td id="percent">0.0</td>
+          </script>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <script type="text/template" id="stats-template">
     <tr>
@@ -50,20 +72,6 @@
       <td><%- percentBillable %></td>
     </tr>
   </script>
-
-  <footer id="footer">
-    <h2>Team Totals</h2>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Total Hours</th>
-          <th>Billable Hours</th>
-          <th>Percent Billable</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </footer>
 
 </div>
   

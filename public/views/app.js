@@ -49,7 +49,7 @@ app.AppView = Backbone.View.extend ({
       }
     });
     var percentBillable = (allBillableHours/allHours*100).toFixed(1)
-    this.$("#footer tbody").html(this.statsTemplate({
+    this.$(".totals tbody").html(this.statsTemplate({
       hours: (isNaN(allHours) ? '0.0' : allHours.toFixed(1)),
       billableHours: (isNaN(allBillableHours) ? '0.0' : allBillableHours.toFixed(1)),
       percentBillable: (isNaN(percentBillable) ? '0.0' : percentBillable)
