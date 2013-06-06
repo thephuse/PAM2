@@ -1,39 +1,136 @@
-* {
-  margin: 0;
-  padding: 0;
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+body {
+  background: #e1e4e7;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
 }
 
-td img {
-  padding-right: 15px;
+.container {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
 }
 
-.btn-group {
-  margin: 20px 0;
+a {
+  text-decoration: none;
 }
 
-.navbar .container {
-  width: 940px;
+table {
+  width: 100%;
+}
+
+th {
+  font-weight: 400;
+}
+
+.navbar {
+  background: #333436;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.brand {
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.nav {
+  float: right;
+  list-style: none;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav a {
+  display: block;
+  padding: 10px 22px;
+  background: #222;
+  border: 1px solid #000;
+}
+
+.nav li:first-child a {
+  border-radius: 5px 0 0 5px;
+  border-right: 0;
+}
+
+.nav li:last-child a {
+  border-radius: 0 5px 5px 0;
+  border-left: 0;
+}
+
+.nav .active a {
+  background: #567bb4;
+}
+
+.module {
+  margin-top: 40px;
+}
+
+.module-header {
+  background: #585a5f;
+  padding: 13px 16px;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-weight: 400;
+}
+
+.module-body {
+  padding: 15px;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+}
+
+.totals table {
+  border-collapse: separate;
+  border-spacing: 15px;
+}
+
+.totals table tfoot {
+  margin-top: -20px;
+}
+
+.totals td {
+  font-size: 50px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from(#43454b), color-stop(0.49, #43454b), color-stop(0.5, #2d2d31), to(#2d2d31));
+  background-image: -webkit-linear-gradient(bottom, #43454b 0%, #43454b 49%, #2d2d31 50%, #2d2d31 100%);
+  background-image: -moz-linear-gradient(bottom, #43454b 0%, #43454b 49%, #2d2d31 50%, #2d2d31 100%);
+  background-image: -o-linear-gradient(bottom, #43454b 0%, #43454b 49%, #2d2d31 50%, #2d2d31 100%);
+  background-image: linear-gradient(bottom, #43454b 0%, #43454b 49%, #2d2d31 50%, #2d2d31 100%);
+}
+
+.users table {
+
+}
+
+.users th, .users td {
+  text-align: left;
+  padding: 15px;
+  vertical-align: top;
+}
+
+.users td {
+  background: #f1f1f2;
+  border: 1px solid #e1e1e2;
+  font-size: 30px;
+  text-align: center;
+}
+
+.users td:first-child {
+  text-align: left;
+  font-size: 18px;
 }
 
 .status {
-  position: relative;
-  padding-left: 25px;
-}
-
-.status:before {
-  width: 19px;
-  height: 19px;
-  position: absolute;
-  display: block;
-  left: -6px;
-  top: 0;
-  content: "";
-}
-
-.status-false:before {
-  background: url("../images/inactive.png") no-repeat top left;
-}
-
-.status-true:before {
-  background: url("../images/active.png") no-repeat top left;
+  vertical-align: top;
+  padding-left: 10px;
 }
