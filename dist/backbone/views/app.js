@@ -48,11 +48,11 @@ app.AppView = Backbone.View.extend ({
         allBillableHours += parseFloat(billableHours);
       }
     });
-    var percentBillable = (allBillableHours/allHours*100).toFixed(1)
-    this.$("#footer tbody").html(this.statsTemplate({
+    var percentBillable = (allBillableHours/allHours*100).toFixed(0)
+    this.$(".totals tbody").html(this.statsTemplate({
       hours: (isNaN(allHours) ? '0.0' : allHours.toFixed(1)),
       billableHours: (isNaN(allBillableHours) ? '0.0' : allBillableHours.toFixed(1)),
-      percentBillable: (isNaN(percentBillable) ? '0.0' : percentBillable)
+      percentBillable: (isNaN(percentBillable) ? '00' : percentBillable + "%")
     }));
   },
 
