@@ -21,21 +21,22 @@
 <div class="container">
 
   <div class="totals module">
-    <h2 class="module-header">Hours</h2>
-    <div class="module-body">
-      <table>
-        <tbody>
-          
-        </tbody>
-        <tfoot>
-          <tr>
-          <th>Total Hours</th>
-          <th>Billable Hours</th>
-          <th>Percent Billable</th>
+    <table>
+      <tbody>
+        <tr>
+          <td><span>0.0</span></td>
+          <td><span>0.0</span></td>
+          <td><span>00</span></td>
         </tr>
-        </tfoot>
-      </table>
-    </div>
+      </tbody>
+      <tfoot>
+        <tr>
+        <th><span>Total Hours</span></th>
+        <th><span>Billable Hours</span></th>
+        <th><span>Percent Billable</span></th>
+      </tr>
+      </tfoot>
+    </table>
   </div>
 
   <div class="users module">
@@ -67,9 +68,9 @@
 
   <script type="text/template" id="stats-template">
     <tr>
-      <td><%- hours %></td>
-      <td><%- billableHours %></td>
-      <td><%- percentBillable %></td>
+      <td><span><%- hours %></span></td>
+      <td><span><%- billableHours %></span></td>
+      <td><span><%- percentBillable %></span></td>
     </tr>
   </script>
 

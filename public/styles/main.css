@@ -3,6 +3,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 body {
   background: #e1e4e7;
   font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -34,8 +35,9 @@ th {
 }
 
 .brand {
-  display: inline-block;
+  display: block;
   padding-top: 5px;
+  float: left;
 }
 
 .nav {
@@ -52,6 +54,7 @@ th {
   padding: 10px 22px;
   background: #222;
   border: 1px solid #000;
+  font-weight: 700;
 }
 
 .nav li:first-child a {
@@ -65,42 +68,31 @@ th {
 }
 
 .nav .active a {
-  background: #567bb4;
+  background: #43454B;
 }
 
 .module {
   margin-top: 40px;
 }
 
-.module-header {
-  background: #585a5f;
-  padding: 13px 16px;
-  border-radius: 5px 5px 0 0;
-  color: #fff;
-  font-weight: 400;
-}
-
-.module-body {
-  padding: 15px;
-  background: #fff;
-  border-radius: 0 0 5px 5px;
-}
-
 .totals table {
   border-collapse: separate;
-  border-spacing: 15px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.totals table tfoot {
-  margin-top: -20px;
+.totals table tfoot span {
+  display: inline-block;
+  margin-top: -32px;
+  position: relative;
+  z-index: 100;
+  color: #fff;
 }
 
 .totals td {
-  font-size: 50px;
-  border-radius: 10px;
-  color: #fff;
-  text-align: center;
-  padding: 30px;
+  position: relative;
+  width: 33.333333%;
   background-image: -webkit-gradient(linear, 0 100%, 0 0, from(#43454b), color-stop(0.49, #43454b), color-stop(0.5, #2d2d31), to(#2d2d31));
   background-image: -webkit-linear-gradient(bottom, #43454b 0%, #43454b 49%, #2d2d31 50%, #2d2d31 100%);
   background-image: -moz-linear-gradient(bottom, #43454b 0%, #43454b 49%, #2d2d31 50%, #2d2d31 100%);
@@ -108,14 +100,72 @@ th {
   background-image: linear-gradient(bottom, #43454b 0%, #43454b 49%, #2d2d31 50%, #2d2d31 100%);
 }
 
-.users table {
+.totals td:after {
+  content: "";
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  right: -5px;
+  top: 0;
+  background: #fff;
+}
 
+.totals td:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.totals td:last-child {
+  border-radius: 0 10px 10px 0; 
+}
+
+.totals td:last-child:after {
+  display: none;
+}
+
+.totals td span {
+  display: block;
+  margin: 10px;
+  font-size: 90px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  padding: 8px 25px 10px 25px;
+  font-family: Helvetica Neue;
+    background: linear-gradient(rgba(205,207,210,1) 0%, rgba(186,188,190,1) 49%, rgba(45,45,49,1) 49%, rgba(45,45,49,1) 51%, rgba(242,244,247,1) 51%, rgba(236,238,241,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.totals td:nth-child(2) span {
+  margin: 0;
+}
+
+.users {
+  margin-bottom: 30px;
+}
+
+.users table {
+  border-radius: 0 0 10px 10px;
 }
 
 .users th, .users td {
-  text-align: left;
   padding: 15px;
   vertical-align: top;
+}
+
+.users th {
+  background: #333436;
+  color: #fff;
+  font-weight: 700;
+}
+
+.users th:first-child {
+  border-radius: 10px 0 0 0;
+  text-align: left;
+}
+
+.users th:last-child {
+  border-radius: 0 10px 0 0;
 }
 
 .users td {
