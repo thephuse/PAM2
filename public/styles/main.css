@@ -68,7 +68,7 @@ th {
 }
 
 .nav .active a {
-  background: #43454B;
+  background: #119dd6;
 }
 
 .module {
@@ -183,4 +183,27 @@ th {
 .status {
   vertical-align: top;
   padding-left: 10px;
+}
+
+.status {
+  position: relative;
+  padding-left: 30px;
+}
+
+.status:before {
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  display: block;
+  left: 4px;
+  top: 0;
+  content: "";
+}
+
+.status-false:before {
+  background: url("../images/inactive.png") no-repeat top left;
+}
+
+.status-true:before {
+  background: url("../images/active.png") no-repeat top left;
 }
