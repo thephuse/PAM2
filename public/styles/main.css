@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1040px;
   width: 90%;
   margin: 0 auto;
 }
@@ -115,7 +115,7 @@ th {
 }
 
 .totals td:last-child {
-  border-radius: 0 10px 10px 0; 
+  border-radius: 0 10px 10px 0;
 }
 
 .totals td:last-child:after {
