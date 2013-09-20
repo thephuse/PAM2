@@ -35,6 +35,10 @@ if (process.env.NODE_ENV === 'production') {
   var harvestSecret = '8EYB1TV6goSe15JMB3mPrdxzwSu4EYastoqXnli+ydbVhSDYOtDPhhKa+rWeTiUS+7SI3Sv6SAND6fYVQoLshA==';
 }
 
+app.use(function staticsPlaceholder(req, res, next) {
+  return next();
+});
+
 var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 
 passport.use('harvest', new OAuth2Strategy({
@@ -56,17 +60,17 @@ var headers = {
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
- 
+
 passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
 app.get('/auth/harvest', passport.authenticate('harvest'));
 
-app.get('/auth/harvest/callback', 
-  passport.authenticate('harvest', { 
+app.get('/auth/harvest/callback',
+  passport.authenticate('harvest', {
     successRedirect: '/',
-    failureRedirect: '/login' 
+    failureRedirect: '/login'
   })
 );
 
@@ -120,7 +124,13 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/auth/harvest');
 }
 
+app.use(function middlewarePlaceholder(req, res, next) {
+  return next();
+});
+
 var port = process.env.PORT || 1234;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
+
+module.exports = app;
