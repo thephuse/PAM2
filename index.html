@@ -3,7 +3,7 @@
   <title>PAM 2.0</title>
   <script type="text/javascript" src="//use.typekit.net/pub1ypm.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
   <div class="users module">
     <div class="module-body">
       <table id="users">
-        <thead>    
+        <thead>
           <tr>
             <th>Name</th>
             <th>Total Hours</th>
@@ -54,9 +54,9 @@
           <script type="text/template" id="person-template">
             <td>
               <% var gravatarUrl  = "http://www.gravatar.com/avatar/" + hex_md5(email); %>
-              <img src=<%- gravatarUrl %> width="40"/>          
+              <img src=<%- gravatarUrl %> width="40"/>
               <span class="status status-false"><%- name %></span>
-            </td> 
+            </td>
             <td id="hours">0.0</td>
             <td id="billable">0.0</td>
             <td id="percent">0.0</td>
@@ -89,7 +89,7 @@
     <script src="views/user.js"></script>
   <script>
 
-    var app = app || {}; 
+    var app = app || {};
 
     $(document).ready(function(){
       new app.AppView();
