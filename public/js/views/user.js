@@ -1,6 +1,6 @@
-define(['backbone', 'jquery', 'md5', 'collections/entries'], function(Backbone, $, md5, entriesList){
+define(['backbone', 'jquery', 'md5', 'collections/entries'], function(Backbone, $, md5, Entries){
 
-  var User = Backbone.View.extend ({
+  var UserView = Backbone.View.extend ({
     tagName: 'tr',
     template: _.template($('#person-template').html()),
     initialize: function(attrs) {
@@ -20,7 +20,7 @@ define(['backbone', 'jquery', 'md5', 'collections/entries'], function(Backbone, 
     // these two functions are a mess and there's got to be a better way...
     getTotalHours: function(hoursDfd) {
       var self = this;
-      var entries = new entriesList();
+      var entries = new Entries();
       entries.url = '/users/' + this.model.get("id") + "/" + this.start + "/" + this.end;
       entries.fetch(
         {success: function(){
@@ -38,7 +38,7 @@ define(['backbone', 'jquery', 'md5', 'collections/entries'], function(Backbone, 
 
     getBillableHours: function(billableHoursDfd) {
       var self = this;
-      var billableEntries = new entriesList();
+      var billableEntries = new Entries();
       billableEntries.url = '/users/' + this.model.get("id") + "/billable/" + this.start + "/" + this.end;
       billableEntries.fetch(
         {success: function(){
@@ -89,6 +89,6 @@ define(['backbone', 'jquery', 'md5', 'collections/entries'], function(Backbone, 
 
   });
 
-  return User;
+  return UserView;
 
 });

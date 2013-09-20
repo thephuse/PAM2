@@ -1,7 +1,7 @@
-define(['backbone', 'models/entry'], function(Backbone, entryModel){
+define(['backbone', 'models/entry'], function(Backbone, Entry){
 
-  var entrylist = Backbone.Collection.extend ({
-    model: entryModel,
+  var Entries = Backbone.Collection.extend ({
+    model: Entry,
     parse: function (data) {
       var parsed = [];
       $(data).find('day-entry').each(function (index) {
@@ -17,6 +17,6 @@ define(['backbone', 'models/entry'], function(Backbone, entryModel){
     }
   });
 
-  return entrylist;
+  return Entries;
 
 });

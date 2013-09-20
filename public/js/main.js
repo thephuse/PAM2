@@ -8,6 +8,7 @@ require.config({
   }
 });
 
-require(['views/app'], function(appView){
-  new appView();
+require(['views/app'], function(AppView){
+
+  new AppView();
 });

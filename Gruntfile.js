@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     dir: {
       local: 'public',
       dist: 'dist'
