@@ -1,4 +1,4 @@
-define(['backbone', 'jquery', 'moment', 'collections/users', 'views/user'], function(Backbone, $, moment, users, userView){
+define(['backbone', 'jquery', 'moment', 'collections/users', 'views/user'], function(Backbone, $, moment, Users, UserView){
 
   AppView = Backbone.View.extend ({
 
@@ -10,25 +10,25 @@ define(['backbone', 'jquery', 'moment', 'collections/users', 'views/user'], func
     },
 
     initialize: function() {
-      users.fetch({reset: true});
-      this.listenTo(users, 'reset', this.render);
-      this.listenTo(users, 'change', this.showStats);
+      Users.fetch({reset: true});
+      this.listenTo(Users, 'reset', this.render);
+      this.listenTo(Users, 'change', this.showStats);
       this.getEnd();
       setInterval(function(){
-        users.fetch({reset:true});
+        Users.fetch({reset:true});
       }, 60000);
     },
 
     render: function() {
       this.$("#users").find("tbody").html('');
-      users.each(this.showActive, this);
+      Users.each(this.showActive, this);
     },
 
     showActive: function(user) {
       var end = this.getEnd();
       var start = this.getStart(this.range);
       if (user.get("active") === "true") {
-        var view = new userView({
+        var view = new UserView({
           model: user,
           endDate: end,
           startDate: start
@@ -40,7 +40,7 @@ define(['backbone', 'jquery', 'moment', 'collections/users', 'views/user'], func
     showStats: function() {
       var allHours = 0;
       var allBillableHours = 0;
-      users.each(function(user){
+      Users.each(function(user){
         if (user.get("active") === "true") {
           var hours = user.get("hours");
           var billableHours = user.get("billableHours");

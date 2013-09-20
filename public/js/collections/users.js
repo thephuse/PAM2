@@ -1,8 +1,8 @@
-define(['backbone', 'models/user'], function(Backbone, userModel){
+define(['backbone', 'models/user'], function(Backbone, User){
 
-  var UserList = Backbone.Collection.extend ({
+  var Users = Backbone.Collection.extend ({
 
-    model: userModel,
+    model: User,
     url: '/users',
 
     parse: function (data) {
@@ -26,6 +26,6 @@ define(['backbone', 'models/user'], function(Backbone, userModel){
 
   });
 
-  return new UserList;
+  return new Users;
 
 });
