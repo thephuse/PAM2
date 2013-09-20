@@ -1,51 +1,29 @@
 module.exports = function(grunt) {
-  
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    dir: 'public',
-   
-    concat: {    
-      src: {
-        src: [
-          '<%= dir %>/backbone/models/user.js','<%= dir %>/backbone/models/entry.js',
-          '<%= dir %>/backbone/collections/users.js', '<%= dir %>/backbone/collections/entries.js',
-          '<%= dir %>/backbone/views/app.js', '<%= dir %>/backbone/views/user.js'
-          ],
-        dest: '<%= dir %>/dist/pam.js'
-      },
-      options: {
-        separator: ';'
-      },
-      vendor: {
-        src: [
-          '<%= dir %>/lib/scripts/jquery.min.js',
-          '<%= dir %>/lib/scripts/underscore-min.js',
-          '<%= dir %>/lib/scripts/backbone-min.js',
-          '<%= dir %>/lib/scripts/md5.js',
-          '<%= dir %>/lib/scripts/moment.min.js'
-          ],
-        dest: '<%= dir %>/dist/vendor.js'
-      }
+    dir: {
+      local: 'public',
+      dist: 'dist'
     },
 
-    uglify: {
-      src: {
+    stylus: {
+      compile: {
+        options: {
+          paths: [],
+          use: [],
+          import: []
+        },
         files: {
-          '<%= dir %>/dist/<%= pkg.name %>.min.js': ['<%= dir %>/dist/pam.js']
-        }
-      },
-      vendor: {
-        files: {
-          '<%= dir %>/dist/vendor.min.js' : ['<%= concat.vendor.dest %>']
+          '<%= dir.local %>/css/main.css': '<%= dir.local %>/stylus/main.styl'
         }
       }
     }
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-stylus');
 
-  grunt.registerTask('default', ['concat', 'uglify']);
+  grunt.registerTask('default', ['stylus']);
 
 };
