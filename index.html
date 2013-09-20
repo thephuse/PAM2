@@ -53,7 +53,6 @@
         <tbody>
           <script type="text/template" id="person-template">
             <td>
-              <% var gravatarUrl  = "http://www.gravatar.com/avatar/" + hex_md5(email); %>
               <img src=<%- gravatarUrl %> width="40"/>
               <span class="status status-false"><%- name %></span>
             </td>
@@ -76,25 +75,7 @@
 
 </div>
 
-    <script src="lib/jquery.min.js"></script>
-    <script src="lib/underscore-min.js"></script>
-    <script src="lib/backbone-min.js"></script>
-    <script src="lib/moment.min.js"></script>
-    <script src="lib/md5.js"></script>
-    <script src="models/user.js"></script>
-    <script src="models/entry.js"></script>
-    <script src="collections/users.js"></script>
-    <script src="collections/entries.js"></script>
-    <script src="views/app.js"></script>
-    <script src="views/user.js"></script>
-  <script>
+  <script data-main="js/main.js" src="js/vendor/requirejs/require.js"></script>
 
-    var app = app || {};
-
-    $(document).ready(function(){
-      new app.AppView();
-    });
-
-  </script>
 </body>
 </html>

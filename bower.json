@@ -1,0 +1,12 @@
+{
+  "name": "PAM",
+  "version": "2.0.1",
+  "dependencies": {
+    "jquery": null,
+    "backbone-amd": null,
+    "underscore-amd": null,
+    "requirejs": null,
+    "momentjs": "~2.2.1",
+    "js-md5": "~1.0.3"
+  }
+}
