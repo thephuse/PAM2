@@ -1,4 +1,4 @@
-var app = app || {}; 
+var app = app || {};
 
 app.AppView = Backbone.View.extend ({
 
@@ -11,9 +11,9 @@ app.AppView = Backbone.View.extend ({
 
   initialize: function() {
     app.Users.fetch({reset: true});
-    this.listenTo(app.Users, 'reset', this.render);  
-    this.listenTo(app.Users, 'change', this.showStats);      
-    this.getEnd();      
+    this.listenTo(app.Users, 'reset', this.render);
+    this.listenTo(app.Users, 'change', this.showStats);
+    this.getEnd();
     setInterval(function(){
       app.Users.fetch({reset:true});
     }, 60000);
@@ -26,14 +26,14 @@ app.AppView = Backbone.View.extend ({
 
   showActive: function(user) {
     var end = this.getEnd();
-    var start = this.getStart(this.range);      
+    var start = this.getStart(this.range);
     if (user.get("active") === "true") {
       var view = new app.UserView({
-        model: user, 
-        endDate: end, 
+        model: user,
+        endDate: end,
         startDate: start
       });
-      $("#users").append(view.render().el);     
+      $("#users").append(view.render().el);
     }
   },
 
@@ -48,7 +48,7 @@ app.AppView = Backbone.View.extend ({
         allBillableHours += parseFloat(billableHours);
       }
     });
-    var percentBillable = (allBillableHours/allHours*100).toFixed(0)
+    var percentBillable = (allBillableHours/allHours*100).toFixed(0);
     this.$(".totals tbody").html(this.statsTemplate({
       hours: (isNaN(allHours) ? '0.0' : allHours.toFixed(1)),
       billableHours: (isNaN(allBillableHours) ? '0.0' : allBillableHours.toFixed(1)),
@@ -69,17 +69,14 @@ app.AppView = Backbone.View.extend ({
 
   getStart: function(range) {
     switch (range) {
-      case "day": 
+      case "day":
         return moment().format("YYYYMMDD");
-        break;
-      case "month": 
+      case "month":
         return moment().startOf("month").format("YYYYMMDD");
-        break;
-      case "week":           
+      case "week":
         return moment().startOf('week').add('days', 1).format("YYYYMMDD");
-        break;
-      default:          
-        return moment().startOf('week').add('days', 1).format("YYYYMMDD");          
+      default:
+        return moment().startOf('week').add('days', 1).format("YYYYMMDD");
     }
   }
 

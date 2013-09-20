@@ -1,4 +1,4 @@
-var app = app || {}; 
+var app = app || {};
 
 var UserList = Backbone.Collection.extend ({
 
@@ -14,7 +14,7 @@ var UserList = Backbone.Collection.extend ({
       var dept = $(this).find('department').text();
       var email = $(this).find('email').text();
       parsed.push({id: uid, name: fname, active: isActive, department: dept, email: email});
-    })
+    });
     return parsed;
   },
 
@@ -22,8 +22,8 @@ var UserList = Backbone.Collection.extend ({
     options = options || {};
     options.dataType = "xml";
     Backbone.Collection.prototype.fetch.call(this, options);
-  }    
+  }
 
 });
 
-app.Users = new UserList(); 
+app.Users = new UserList();
