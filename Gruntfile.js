@@ -79,6 +79,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('server', ['watch']);
 
-  grunt.registerTask('default', ['stylus', 'jshint']);
+  grunt.registerTask('default', ['stylus', 'jshint', 'copy', 'useminPrepare', 'usemin']);
 
 };
