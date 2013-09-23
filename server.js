@@ -75,7 +75,11 @@ app.get('/auth/harvest/callback',
 );
 
 app.get('/', ensureAuthenticated, function(req,res){
-  res.sendfile('index.html');
+  if (process.env.NODE_ENV === 'production') {
+    res.sendfile('dist/index.html');
+  } else {
+    res.sendfile('index.html')
+  }
 });
 
 app.get('/logout', function(req, res){
