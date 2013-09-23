@@ -29,6 +29,17 @@ module.exports = function(grunt) {
       }
     },
 
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: "public/js",
+          name: "main",
+          mainConfigFile: "public/js/main.js",
+          out: "public/js/main.min.js"
+        }
+      }
+    },
+
     watch: {
       files: [
         '<%= dir.local %>/stylus/{,*/}*.styl',
@@ -39,11 +50,13 @@ module.exports = function(grunt) {
       tasks: ['stylus', 'jshint']
     }
 
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   grunt.registerTask('server', ['watch']);
 
