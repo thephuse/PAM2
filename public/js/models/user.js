@@ -1,13 +1,14 @@
-define(['backbone'], function(Backbone){
-
-  var User = Backbone.Model.extend({
-    defaults: {
-      name: '',
-      department: '',
-      isActive: false
-    }
+(function() {
+  define(["backbone"], function(Backbone) {
+    var User;
+    User = Backbone.Model.extend({
+      defaults: {
+        name: "",
+        department: "",
+        isActive: false
+      }
+    });
+    return User;
   });
 
-  return User;
-
-});
+}).call(this);

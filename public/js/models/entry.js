@@ -1,7 +1,8 @@
-define(['backbone'], function(Backbone){
+(function() {
+  define(["backbone"], function(Backbone) {
+    var Entry;
+    Entry = Backbone.Model.extend({});
+    return Entry;
+  });
 
-  var Entry = Backbone.Model.extend({});
-
-  return Entry;
-
-});
+}).call(this);
