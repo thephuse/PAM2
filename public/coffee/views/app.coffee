@@ -60,12 +60,13 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
         percentClass = "offTarget"
       @$el.find(".stats-hours span").text(@stats.allHours.toFixed(1)).removeClass "pending"
       @$el.find(".stats-billable span").text(@stats.allBillableHours.toFixed(1)).removeClass "pending"
-      @$el.find(".stats-percent span").text(@stats.percentBillable + "%").removeClass("pending").addClass percentClass
+      @$el.find(".stats-percent span").text(@stats.percentBillable + "%").removeClass().addClass percentClass
 
     getEnd: ->
       moment().format "YYYYMMDD"
 
     filterRange: (e) ->
+      @$el.find(".totals span").text("").addClass "pending"
       @range = ($(e.currentTarget).data("range"))
       @$("li").removeClass "active"
       $(e.currentTarget).parent("li").addClass "active"
