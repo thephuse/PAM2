@@ -1,6 +1,9 @@
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
-body{line-height:1;background:#e1e4e7;font-family:"proxima-nova",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+@-webkit-keyframes fadeToggle{0%{-webkit-transform:scale(0)}
+50%{-webkit-transform:scale(1)}
+100%{-webkit-transform:scale(0)}
+}body{line-height:1;background:#e1e4e7;font-family:"proxima-nova",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 nav ul{list-style:none}
 blockquote,q{quotes:none}
 blockquote:before,blockquote:after,q:before,q:after{content:none}
@@ -38,8 +41,11 @@ th{font-weight:400}
 .users th{background:#333436;color:#fff;font-weight:700;}
 .users th:first-child{border-radius:10px 0 0 0;text-align:left}
 .users th:last-child{border-radius:0 10px 0 0}
-.users td{background:#f1f1f2;border:1px solid #e1e1e2;font-size:30px;text-align:center;}
+.users td{background-color:#f1f1f2;border:1px solid #e1e1e2;font-size:30px;text-align:center;}
 .users td:first-child{text-align:left;font-size:18px}
+.users td.pending:before,.users td.pending:after{display:inline-block;content:"";width:10px;height:10px;border-radius:50%;margin:5px;-webkit-animation-name:fadeToggle;-webkit-animation-duration:.6s;-webkit-animation-timing-function:ease;-webkit-animation-iteration-count:infinite}
+.users td.pending:before{background:#cd0000}
+.users td.pending:after{background:#92da40;-webkit-animation-delay:.3s}
 .users th,.users td{padding:15px;vertical-align:top}
 .status{vertical-align:top;padding-left:10px;position:relative;padding-left:30px;}
 .status:before{width:19px;height:19px;position:absolute;display:block;left:4px;top:0;content:""}
