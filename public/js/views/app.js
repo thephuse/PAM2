@@ -15,11 +15,6 @@
         this.statsEl = this.$(".totals tbdoy");
         this.calcUserDfds = [];
         this.userCount = 0;
-        this.stats = {
-          allHours: 0,
-          allBillableHours: 0,
-          percentBillable: 0
-        };
         this.listenTo(Users, "reset", this.render);
         this.getEnd();
         return setInterval((function() {
@@ -31,11 +26,14 @@
       render: function() {
         var _this = this;
         this.$("#users").find("tbody").html("");
+        this.stats = {
+          allHours: 0,
+          allBillableHours: 0,
+          percentBillable: 0
+        };
         Users.each(this.showActive, this);
         return $.when.apply($, this.calcUserDfds).done(function() {
-          return _this.calcStats(function() {
-            return _this.showStats();
-          });
+          return _this.calcStats();
         });
       },
       showActive: function(user) {
@@ -53,7 +51,7 @@
           return this.calcUserDfds.push(view.userLoaded);
         }
       },
-      calcStats: function(cb) {
+      calcStats: function() {
         var _this = this;
         Users.each(function(user) {
           var billableHours, hours;
@@ -65,7 +63,7 @@
           }
         });
         this.stats.percentBillable = (this.stats.allBillableHours / this.stats.allHours * 100).toFixed(0);
-        return cb();
+        return this.showStats();
       },
       showStats: function() {
         console.log(this.stats);
