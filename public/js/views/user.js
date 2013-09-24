@@ -11,6 +11,7 @@
         this.start = attrs.startDate;
         hoursDfd = new $.Deferred();
         billableHoursDfd = new $.Deferred();
+        this.userLoaded = new $.Deferred();
         this.getTotalHours(hoursDfd);
         this.getBillableHours(billableHoursDfd);
         this.getStatus();
@@ -65,7 +66,8 @@
         total = this.model.get("hours");
         billable = this.model.get("billableHours");
         percentBillable = (billable / total) * 100;
-        return this.$el.find(".percent").html(total > 0 ? percentBillable.toFixed(0) + "%" : void 0).removeClass("pending");
+        this.$el.find(".percent").html(total > 0 ? percentBillable.toFixed(0) + "%" : void 0).removeClass("pending");
+        return this.userLoaded.resolve();
       },
       getStatus: function() {
         var self, userId;

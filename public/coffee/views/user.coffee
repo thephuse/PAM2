@@ -8,15 +8,13 @@ define ["backbone", "jquery", "md5", "collections/entries"], (Backbone, $, md5, 
       @start = attrs.startDate
       hoursDfd = new $.Deferred()
       billableHoursDfd = new $.Deferred()
+      @userLoaded = new $.Deferred()
       @getTotalHours hoursDfd
       @getBillableHours billableHoursDfd
       @getStatus()
       $.when(hoursDfd, billableHoursDfd).then ->
         self.calcPercent()
 
-
-
-    # these two functions are a mess and there's got to be a better way...
     getTotalHours: (hoursDfd) ->
       self = this
       entries = new Entries()
@@ -29,7 +27,6 @@ define ["backbone", "jquery", "md5", "collections/entries"], (Backbone, $, md5, 
         self.model.set hours: totalHours
         self.$el.find(".hours").html(self.model.get("hours")).removeClass "pending"
         hoursDfd.resolve()
-
 
     getBillableHours: (billableHoursDfd) ->
       self = this
@@ -45,12 +42,12 @@ define ["backbone", "jquery", "md5", "collections/entries"], (Backbone, $, md5, 
         self.$el.find(".billable").html(self.model.get("billableHours")).removeClass "pending"
         billableHoursDfd.resolve()
 
-
     calcPercent: ->
       total = @model.get("hours")
       billable = @model.get("billableHours")
       percentBillable = (billable / total) * 100
       @$el.find(".percent").html(percentBillable.toFixed(0) + "%"  if total > 0).removeClass "pending"
+      @userLoaded.resolve()
 
     getStatus: ->
       userId = @model.get("id")
@@ -64,7 +61,6 @@ define ["backbone", "jquery", "md5", "collections/entries"], (Backbone, $, md5, 
           self.model.set isActive: false
           self.$el.find(".status").addClass "status-false"
           self.$el.find(".status").removeClass "status-true"
-
 
     render: ->
       person = @model.toJSON()

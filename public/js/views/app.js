@@ -12,8 +12,15 @@
         Users.fetch({
           reset: true
         });
+        this.statsEl = this.$(".totals tbdoy");
+        this.calcUserDfds = [];
+        this.userCount = 0;
+        this.stats = {
+          allHours: 0,
+          allBillableHours: 0,
+          percentBillable: 0
+        };
         this.listenTo(Users, "reset", this.render);
-        this.listenTo(Users, "change", this.showStats);
         this.getEnd();
         return setInterval((function() {
           return Users.fetch({
@@ -22,8 +29,14 @@
         }), 60000);
       },
       render: function() {
+        var _this = this;
         this.$("#users").find("tbody").html("");
-        return Users.each(this.showActive, this);
+        Users.each(this.showActive, this);
+        return $.when.apply($, this.calcUserDfds).done(function() {
+          return _this.calcStats(function() {
+            return _this.showStats();
+          });
+        });
       },
       showActive: function(user) {
         var end, start, view;
@@ -35,28 +48,30 @@
             endDate: end,
             startDate: start
           });
-          return $("#users").append(view.render().el);
+          $("#users").append(view.render().el);
+          this.userCount++;
+          return this.calcUserDfds.push(view.userLoaded);
         }
       },
-      showStats: function() {
-        var allBillableHours, allHours, percentBillable;
-        allHours = 0;
-        allBillableHours = 0;
+      calcStats: function(cb) {
+        var _this = this;
         Users.each(function(user) {
           var billableHours, hours;
           if (user.get("active") === "true") {
             hours = user.get("hours");
             billableHours = user.get("billableHours");
-            allHours += parseFloat(hours);
-            return allBillableHours += parseFloat(billableHours);
+            _this.stats.allHours += parseFloat(hours);
+            return _this.stats.allBillableHours += parseFloat(billableHours);
           }
         });
-        percentBillable = (allBillableHours / allHours * 100).toFixed(0);
-        return this.$(".totals tbody").html(this.statsTemplate({
-          hours: (isNaN(allHours) ? "0.0" : allHours.toFixed(1)),
-          billableHours: (isNaN(allBillableHours) ? "0.0" : allBillableHours.toFixed(1)),
-          percentBillable: (isNaN(percentBillable) ? "00" : percentBillable + "%")
-        }));
+        this.stats.percentBillable = (this.stats.allBillableHours / this.stats.allHours * 100).toFixed(0);
+        return cb();
+      },
+      showStats: function() {
+        console.log(this.stats);
+        this.$el.find(".stats-hours span").text(this.stats.allHours.toFixed(1)).removeClass("pending");
+        this.$el.find(".stats-billable span").text(this.stats.allBillableHours.toFixed(1)).removeClass("pending");
+        return this.$el.find(".stats-percent span").text(this.stats.percentBillable).removeClass("pending");
       },
       getEnd: function() {
         return moment().format("YYYYMMDD");
