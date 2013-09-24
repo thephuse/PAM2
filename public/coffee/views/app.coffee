@@ -52,9 +52,15 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
 
     showStats: ->
       console.log @stats
+      if @stats.percentBillable >= 60
+        percentClass = "onTarget"
+      else if @stats.percentBillable >= 50 and @stats.percentBillable < 60
+        percentClass = "nearTarget"
+      else
+        percentClass = "offTarget"
       @$el.find(".stats-hours span").text(@stats.allHours.toFixed(1)).removeClass "pending"
       @$el.find(".stats-billable span").text(@stats.allBillableHours.toFixed(1)).removeClass "pending"
-      @$el.find(".stats-percent span").text(@stats.percentBillable + "%").removeClass "pending"
+      @$el.find(".stats-percent span").text(@stats.percentBillable + "%").removeClass("pending").addClass percentClass
 
     getEnd: ->
       moment().format "YYYYMMDD"
