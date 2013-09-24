@@ -8,8 +8,14 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
 
     initialize: ->
       Users.fetch reset: true
+      @statsEl = @$(".totals tbdoy")
+      @calcUserDfds = []
+      @userCount = 0
+      @stats =
+        allHours: 0
+        allBillableHours: 0
+        percentBillable: 0
       @listenTo Users, "reset", @render
-      @listenTo Users, "change", @showStats
       @getEnd()
       setInterval (->
         Users.fetch reset: true
@@ -18,6 +24,10 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
     render: ->
       @$("#users").find("tbody").html ""
       Users.each @showActive, this
+      $.when.apply($, @calcUserDfds).done =>
+        @calcStats =>
+          @showStats()
+
 
     showActive: (user) ->
       end = @getEnd()
@@ -29,23 +39,24 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           startDate: start
         )
         $("#users").append view.render().el
+        @userCount++
+        @calcUserDfds.push view.userLoaded
 
-    showStats: ->
-      allHours = 0
-      allBillableHours = 0
-      Users.each (user) ->
+    calcStats: (cb) ->
+      Users.each (user) =>
         if user.get("active") is "true"
           hours = user.get("hours")
           billableHours = user.get("billableHours")
-          allHours += parseFloat(hours)
-          allBillableHours += parseFloat(billableHours)
+          @stats.allHours += parseFloat(hours)
+          @stats.allBillableHours += parseFloat(billableHours)
+      @stats.percentBillable = (@stats.allBillableHours / @stats.allHours * 100).toFixed(0)
+      cb()
 
-      percentBillable = (allBillableHours / allHours * 100).toFixed(0)
-      @$(".totals tbody").html @statsTemplate(
-        hours: ((if isNaN(allHours) then "0.0" else allHours.toFixed(1)))
-        billableHours: ((if isNaN(allBillableHours) then "0.0" else allBillableHours.toFixed(1)))
-        percentBillable: ((if isNaN(percentBillable) then "00" else percentBillable + "%"))
-      )
+    showStats: ->
+      console.log @stats
+      @$el.find(".stats-hours span").text(@stats.allHours.toFixed(1)).removeClass "pending"
+      @$el.find(".stats-billable span").text(@stats.allBillableHours.toFixed(1)).removeClass "pending"
+      @$el.find(".stats-percent span").text(@stats.percentBillable).removeClass "pending"
 
     getEnd: ->
       moment().format "YYYYMMDD"
@@ -67,4 +78,5 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
         else
           moment().startOf("week").add("days", 1).format "YYYYMMDD"
   )
+
   AppView
