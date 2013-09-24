@@ -59,4 +59,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-usemin"
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.registerTask "server", ["watch"]
-  grunt.registerTask "default", ["stylus", "jshint", "coffee", "copy", "useminPrepare", "usemin"]
+  grunt.registerTask "default", ["stylus", "jshint", "coffee", "requirejs", "copy", "useminPrepare", "usemin"]
