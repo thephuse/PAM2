@@ -33,7 +33,10 @@ th{font-weight:400}
 .module{margin-top:40px}
 .totals li{width:33.3333%;float:left;text-align:center;}
 .totals li h2{margin:30px 0}
-.totals li span{text-align:center;display:block;margin:0 auto;color:#fff;background:#333436;width:190px;height:190px;border-radius:50%;font-size:50px;font-weight:bold;padding-top:60px;border:10px solid #fff;}
+.totals li span{text-align:center;display:block;margin:0 auto;color:#fff;background:#333436;width:190px;height:190px;border-radius:50%;font-size:50px;font-weight:bold;padding-top:60px;border:8px solid #fff;}
+.totals li span.nearTarget{border-color:#ffcd5b}
+.totals li span.onTarget{border-color:#6dcd00}
+.totals li span.offTarget{border-color:#cd0000}
 .totals li span.pending:before,.totals li span.pending:after{display:inline-block;content:"";width:30px;height:30px;border-radius:50%;margin:5px;top:20px;-webkit-animation-name:fadeToggle;-webkit-animation-duration:.6s;-webkit-animation-timing-function:ease;-webkit-animation-iteration-count:infinite}
 .totals li span:before{background:#fff}
 .totals li span:after{background:#fff;-webkit-animation-delay:.3s}

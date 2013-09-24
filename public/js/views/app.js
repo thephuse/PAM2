@@ -65,10 +65,18 @@
         return this.showStats();
       },
       showStats: function() {
+        var percentClass;
         console.log(this.stats);
+        if (this.stats.percentBillable >= 60) {
+          percentClass = "onTarget";
+        } else if (this.stats.percentBillable >= 50 && this.stats.percentBillable < 60) {
+          percentClass = "nearTarget";
+        } else {
+          percentClass = "offTarget";
+        }
         this.$el.find(".stats-hours span").text(this.stats.allHours.toFixed(1)).removeClass("pending");
         this.$el.find(".stats-billable span").text(this.stats.allBillableHours.toFixed(1)).removeClass("pending");
-        return this.$el.find(".stats-percent span").text(this.stats.percentBillable + "%").removeClass("pending");
+        return this.$el.find(".stats-percent span").text(this.stats.percentBillable + "%").removeClass("pending").addClass(percentClass);
       },
       getEnd: function() {
         return moment().format("YYYYMMDD");
