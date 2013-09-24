@@ -1,0 +1,27 @@
+@-webkit-keyframes fadeToggle
+  0%
+    -webkit-transform: scale(0)
+  50%
+    -webkit-transform: scale(1)
+  100%
+    -webkit-transform: scale(0)
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}

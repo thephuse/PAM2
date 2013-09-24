@@ -68,7 +68,7 @@
         console.log(this.stats);
         this.$el.find(".stats-hours span").text(this.stats.allHours.toFixed(1)).removeClass("pending");
         this.$el.find(".stats-billable span").text(this.stats.allBillableHours.toFixed(1)).removeClass("pending");
-        return this.$el.find(".stats-percent span").text(this.stats.percentBillable).removeClass("pending");
+        return this.$el.find(".stats-percent span").text(this.stats.percentBillable + "%").removeClass("pending");
       },
       getEnd: function() {
         return moment().format("YYYYMMDD");

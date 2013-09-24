@@ -3,7 +3,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 @-webkit-keyframes fadeToggle{0%{-webkit-transform:scale(0)}
 50%{-webkit-transform:scale(1)}
 100%{-webkit-transform:scale(0)}
-}body{line-height:1;background:#e1e4e7;font-family:"proxima-nova",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+}*{box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}
+.cf:before,.cf:after{content:" ";display:table}
+.cf:after{clear:both}
+.cf{*zoom:1}
+body{line-height:1;background:#e1e4e7;font-family:"proxima-nova",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 nav ul{list-style:none}
 blockquote,q{quotes:none}
 blockquote:before,blockquote:after,q:before,q:after{content:none}
@@ -27,23 +31,16 @@ th{font-weight:400}
 .nav a{display:block;padding:10px 22px;background:#222;border:1px solid #000;font-weight:700}
 .nav .active a{background:#119dd6}
 .module{margin-top:40px}
-.totals table{border-collapse:separate;background:#fff;border-radius:10px;padding:10px;}
-.totals table tfoot span{display:inline-block;margin-top:-32px;position:relative;z-index:100;color:#fff}
-.totals td{position:relative;width:33.333333%;background-image:-webkit-gradient(linear,0 100%,0 0,from(#43454b),color-stop(.49,#43454b),color-stop(.5,#2d2d31),to(#2d2d31));background-image:-webkit-linear-gradient(bottom,#43454b 0%,#43454b 49%,#2d2d31 50%,#2d2d31 100%);background-image:-moz-linear-gradient(bottom,#43454b 0%,#43454b 49%,#2d2d31 50%,#2d2d31 100%);background-image:-o-linear-gradient(bottom,#43454b 0%,#43454b 49%,#2d2d31 50%,#2d2d31 100%);background-image:linear-gradient(bottom,#43454b 0%,#43454b 49%,#2d2d31 50%,#2d2d31 100%);}
-.totals td:after{content:"";width:10px;height:100%;position:absolute;right:-5px;top:0;background:#fff}
-.totals td:first-child{border-radius:10px 0 0 10px}
-.totals td:last-child{border-radius:0 10px 10px 0;}
-.totals td:last-child:after{display:none}
-.totals td span{display:block;margin:10px;font-size:90px;font-weight:700;color:#fff;text-align:center;padding:8px 25px 10px 25px;font-family:Helvetica Neue;background:linear-gradient(#cdcfd2 0%,#babcbe 49%,#2d2d31 49%,#2d2d31 51%,#f2f4f7 51%,#eceef1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;min-height:130px;}
-.totals td span.pending:before,.totals td span.pending:after{display:inline-block;content:"";width:30px;height:30px;border-radius:50%;margin:5px;top:20px;-webkit-animation-name:fadeToggle;-webkit-animation-duration:.6s;-webkit-animation-timing-function:ease;-webkit-animation-iteration-count:infinite}
-.totals td span:before{background:#fff}
-.totals td span:after{background:#fff;-webkit-animation-delay:.3s}
-.totals td:nth-child(2) span{margin:0}
+.totals li{width:33.3333%;float:left;text-align:center;}
+.totals li h2{margin:30px 0}
+.totals li span{text-align:center;display:block;margin:0 auto;color:#fff;background:#333436;width:190px;height:190px;border-radius:50%;font-size:50px;font-weight:bold;padding-top:60px;border:10px solid #fff;}
+.totals li span.pending:before,.totals li span.pending:after{display:inline-block;content:"";width:30px;height:30px;border-radius:50%;margin:5px;top:20px;-webkit-animation-name:fadeToggle;-webkit-animation-duration:.6s;-webkit-animation-timing-function:ease;-webkit-animation-iteration-count:infinite}
+.totals li span:before{background:#fff}
+.totals li span:after{background:#fff;-webkit-animation-delay:.3s}
 .users{margin-bottom:30px;}
 .users table{border-radius:0 0 10px 10px}
 .users th{background:#333436;color:#fff;font-weight:700;}
-.users th:first-child{border-radius:10px 0 0 0;text-align:left}
-.users th:last-child{border-radius:0 10px 0 0}
+.users th:first-child{text-align:left}
 .users td{background-color:#f1f1f2;border:1px solid #e1e1e2;font-size:30px;text-align:center;}
 .users td:first-child{text-align:left;font-size:18px}
 .users td.pending:before,.users td.pending:after{display:inline-block;content:"";width:10px;height:10px;border-radius:50%;margin:5px;-webkit-animation-name:fadeToggle;-webkit-animation-duration:.6s;-webkit-animation-timing-function:ease;-webkit-animation-iteration-count:infinite}
