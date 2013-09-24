@@ -23,7 +23,7 @@ app.configure(function(){
 if (process.env.NODE_ENV === 'production') {
   var harvestUsername = process.env.HARVEST_USERNAME;
   var harvestPassword = process.env.HARVEST_PASSWORD;
-  var rootUrl = 'http://phusepam2.herokuapp.com/';
+  var rootUrl = 'http://pam.thephuse.com/';
   var harvestCID = 'IZ/QNmA6y4+9qWirCgJ01g==';
   var harvestSecret = 'rC3Rtf3ZXiTQYP47BqGVdGT0dtpAvs17sNrYup6NcnLmADRDFiYG9PFY77VKuR/7nSTtnbgcwBXneUjbkIOfow==';
 } else {
