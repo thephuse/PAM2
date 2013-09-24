@@ -34,7 +34,10 @@ th{font-weight:400}
 .totals td:first-child{border-radius:10px 0 0 10px}
 .totals td:last-child{border-radius:0 10px 10px 0;}
 .totals td:last-child:after{display:none}
-.totals td span{display:block;margin:10px;font-size:90px;font-weight:700;color:#fff;text-align:center;padding:8px 25px 10px 25px;font-family:Helvetica Neue;background:linear-gradient(#cdcfd2 0%,#babcbe 49%,#2d2d31 49%,#2d2d31 51%,#f2f4f7 51%,#eceef1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.totals td span{display:block;margin:10px;font-size:90px;font-weight:700;color:#fff;text-align:center;padding:8px 25px 10px 25px;font-family:Helvetica Neue;background:linear-gradient(#cdcfd2 0%,#babcbe 49%,#2d2d31 49%,#2d2d31 51%,#f2f4f7 51%,#eceef1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;min-height:130px;}
+.totals td span.pending:before,.totals td span.pending:after{display:inline-block;content:"";width:30px;height:30px;border-radius:50%;margin:5px;top:20px;-webkit-animation-name:fadeToggle;-webkit-animation-duration:.6s;-webkit-animation-timing-function:ease;-webkit-animation-iteration-count:infinite}
+.totals td span:before{background:#fff}
+.totals td span:after{background:#fff;-webkit-animation-delay:.3s}
 .totals td:nth-child(2) span{margin:0}
 .users{margin-bottom:30px;}
 .users table{border-radius:0 0 10px 10px}
