@@ -54,7 +54,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       console.log @stats
       @$el.find(".stats-hours span").text(@stats.allHours.toFixed(1)).removeClass "pending"
       @$el.find(".stats-billable span").text(@stats.allBillableHours.toFixed(1)).removeClass "pending"
-      @$el.find(".stats-percent span").text(@stats.percentBillable).removeClass "pending"
+      @$el.find(".stats-percent span").text(@stats.percentBillable + "%").removeClass "pending"
 
     getEnd: ->
       moment().format "YYYYMMDD"
