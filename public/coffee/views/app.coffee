@@ -2,7 +2,6 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
   AppView = Backbone.View.extend(
     el: "body"
     range: "week"
-    statsTemplate: _.template($("#stats-template").html())
     events:
       "click .filter": "filterRange"
 
