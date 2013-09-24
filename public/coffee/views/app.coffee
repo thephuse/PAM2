@@ -11,10 +11,6 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       @statsEl = @$(".totals tbdoy")
       @calcUserDfds = []
       @userCount = 0
-      @stats =
-        allHours: 0
-        allBillableHours: 0
-        percentBillable: 0
       @listenTo Users, "reset", @render
       @getEnd()
       setInterval (->
@@ -23,10 +19,13 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
 
     render: ->
       @$("#users").find("tbody").html ""
+      @stats =
+        allHours: 0
+        allBillableHours: 0
+        percentBillable: 0
       Users.each @showActive, this
       $.when.apply($, @calcUserDfds).done =>
-        @calcStats =>
-          @showStats()
+        @calcStats()
 
 
     showActive: (user) ->
@@ -42,7 +41,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
         @userCount++
         @calcUserDfds.push view.userLoaded
 
-    calcStats: (cb) ->
+    calcStats: ->
       Users.each (user) =>
         if user.get("active") is "true"
           hours = user.get("hours")
@@ -50,7 +49,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           @stats.allHours += parseFloat(hours)
           @stats.allBillableHours += parseFloat(billableHours)
       @stats.percentBillable = (@stats.allBillableHours / @stats.allHours * 100).toFixed(0)
-      cb()
+      @showStats()
 
     showStats: ->
       console.log @stats
