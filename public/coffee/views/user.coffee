@@ -25,10 +25,9 @@ define ["backbone", "jquery", "md5", "collections/entries"], (Backbone, $, md5, 
         totalHours = 0
         entries.each (entry) ->
           totalHours += parseFloat(entry.get("hours"))
-
         totalHours = totalHours.toFixed(2)
         self.model.set hours: totalHours
-        self.$el.find("#hours").html self.model.get("hours")
+        self.$el.find(".hours").html(self.model.get("hours")).removeClass "pending"
         hoursDfd.resolve()
 
 
@@ -43,7 +42,7 @@ define ["backbone", "jquery", "md5", "collections/entries"], (Backbone, $, md5, 
 
         billableHours = billableHours.toFixed(2)
         self.model.set billableHours: billableHours
-        self.$el.find("#billable").html self.model.get("billableHours")
+        self.$el.find(".billable").html(self.model.get("billableHours")).removeClass "pending"
         billableHoursDfd.resolve()
 
 
@@ -51,7 +50,7 @@ define ["backbone", "jquery", "md5", "collections/entries"], (Backbone, $, md5, 
       total = @model.get("hours")
       billable = @model.get("billableHours")
       percentBillable = (billable / total) * 100
-      @$el.find("#percent").html percentBillable.toFixed(0) + "%"  if total > 0
+      @$el.find(".percent").html(percentBillable.toFixed(0) + "%"  if total > 0).removeClass "pending"
 
     getStatus: ->
       userId = @model.get("id")

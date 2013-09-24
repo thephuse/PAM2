@@ -34,7 +34,7 @@
             self.model.set({
               hours: totalHours
             });
-            self.$el.find("#hours").html(self.model.get("hours"));
+            self.$el.find(".hours").html(self.model.get("hours")).removeClass("pending");
             return hoursDfd.resolve();
           }
         });
@@ -55,7 +55,7 @@
             self.model.set({
               billableHours: billableHours
             });
-            self.$el.find("#billable").html(self.model.get("billableHours"));
+            self.$el.find(".billable").html(self.model.get("billableHours")).removeClass("pending");
             return billableHoursDfd.resolve();
           }
         });
@@ -65,9 +65,7 @@
         total = this.model.get("hours");
         billable = this.model.get("billableHours");
         percentBillable = (billable / total) * 100;
-        if (total > 0) {
-          return this.$el.find("#percent").html(percentBillable.toFixed(0) + "%");
-        }
+        return this.$el.find(".percent").html(total > 0 ? percentBillable.toFixed(0) + "%" : void 0).removeClass("pending");
       },
       getStatus: function() {
         var self, userId;
