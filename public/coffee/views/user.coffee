@@ -36,7 +36,6 @@ define ["backbone", "jquery", "md5", "collections/entries"], (Backbone, $, md5, 
         billableHours = 0
         billableEntries.each (entry) ->
           billableHours += parseFloat(entry.get("hours"))
-
         billableHours = billableHours.toFixed(2)
         self.model.set billableHours: billableHours
         self.$el.find(".billable").html(self.model.get("billableHours")).removeClass "pending"
