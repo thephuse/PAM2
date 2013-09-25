@@ -23,22 +23,26 @@
         }), 60000);
       },
       render: function() {
-        var _this = this;
+        var end, self, start,
+          _this = this;
         this.$("#users").find("tbody").html("");
         this.stats = {
           allHours: 0,
           allBillableHours: 0,
           percentBillable: 0
         };
-        Users.each(this.showActive, this);
+        end = this.getEnd();
+        start = this.getStart(this.range);
+        self = this;
+        Users.each(function(user) {
+          return self.showActive(user, start, end);
+        });
         return $.when.apply($, this.calcUserDfds).done(function() {
           return _this.calcStats();
         });
       },
-      showActive: function(user) {
-        var end, start, view;
-        end = this.getEnd();
-        start = this.getStart(this.range);
+      showActive: function(user, start, end) {
+        var view;
         if (user.get("active") === "true") {
           view = new UserView({
             model: user,
@@ -66,7 +70,6 @@
       },
       showStats: function() {
         var percentClass;
-        console.log(this.stats);
         if (this.stats.percentBillable >= 60) {
           percentClass = "onTarget";
         } else if (this.stats.percentBillable >= 50 && this.stats.percentBillable < 60) {
