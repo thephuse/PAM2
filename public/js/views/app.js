@@ -16,6 +16,7 @@
         this.userCount = 0;
         this.listenTo(Users, "reset", this.render);
         this.getEnd();
+        this.showRange();
         return setInterval((function() {
           return Users.fetch({
             reset: true
@@ -105,7 +106,17 @@
         }
       },
       showRange: function() {
-        return console.log(moment(this.getStart(this.range), ["YYYYMMDD"]).format("MMM Do YYYY"));
+        var end, start;
+        start = this.getStart(this.range).format("MMMM Do");
+        end = this.getEnd().format("MMMM Do");
+        console.log(this.range);
+        if (this.range === "day") {
+          return $("#date").text(this.getEnd().format("MMMM Do"));
+        } else if (this.range === "week") {
+          return $("#date").text(start + " to " + this.getEnd().format("Do"));
+        } else {
+          return $("#date").text(this.getEnd().format("MMMM"));
+        }
       }
     });
     return AppView;

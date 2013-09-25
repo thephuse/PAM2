@@ -12,6 +12,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       @userCount = 0
       @listenTo Users, "reset", @render
       @getEnd()
+      @showRange()
       setInterval (->
         Users.fetch reset: true
       ), 60000
@@ -86,8 +87,15 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           moment().startOf("week").add("days", 1)
 
     showRange: () ->
-      console.log moment(@getStart(@range), ["YYYYMMDD"]).format("MMM Do YYYY")
-
+      start = @getStart(@range).format "MMMM Do"
+      end = @getEnd().format "MMMM Do"
+      console.log @range
+      if @range == "day"
+        $("#date").text @getEnd().format "MMMM Do"
+      else if @range == "week"
+        $("#date").text start + " to " + @getEnd().format "Do"
+      else
+        $("#date").text @getEnd().format "MMMM"
   )
 
   AppView
