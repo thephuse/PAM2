@@ -22,14 +22,16 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
         allHours: 0
         allBillableHours: 0
         percentBillable: 0
-      Users.each @showActive, this
+      end = @getEnd()
+      start = @getStart(@range)
+      self = @
+      Users.each (user) ->
+        self.showActive(user, start, end)
       $.when.apply($, @calcUserDfds).done =>
         @calcStats()
 
 
-    showActive: (user) ->
-      end = @getEnd()
-      start = @getStart(@range)
+    showActive: (user, start, end) ->
       if user.get("active") is "true"
         view = new UserView(
           model: user
@@ -51,7 +53,6 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       @showStats()
 
     showStats: ->
-      console.log @stats
       if @stats.percentBillable >= 60
         percentClass = "onTarget"
       else if @stats.percentBillable >= 50 and @stats.percentBillable < 60
