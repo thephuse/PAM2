@@ -22,8 +22,8 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
         allHours: 0
         allBillableHours: 0
         percentBillable: 0
-      end = @getEnd()
-      start = @getStart(@range)
+      end = @getEnd().format "YYYYMMDD"
+      start = @getStart(@range).format "YYYYMMDD"
       self = @
       Users.each (user) ->
         self.showActive(user, start, end)
@@ -64,7 +64,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       @$el.find(".stats-percent span").text(@stats.percentBillable + "%").removeClass().addClass percentClass
 
     getEnd: ->
-      moment().format "YYYYMMDD"
+      moment()
 
     filterRange: (e) ->
       @$el.find(".totals span").text("").addClass "pending"
@@ -72,17 +72,22 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       @$("li").removeClass "active"
       $(e.currentTarget).parent("li").addClass "active"
       @render()
+      @showRange()
 
     getStart: (range) ->
       switch range
         when "day"
-          moment().format "YYYYMMDD"
+          moment()
         when "month"
-          moment().startOf("month").format "YYYYMMDD"
+          moment().startOf("month")
         when "week"
-          moment().startOf("week").add("days", 1).format "YYYYMMDD"
+          moment().startOf("week").add("days", 1)
         else
-          moment().startOf("week").add("days", 1).format "YYYYMMDD"
+          moment().startOf("week").add("days", 1)
+
+    showRange: () ->
+      console.log moment(@getStart(@range), ["YYYYMMDD"]).format("MMM Do YYYY")
+
   )
 
   AppView
