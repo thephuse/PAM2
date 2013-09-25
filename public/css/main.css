@@ -22,6 +22,7 @@ input,select{vertical-align:middle}
 .container{max-width:1040px;width:90%;margin:0 auto}
 th{font-weight:400}
 .navbar{background:#333436;padding:10px 0;overflow:hidden;}
+.navbar h1{color:#fff}
 .navbar a{color:#fff}
 .brand{display:block;padding-top:5px;float:left}
 .nav{float:right;list-style:none;}
