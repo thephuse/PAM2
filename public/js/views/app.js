@@ -27,11 +27,6 @@
         var end, self, start,
           _this = this;
         this.$("#users").find("tbody").html("");
-        this.stats = {
-          allHours: 0,
-          allBillableHours: 0,
-          percentBillable: 0
-        };
         end = this.getEnd().format("YYYYMMDD");
         start = this.getStart(this.range).format("YYYYMMDD");
         self = this;
@@ -57,6 +52,11 @@
       },
       calcStats: function() {
         var _this = this;
+        this.stats = {
+          allHours: 0,
+          allBillableHours: 0,
+          percentBillable: 0
+        };
         Users.each(function(user) {
           var billableHours, hours;
           if (user.get("active") === "true") {
@@ -106,10 +106,8 @@
         }
       },
       showRange: function() {
-        var end, start;
+        var start;
         start = this.getStart(this.range).format("MMMM Do");
-        end = this.getEnd().format("MMMM Do");
-        console.log(this.range);
         if (this.range === "day") {
           return $("#date").text(this.getEnd().format("MMMM Do"));
         } else if (this.range === "week") {

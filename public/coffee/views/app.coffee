@@ -19,10 +19,6 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
 
     render: ->
       @$("#users").find("tbody").html ""
-      @stats =
-        allHours: 0
-        allBillableHours: 0
-        percentBillable: 0
       end = @getEnd().format "YYYYMMDD"
       start = @getStart(@range).format "YYYYMMDD"
       self = @
@@ -44,6 +40,10 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
         @calcUserDfds.push view.userLoaded
 
     calcStats: ->
+      @stats =
+        allHours: 0
+        allBillableHours: 0
+        percentBillable: 0
       Users.each (user) =>
         if user.get("active") is "true"
           hours = user.get("hours")
@@ -88,8 +88,6 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
 
     showRange: () ->
       start = @getStart(@range).format "MMMM Do"
-      end = @getEnd().format "MMMM Do"
-      console.log @range
       if @range == "day"
         $("#date").text @getEnd().format "MMMM Do"
       else if @range == "week"
