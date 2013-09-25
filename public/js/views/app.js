@@ -31,8 +31,8 @@
           allBillableHours: 0,
           percentBillable: 0
         };
-        end = this.getEnd();
-        start = this.getStart(this.range);
+        end = this.getEnd().format("YYYYMMDD");
+        start = this.getStart(this.range).format("YYYYMMDD");
         self = this;
         Users.each(function(user) {
           return self.showActive(user, start, end);
@@ -82,26 +82,30 @@
         return this.$el.find(".stats-percent span").text(this.stats.percentBillable + "%").removeClass().addClass(percentClass);
       },
       getEnd: function() {
-        return moment().format("YYYYMMDD");
+        return moment();
       },
       filterRange: function(e) {
         this.$el.find(".totals span").text("").addClass("pending");
         this.range = $(e.currentTarget).data("range");
         this.$("li").removeClass("active");
         $(e.currentTarget).parent("li").addClass("active");
-        return this.render();
+        this.render();
+        return this.showRange();
       },
       getStart: function(range) {
         switch (range) {
           case "day":
-            return moment().format("YYYYMMDD");
+            return moment();
           case "month":
-            return moment().startOf("month").format("YYYYMMDD");
+            return moment().startOf("month");
           case "week":
-            return moment().startOf("week").add("days", 1).format("YYYYMMDD");
+            return moment().startOf("week").add("days", 1);
           default:
-            return moment().startOf("week").add("days", 1).format("YYYYMMDD");
+            return moment().startOf("week").add("days", 1);
         }
+      },
+      showRange: function() {
+        return console.log(moment(this.getStart(this.range), ["YYYYMMDD"]).format("MMM Do YYYY"));
       }
     });
     return AppView;
