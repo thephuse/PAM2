@@ -1,15 +1,19 @@
 define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Backbone, $, moment, Users, UserView) ->
   AppView = Backbone.View.extend(
     el: "body"
-    range: "week"
     events:
       "click .filter": "filterRange"
+      "click .adjust-range" : "adjustRange"
 
     initialize: ->
       Users.fetch reset: true
       @statsEl = @$(".totals tbdoy")
       @calcUserDfds = []
       @userCount = 0
+      @timeUnit = "week"
+      @range =
+        start: @getStart(@timeUnit)
+        end: @getEnd()
       @listenTo Users, "reset", @render
       @getEnd()
       @showRange()
@@ -19,14 +23,13 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
 
     render: ->
       @$("#users").find("tbody").html ""
-      end = @getEnd().format "YYYYMMDD"
-      start = @getStart(@range).format "YYYYMMDD"
+      end = @range.end.format "YYYYMMDD"
+      start = @range.start.format "YYYYMMDD"
       self = @
       Users.each (user) ->
         self.showActive(user, start, end)
       $.when.apply($, @calcUserDfds).done =>
         @calcStats()
-
 
     showActive: (user, start, end) ->
       if user.get("active") is "true"
@@ -69,14 +72,16 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
 
     filterRange: (e) ->
       @$el.find(".totals span").text("").addClass "pending"
-      @range = ($(e.currentTarget).data("range"))
+      @timeUnit = ($(e.currentTarget).data("range"))
+      @range.start = @getStart(@timeUnit)
+      @range.end = @getEnd()
       @$("li").removeClass "active"
       $(e.currentTarget).parent("li").addClass "active"
       @render()
-      @showRange()
+      @showRange(@range.start, @range.end)
 
-    getStart: (range) ->
-      switch range
+    getStart: (unit) ->
+      switch unit
         when "day"
           moment()
         when "month"
@@ -86,14 +91,33 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
         else
           moment().startOf("week").add("days", 1)
 
-    showRange: () ->
-      start = @getStart(@range).format "MMMM Do"
-      if @range == "day"
-        $("#date").text @getEnd().format "MMMM Do"
-      else if @range == "week"
-        $("#date").text start + " to " + @getEnd().format "Do"
+    showRange:  ->
+      if @timeUnit is "day"
+        $("#date").text @range.end.format "MMMM D"
+      else if @timeUnit is "week"
+        $("#date").text @range.start.format "MMMM D" + " to " + @range.end.format "D"
       else
-        $("#date").text @getEnd().format "MMMM"
+        $("#date").text @range.end.format "MMMM"
+
+    adjustRange: (e) ->
+      direction = $(e.currentTarget).data("direction")
+      isToday = moment().isSame(@range.end, 'day')
+      if direction is "future" and isToday is true
+        console.log "YOU CAN'T KNOW THE FUTURE"
+      else
+        moment.fn.manipulate = (if direction is "past" then moment.fn.subtract else moment.fn.add)
+        if @timeUnit is "day"
+          @range.start = @range.start.manipulate('days', 1)
+          @range.end = @range.end.manipulate('days', 1)
+        else if @timeUnit is "week"
+          @range.start = @range.start.manipulate('weeks', 1)
+          @range.end = @range.end.endOf('week').manipulate('weeks', 1)
+        else if @timeUnit is "month"
+          @range.start = @range.start.manipulate('months', 1)
+          @range.end = @range.end.endOf('month').manipulate('months', 1)
+        @render()
+        @showRange()
+
   )
 
   AppView
