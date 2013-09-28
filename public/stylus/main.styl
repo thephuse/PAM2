@@ -18,7 +18,6 @@ th
     color: #fff
     float: left
     color: #FFF
-    float: right
     font-size: 22px
     padding-top: 8px
     margin-right 20px
@@ -30,8 +29,28 @@ th
   padding-top 5px
   float left
 
-.nav
-  float right
+.range, .date
+  float left
+
+.range
+  padding 7px
+
+.range a
+  width 18px
+  height 24px
+  display inline-block
+  text-indent -9999px
+  cursor pointer
+  background-repeat no-repeat
+
+.prev-range
+  background-image url("../images/arrow-left.png")
+
+.next-range
+  background-image url("../images/arrow-right.png")
+
+.filter
+  float left
   list-style none
   li
     float left
@@ -52,6 +71,10 @@ th
   .active
     a
       background #119dd6
+
+.navbar-right
+  float right
+
 
 .module
   margin-top 40px

@@ -10,14 +10,18 @@
 <div class="navbar">
   <div class="container">
     <a class="brand" href="#"><img src="images/logo.png" /></a>
-    <a class="adjust-range prev-range" data-direction="past">Prev</a>
-    <a class="adjust-range next-range" data-direction="future">next</a>
-    <ul class="nav">
-      <li><a href="#" class="filter" data-range="day">Day</a></li>
-      <li class="active"><a href="#" class="filter active" data-range="week">Week</a></li>
-      <li><a href="#" class="filter" data-range="month">Month</a></li>
-    </ul>
-    <h1 id="date"></h1>
+    <div class="navbar-right">
+      <h1 id="date" class="date"></h1>
+      <nav class="range">
+        <a class="adjust-range prev-range" data-direction="past">Prev</a>
+        <a class="adjust-range next-range" data-direction="future">next</a>
+      </nav>
+      <ul class="filter">
+        <li><a href="#" class="filter" data-range="day">Day</a></li>
+        <li class="active"><a href="#" class="filter active" data-range="week">Week</a></li>
+        <li><a href="#" class="filter" data-range="month">Month</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 
