@@ -3,9 +3,9 @@
     var AppView;
     AppView = Backbone.View.extend({
       el: "body",
-      range: "week",
       events: {
-        "click .filter": "filterRange"
+        "click .filter": "filterRange",
+        "click .adjust-range": "adjustRange"
       },
       initialize: function() {
         Users.fetch({
@@ -14,6 +14,11 @@
         this.statsEl = this.$(".totals tbdoy");
         this.calcUserDfds = [];
         this.userCount = 0;
+        this.timeUnit = "week";
+        this.range = {
+          start: this.getStart(this.timeUnit),
+          end: this.getEnd()
+        };
         this.listenTo(Users, "reset", this.render);
         this.getEnd();
         this.showRange();
@@ -27,8 +32,8 @@
         var end, self, start,
           _this = this;
         this.$("#users").find("tbody").html("");
-        end = this.getEnd().format("YYYYMMDD");
-        start = this.getStart(this.range).format("YYYYMMDD");
+        end = this.range.end.format("YYYYMMDD");
+        start = this.range.start.format("YYYYMMDD");
         self = this;
         Users.each(function(user) {
           return self.showActive(user, start, end);
@@ -87,14 +92,16 @@
       },
       filterRange: function(e) {
         this.$el.find(".totals span").text("").addClass("pending");
-        this.range = $(e.currentTarget).data("range");
+        this.timeUnit = $(e.currentTarget).data("range");
+        this.range.start = this.getStart(this.timeUnit);
+        this.range.end = this.getEnd();
         this.$("li").removeClass("active");
         $(e.currentTarget).parent("li").addClass("active");
         this.render();
-        return this.showRange();
+        return this.showRange(this.range.start, this.range.end);
       },
-      getStart: function(range) {
-        switch (range) {
+      getStart: function(unit) {
+        switch (unit) {
           case "day":
             return moment();
           case "month":
@@ -106,14 +113,34 @@
         }
       },
       showRange: function() {
-        var start;
-        start = this.getStart(this.range).format("MMMM Do");
-        if (this.range === "day") {
-          return $("#date").text(this.getEnd().format("MMMM Do"));
-        } else if (this.range === "week") {
-          return $("#date").text(start + " to " + this.getEnd().format("Do"));
+        if (this.timeUnit === "day") {
+          return $("#date").text(this.range.end.format("MMMM D"));
+        } else if (this.timeUnit === "week") {
+          return $("#date").text(this.range.start.format("MMMM D" + " to " + this.range.end.format("D")));
         } else {
-          return $("#date").text(this.getEnd().format("MMMM"));
+          return $("#date").text(this.range.end.format("MMMM"));
+        }
+      },
+      adjustRange: function(e) {
+        var direction, isToday;
+        direction = $(e.currentTarget).data("direction");
+        isToday = moment().isSame(this.range.end, 'day');
+        if (direction === "future" && isToday === true) {
+          return console.log("YOU CAN'T KNOW THE FUTURE");
+        } else {
+          moment.fn.manipulate = (direction === "past" ? moment.fn.subtract : moment.fn.add);
+          if (this.timeUnit === "day") {
+            this.range.start = this.range.start.manipulate('days', 1);
+            this.range.end = this.range.end.manipulate('days', 1);
+          } else if (this.timeUnit === "week") {
+            this.range.start = this.range.start.manipulate('weeks', 1);
+            this.range.end = this.range.end.endOf('week').manipulate('weeks', 1);
+          } else if (this.timeUnit === "month") {
+            this.range.start = this.range.start.manipulate('months', 1);
+            this.range.end = this.range.end.endOf('month').manipulate('months', 1);
+          }
+          this.render();
+          return this.showRange();
         }
       }
     });
