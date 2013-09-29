@@ -71,7 +71,7 @@
             return _this.stats.allBillableHours += parseFloat(billableHours);
           }
         });
-        this.stats.percentBillable = (this.stats.allBillableHours / this.stats.allHours * 100).toFixed(0);
+        this.stats.percentBillable = (this.stats.allHours > 0 ? (this.stats.allBillableHours / this.stats.allHours * 100).toFixed(0) : 0);
         return this.showStats();
       },
       showStats: function() {
@@ -107,9 +107,9 @@
           case "month":
             return moment().startOf("month");
           case "week":
-            return moment().startOf("week").add("days", 1);
+            return moment().startOf("week");
           default:
-            return moment().startOf("week").add("days", 1);
+            return moment().startOf("week");
         }
       },
       showRange: function() {

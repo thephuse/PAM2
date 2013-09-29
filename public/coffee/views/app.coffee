@@ -53,7 +53,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           billableHours = user.get("billableHours")
           @stats.allHours += parseFloat(hours)
           @stats.allBillableHours += parseFloat(billableHours)
-      @stats.percentBillable = (@stats.allBillableHours / @stats.allHours * 100).toFixed(0)
+      @stats.percentBillable = (if @stats.allHours > 0 then (@stats.allBillableHours / @stats.allHours * 100).toFixed(0) else 0)
       @showStats()
 
     showStats: ->
@@ -86,10 +86,10 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           moment()
         when "month"
           moment().startOf("month")
-        when "week"
-          moment().startOf("week").add("days", 1)
+        when "week" # breaks on sunday
+          moment().startOf("week")
         else
-          moment().startOf("week").add("days", 1)
+          moment().startOf("week")
 
     showRange:  ->
       if @timeUnit is "day"

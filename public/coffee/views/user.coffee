@@ -44,8 +44,8 @@ define ["backbone", "jquery", "md5", "collections/entries"], (Backbone, $, md5, 
     calcPercent: ->
       total = @model.get("hours")
       billable = @model.get("billableHours")
-      percentBillable = (billable / total) * 100
-      @$el.find(".percent").html(percentBillable.toFixed(0) + "%"  if total > 0).removeClass "pending"
+      percentBillable = ((if total > 0 then (billable / total) * 100 else 0))
+      @$el.find(".percent").html(percentBillable.toFixed(0) + "%").removeClass "pending"
       @userLoaded.resolve()
 
     getStatus: ->

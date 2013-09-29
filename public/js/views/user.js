@@ -65,8 +65,8 @@
         var billable, percentBillable, total;
         total = this.model.get("hours");
         billable = this.model.get("billableHours");
-        percentBillable = (billable / total) * 100;
-        this.$el.find(".percent").html(total > 0 ? percentBillable.toFixed(0) + "%" : void 0).removeClass("pending");
+        percentBillable = (total > 0 ? (billable / total) * 100 : 0);
+        this.$el.find(".percent").html(percentBillable.toFixed(0) + "%").removeClass("pending");
         return this.userLoaded.resolve();
       },
       getStatus: function() {
