@@ -6,6 +6,9 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       "click .adjust-range" : "adjustRange"
 
     initialize: ->
+      moment.lang "en",
+        week:
+          dow: 1
       Users.fetch reset: true
       @statsEl = @$(".totals tbdoy")
       @calcUserDfds = []

@@ -8,6 +8,11 @@
         "click .adjust-range": "adjustRange"
       },
       initialize: function() {
+        moment.lang("en", {
+          week: {
+            dow: 1
+          }
+        });
         Users.fetch({
           reset: true
         });

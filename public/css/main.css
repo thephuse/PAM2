@@ -34,8 +34,8 @@ th{font-weight:400}
 .filter li{float:left;}
 .filter li:first-child a{border-radius:5px 0 0 5px;border-right:0}
 .filter li:last-child a{border-radius:0 5px 5px 0;border-left:0}
-.filter a{display:block;padding:10px 22px;background:#222;border:1px solid #000;font-weight:700}
-.filter .active a{background:#119dd6}
+.filter a{display:block;padding:10px 22px;background:#222;border:1px solid #000;font-weight:700;}
+.filter a.active{background:#119dd6}
 .navbar-right{float:right}
 .module{margin-top:40px}
 .totals li{width:33.3333%;float:left;text-align:center;}
