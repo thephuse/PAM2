@@ -96,11 +96,14 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
 
     showRange:  ->
       if @timeUnit is "day"
-        $("#date").text @range.end.format "MMMM D"
+        $("#date").text @range.end.format("MMMM D")
       else if @timeUnit is "week"
-        $("#date").text @range.start.format "MMMM D" + " to " + @range.end.format "D"
+        if @range.start.month() == @range.end.month()
+          $("#date").text @range.start.format("MMMM D") + " to " + @range.end.endOf("week").format("D")
+        else
+          $("#date").text @range.start.format("MMMM D") + " to " + @range.end.endOf("week").format("MMMM D")
       else
-        $("#date").text @range.end.format "MMMM"
+        $("#date").text @range.end.format("MMMM")
 
     adjustRange: (e) ->
       direction = $(e.currentTarget).data("direction")
