@@ -6,7 +6,7 @@ Phuse Activity Monitor (PAM) v.2.0
 - create a config.json file (see below)
 - `node server`
 - `grunt watch`
-- open at localhost:1234
+- open at http://127.0.0.1/1234
 
 ###config.json
 Required to run locally (uses env vars on heroku). Get creds from password archive or ask James.
