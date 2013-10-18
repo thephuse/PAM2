@@ -2,7 +2,7 @@ Phuse Activity Monitor (PAM) v.2.0
 ====================================
 
 ###Setup:
-- `npm install && bower install`
+- `npm install`
 - create a config.json file (see below)
 - `node server`
 - `grunt watch`
