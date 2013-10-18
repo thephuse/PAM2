@@ -121,7 +121,11 @@
         if (this.timeUnit === "day") {
           return $("#date").text(this.range.end.format("MMMM D"));
         } else if (this.timeUnit === "week") {
-          return $("#date").text(this.range.start.format("MMMM D" + " to " + this.range.end.format("D")));
+          if (this.range.start.month() === this.range.end.month()) {
+            return $("#date").text(this.range.start.format("MMMM D") + " to " + this.range.end.endOf("week").format("D"));
+          } else {
+            return $("#date").text(this.range.start.format("MMMM D") + " to " + this.range.end.endOf("week").format("MMMM D"));
+          }
         } else {
           return $("#date").text(this.range.end.format("MMMM"));
         }
