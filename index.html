@@ -7,39 +7,39 @@
 </head>
 <body>
 
-<div class="navbar">
+<header class="app-header">
   <div class="container">
     <a class="brand" href="#"><img src="images/logo.png" /></a>
-    <div class="navbar-right">
-      <h1 id="date" class=""></h1>
-      <nav class="range">
-        <a class="adjust-range prev-range" data-direction="past">Prev</a>
-        <a class="adjust-range next-range" data-direction="future">next</a>
-      </nav>
-      <ul class="filters">
-        <li><a href="#" class="filter" data-range="day">Day</a></li>
-        <li class="active"><a href="#" class="filter active" data-range="week">Week</a></li>
-        <li><a href="#" class="filter" data-range="month">Month</a></li>
-      </ul>
-    </div>
   </div>
-</div>
+</header>
 
 <div class="container">
 
-  <div class="totals module">
+  <ul class="filters cf">
+    <li><a href="#" class="filter" data-range="day">Day</a></li>
+    <li class="active"><a href="#" class="filter active" data-range="week">Week</a></li>
+    <li><a href="#" class="filter" data-range="month">Month</a></li>
+  </ul>
+
+  <nav class="range">
+    <a class="adjust-range prev-range" data-direction="past">Prev</a>
+    <h1 id="date" class=""></h1>
+    <a class="adjust-range next-range" data-direction="future">next</a>
+  </nav>
+
+  <div class="totals module cf">
     <ul>
       <li class="stats-hours">
         <span class="pending">&nbsp;</span>
-        <h2>Total Hours</h2>
+        Total Hours
       </li>
       <li class="stats-billable">
         <span class="pending">&nbsp;</span>
-        <h2>Billable Hours</h2>
+        Billable Hours
       </li>
       <li class="stats-percent">
         <span class="pending">&nbsp;</span>
-        <h2>Percent Billable</h2>
+        Billable
       </li>
     </ul>
   </div>
@@ -49,17 +49,20 @@
       <table id="users">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Total Hours</th>
-            <th>Billable Hours</th>
-            <th>Percent Billable</th>
+            <th class="name"></th>
+            <th>Total</th>
+            <th>Billable</th>
+            <th class="percent">% Billable</th>
           </tr>
         </thead>
         <tbody>
           <script type="text/template" id="person-template">
             <td>
-              <img src=<%- gravatarUrl %> width="40"/>
-              <span class="status status-false"><%- name %></span>
+              <span class="status status-false"><img src=<%- gravatarUrl %> width="70"/></span>
+              <div class="info">
+                <%- name %>
+                <span class="timezone">12:00 <span>PM EDT</span></span>
+              </div>
             </td>
             <td class="hours pending"></td>
             <td class="billable pending"></td>

@@ -2,144 +2,154 @@
 @import "_utils.styl"
 @import "_base.styl"
 
-.container
-  max-width 1040px
-  width 90%
-  margin 0 auto
+$tagtext
+  color a1a8ad
+  font-size 12px
+  text-transform uppercase
 
+a
+  color #303c48
+  &:visited
+    color #303c48
+  &:hover
+    color #0498d4
 th
   font-weight 400
 
-.navbar
-  background #333436
-  padding 10px 0
-  overflow hidden
-  h1
-    color: #fff
-    float: left
-    color: #FFF
-    font-size: 22px
-    padding-top: 8px
-    margin-right 20px
+.container
+  max-width 600px
+  width 90%
+  margin 0 auto
+
+.app-header
+  background #303c48
+  margin-bottom 2em
+  padding 11px 0 10px 0
+  text-align center
+
+
+
+.filters, .range
+  text-align center
+  margin 0 0 1em 0
+
+
+
+.filters
+  li
+    background #e1e5e7
+    float left
+    width 33.3333%
   a
+    display block
+    padding 10px
+  .active a
+    background #0498d4
     color #fff
 
-.brand
-  display block
-  padding-top 5px
-  float left
 
-.range, .date
-  float left
 
 .range
-  padding 7px
-
-.range a
-  width 18px
-  height 24px
-  display inline-block
-  text-indent -9999px
-  cursor pointer
-  background-repeat no-repeat
+  h1
+    display inline-block
+    font-size 1em
+    font-weight normal
+    vertical-align middle
+  a
+    width 12px
+    min-height 13px
+    display inline-block
+    text-indent -9999px
+    cursor pointer
+    background-repeat no-repeat
+    background-position center
+    vertical-align middle
+    opacity 0.6
 
 .prev-range
   background-image url("../images/arrow-left.png")
+  float left
 
 .next-range
   background-image url("../images/arrow-right.png")
-
-.filters
-  float left
-  list-style none
-  li
-    float left
-    &:first-child
-      a
-        border-radius 5px 0 0 5px
-        border-right 0
-    &:last-child
-      a
-        border-radius 0 5px 5px 0
-        border-left 0
-  a
-    display block
-    padding 10px 22px
-    background #222
-    border 1px solid #000
-    font-weight 700
-  .active a
-    background #119dd6
-
-.navbar-right
   float right
 
 
 .module
-  margin-top 40px
+  margin-bottom 4em
 
 .totals
+  @extends $tagtext
+  text-align center
   li
+    background #f6f8f8
+    border 1px solid #ecf0f1
+    border-width 0 1px
     width 33.3333%
+    padding 20px 10px
     float left
-    text-align center
-    h2
-      margin 30px 0
+    &:first-child
+      border-left 0
+    &:last-child
+      border-right 0
     span
       text-align center
       display block
-      margin 0 auto
-      color #fff
-      background #333436
-      width 190px
-      height 190px
-      border-radius 50%
-      font-size 50px
-      font-weight bold
-      padding-top 60px
-      border 8px solid #fff
+      font-size 48px
+      line-height 66px
+      height 66px
+      min-width 30px
+      margin-bottom 10px
+      position relative
+      sup
+        font-size 0.7em
+        margin 0 -0.7em 0 4px
+        position relative
+        top -0.05em
       &.nearTarget
-        border-color #FFCD5B
+        color #d4a104
       &.onTarget
-        border-color #6DCD00
+        color #0498d4
       &.offTarget
-        border-color #CD0000
+        color #e26161
       &.pending
-         &:before, &:after
+         &:before
+          background #0498d4
           display inline-block
           content ""
           width 30px
           height 30px
           border-radius 50%
           margin 5px
-          top 20px
+          position absolute
+          top 50%
+          left 50%
+          margin-top -15px
+          margin-left -15px
           -webkit-animation-name fadeToggle
           -webkit-animation-duration 0.6s
           -webkit-animation-timing-function ease
           -webkit-animation-iteration-count infinite
-        &:before
-          background #fff
-        &:after
-          background #fff
-          -webkit-animation-delay 0.3s
+  .stats-percent span
+    font-size 60px
+
+
 
 .users
-  margin-bottom 30px
-  table
-    border-radius 0 0 10px 10px
+  th, td
+    vertical-align middle
   th
-    background #333436
-    color #fff
-    font-weight 700
-    &:first-child
-      text-align left
+    @extends $tagtext
+    text-align left
+    padding-bottom: 10px
+    width 20%
   td
-    background-color #f1f1f2
-    border 1px solid #e1e1e2
-    font-size 30px
-    text-align center
+    background-color #fff
+    border-bottom 2px solid #ecf0f1
+    color #a1a8ad
+    font-size 24px
     &:first-child
-      text-align left
+      color #303c48
       font-size 18px
     &.pending
       &:before, &:after
@@ -158,30 +168,28 @@ th
       &:after
         background: #92da40
         -webkit-animation-delay: 0.3s
-
-.users th, .users td
-  padding 15px
-  vertical-align top
-
+  .name
+    width 47%
+  .percent
+    width 13%
+  .info
+    display inline-block
+    vertical-align middle
+  .timezone
+    display block
+    font-size 16px
+    span
+      @extends $tagtext
 
 .status
-  vertical-align top
+  background #bfc3c5
+  display inline-block
   padding-left 10px
   position relative
-  padding-left 30px
-  &:before
-    width 19px
-    height 19px
-    position absolute
+  margin 0 20px -2px 0
+  vertical-align middle
+  img
     display block
-    left 4px
-    top 0
-    content ""
-
-.status-false
-  &:before
-    background url("../images/inactive.png") no-repeat top left
 
 .status-true
-  &:before
-    background url("../images/active.png") no-repeat top left
+  background-color #0498d4
