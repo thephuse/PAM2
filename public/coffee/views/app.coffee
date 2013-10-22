@@ -68,7 +68,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
         percentClass = "offTarget"
       @$el.find(".stats-hours span").text(@stats.allHours.toFixed(1)).removeClass "pending"
       @$el.find(".stats-billable span").text(@stats.allBillableHours.toFixed(1)).removeClass "pending"
-      @$el.find(".stats-percent span").text(@stats.percentBillable + "%").removeClass().addClass percentClass
+      @$el.find(".stats-percent span").html(@stats.percentBillable + "<sup>%</sup>").removeClass().addClass percentClass
 
     getEnd: ->
       moment()

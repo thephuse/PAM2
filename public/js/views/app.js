@@ -90,7 +90,7 @@
         }
         this.$el.find(".stats-hours span").text(this.stats.allHours.toFixed(1)).removeClass("pending");
         this.$el.find(".stats-billable span").text(this.stats.allBillableHours.toFixed(1)).removeClass("pending");
-        return this.$el.find(".stats-percent span").text(this.stats.percentBillable + "%").removeClass().addClass(percentClass);
+        return this.$el.find(".stats-percent span").html(this.stats.percentBillable + "<sup>%</sup>").removeClass().addClass(percentClass);
       },
       getEnd: function() {
         return moment();
