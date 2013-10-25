@@ -1,9 +1,15 @@
 define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Backbone, $, moment, Users, UserView) ->
   AppView = Backbone.View.extend(
+
     el: "body"
+
     events:
       "click .filter": "filterRange"
       "click .adjust-range" : "adjustRange"
+
+    ui:
+      users: @$("#users")
+      date: @$("#date")
 
     initialize: ->
       moment.lang "en",
@@ -25,7 +31,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       ), 60000
 
     render: ->
-      @$("#users").find("tbody").html ""
+      @ui.users.find("tbody").html ""
       end = @range.end.format "YYYYMMDD"
       start = @range.start.format "YYYYMMDD"
       self = @
@@ -41,7 +47,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           endDate: end
           startDate: start
         )
-        $("#users").append view.render().el
+        @ui.users.append view.render().el
         @userCount++
         @calcUserDfds.push view.userLoaded
 
@@ -89,21 +95,21 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           moment()
         when "month"
           moment().startOf("month")
-        when "week" # breaks on sunday
+        when "week"
           moment().startOf("week")
         else
           moment().startOf("week")
 
     showRange:  ->
       if @timeUnit is "day"
-        $("#date").text @range.end.format("MMMM D")
+        @ui.date.text @range.end.format("MMMM D")
       else if @timeUnit is "week"
         if @range.start.month() == @range.end.month()
-          $("#date").text @range.start.format("MMMM D") + " to " + @range.end.endOf("week").format("D")
+          @ui.date.text @range.start.format("MMMM D") + " to " + @range.end.endOf("week").format("D")
         else
-          $("#date").text @range.start.format("MMMM D") + " to " + @range.end.endOf("week").format("MMMM D")
+          @ui.date.text @range.start.format("MMMM D") + " to " + @range.end.endOf("week").format("MMMM D")
       else
-        $("#date").text @range.end.format("MMMM")
+        @ui.date.text @range.end.format("MMMM")
 
     adjustRange: (e) ->
       direction = $(e.currentTarget).data("direction")

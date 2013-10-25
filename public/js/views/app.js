@@ -7,6 +7,10 @@
         "click .filter": "filterRange",
         "click .adjust-range": "adjustRange"
       },
+      ui: {
+        users: this.$("#users"),
+        date: this.$("#date")
+      },
       initialize: function() {
         moment.lang("en", {
           week: {
@@ -36,7 +40,7 @@
       render: function() {
         var end, self, start,
           _this = this;
-        this.$("#users").find("tbody").html("");
+        this.ui.users.find("tbody").html("");
         end = this.range.end.format("YYYYMMDD");
         start = this.range.start.format("YYYYMMDD");
         self = this;
@@ -55,7 +59,7 @@
             endDate: end,
             startDate: start
           });
-          $("#users").append(view.render().el);
+          this.ui.users.append(view.render().el);
           this.userCount++;
           return this.calcUserDfds.push(view.userLoaded);
         }
@@ -119,15 +123,15 @@
       },
       showRange: function() {
         if (this.timeUnit === "day") {
-          return $("#date").text(this.range.end.format("MMMM D"));
+          return this.ui.date.text(this.range.end.format("MMMM D"));
         } else if (this.timeUnit === "week") {
           if (this.range.start.month() === this.range.end.month()) {
-            return $("#date").text(this.range.start.format("MMMM D") + " to " + this.range.end.endOf("week").format("D"));
+            return this.ui.date.text(this.range.start.format("MMMM D") + " to " + this.range.end.endOf("week").format("D"));
           } else {
-            return $("#date").text(this.range.start.format("MMMM D") + " to " + this.range.end.endOf("week").format("MMMM D"));
+            return this.ui.date.text(this.range.start.format("MMMM D") + " to " + this.range.end.endOf("week").format("MMMM D"));
           }
         } else {
-          return $("#date").text(this.range.end.format("MMMM"));
+          return this.ui.date.text(this.range.end.format("MMMM"));
         }
       },
       adjustRange: function(e) {
