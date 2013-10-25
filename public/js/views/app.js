@@ -10,9 +10,11 @@
       ui: {
         users: $("#users"),
         date: $("#date"),
-        totals: $(".totals span"),
+        stats: $(".totals ul"),
+        total: $(".totals span"),
         filtersLi: $(".filters li")
       },
+      statsTemplate: _.template($("#stats-template").html()),
       initialize: function() {
         moment.lang("en", {
           week: {
@@ -82,20 +84,23 @@
         return this.showStats();
       },
       showStats: function() {
-        var percentClass;
+        var _stats;
+        _stats = {
+          hours: this.stats.allHours.toFixed(1),
+          billableHours: this.stats.allBillableHours.toFixed(1),
+          percentBillable: this.stats.percentBillable
+        };
         if (this.stats.percentBillable >= 60) {
-          percentClass = "onTarget";
+          _stats.percentClass = "onTarget";
         } else if (this.stats.percentBillable >= 50 && this.stats.percentBillable < 60) {
-          percentClass = "nearTarget";
+          _stats.percentClass = "nearTarget";
         } else {
-          percentClass = "offTarget";
+          _stats.percentClass = "offTarget";
         }
-        this.$el.find(".stats-hours span").text(this.stats.allHours.toFixed(1)).removeClass("pending");
-        this.$el.find(".stats-billable span").text(this.stats.allBillableHours.toFixed(1)).removeClass("pending");
-        return this.$el.find(".stats-percent span").html(this.stats.percentBillable + "<sup>%</sup>").removeClass().addClass(percentClass);
+        return this.ui.stats.html(this.statsTemplate(_stats));
       },
       filterRange: function(e) {
-        this.ui.totals.text("").addClass("pending");
+        this.ui.total.text("").addClass("pending");
         this.timeUnit = $(e.currentTarget).data("range");
         this.range.start = this.getStart(this.timeUnit);
         this.range.end = moment();

@@ -1,4 +1,4 @@
-define ["backbone", "jquery", "md5", "collections/entries"], (Backbone, $, md5, Entries) ->
+define ["backbone", "underscore", "jquery", "md5", "collections/entries"], (Backbone, _, $, md5, Entries) ->
   UserView = Backbone.View.extend(
     tagName: "tr"
     template: _.template($("#person-template").html())

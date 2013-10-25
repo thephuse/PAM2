@@ -10,8 +10,11 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
     ui:
       users: $("#users")
       date: $("#date")
-      totals: $(".totals span")
+      stats: $(".totals ul")
+      total: $(".totals span")
       filtersLi: $(".filters li")
+
+    statsTemplate: _.template($("#stats-template").html())
 
     initialize: ->
       moment.lang "en",
@@ -64,18 +67,21 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       @showStats()
 
     showStats: ->
+      _stats =
+        hours: @stats.allHours.toFixed(1)
+        billableHours: @stats.allBillableHours.toFixed(1)
+        percentBillable: @stats.percentBillable
       if @stats.percentBillable >= 60
-        percentClass = "onTarget"
+        _stats.percentClass = "onTarget"
       else if @stats.percentBillable >= 50 and @stats.percentBillable < 60
-        percentClass = "nearTarget"
+        _stats.percentClass = "nearTarget"
       else
-        percentClass = "offTarget"
-      @$el.find(".stats-hours span").text(@stats.allHours.toFixed(1)).removeClass "pending"
-      @$el.find(".stats-billable span").text(@stats.allBillableHours.toFixed(1)).removeClass "pending"
-      @$el.find(".stats-percent span").html(@stats.percentBillable + "<sup>%</sup>").removeClass().addClass percentClass
+        _stats.percentClass = "offTarget"
+      @ui.stats.html(@statsTemplate(_stats))
+
 
     filterRange: (e) ->
-      @ui.totals.text("").addClass "pending"
+      @ui.total.text("").addClass "pending"
       @timeUnit = ($(e.currentTarget).data("range"))
       @range.start = @getStart(@timeUnit)
       @range.end = moment()
