@@ -26,10 +26,9 @@
         this.timeUnit = "week";
         this.range = {
           start: this.getStart(this.timeUnit),
-          end: this.getEnd()
+          end: moment()
         };
         this.listenTo(Users, "reset", this.render);
-        this.getEnd();
         this.showRange();
         return setInterval((function() {
           return Users.fetch({
@@ -122,24 +121,30 @@
         }
       },
       showRange: function() {
+        var _end, _range, _start;
+        _end = moment(this.range.end);
         if (this.timeUnit === "day") {
-          return this.ui.date.text(this.range.end.format("MMMM D"));
+          _range = _end.format("MMMM D");
         } else if (this.timeUnit === "week") {
+          _start = this.range.start.format("MMMM D");
+          _end.endOf('week');
           if (this.range.start.month() === this.range.end.month()) {
-            return this.ui.date.text(this.range.start.format("MMMM D") + " to " + this.range.end.endOf("week").format("D"));
+            _end = _end.format("D");
           } else {
-            return this.ui.date.text(this.range.start.format("MMMM D") + " to " + this.range.end.endOf("week").format("MMMM D"));
+            _end = _end.format("MMMM D");
           }
+          _range = "" + _start + " to " + _end;
         } else {
-          return this.ui.date.text(this.range.end.format("MMMM"));
+          _range = _end.format("MMMM");
         }
+        return this.ui.date.text(_range);
       },
       adjustRange: function(e) {
         var direction, isToday;
         direction = $(e.currentTarget).data("direction");
         isToday = moment().isSame(this.range.end, 'day');
         if (direction === "future" && isToday === true) {
-          return console.log("YOU CAN'T KNOW THE FUTURE");
+          return console.log("YOU CAN'T KNOW THE FUTURE BRO");
         } else {
           moment.fn.manipulate = (direction === "past" ? moment.fn.subtract : moment.fn.add);
           if (this.timeUnit === "day") {
