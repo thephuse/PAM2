@@ -8,17 +8,17 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       "click .adjust-range" : "adjustRange"
 
     ui:
-      users: @$("#users")
-      date: @$("#date")
+      users: $("#users")
+      date: $("#date")
+      totals: $(".totals span")
+      filtersLi: $(".filters li")
 
     initialize: ->
       moment.lang "en",
         week:
           dow: 1
       Users.fetch reset: true
-      @statsEl = @$(".totals tbdoy")
       @calcUserDfds = []
-      @userCount = 0
       @timeUnit = "week"
       @range =
         start: @getStart(@timeUnit)
@@ -31,24 +31,23 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
 
     render: ->
       @ui.users.find("tbody").html ""
-      end = @range.end.format "YYYYMMDD"
-      start = @range.start.format "YYYYMMDD"
-      self = @
+      _end = @range.end.format "YYYYMMDD"
+      _start = @range.start.format "YYYYMMDD"
+      _self = @
       Users.each (user) ->
-        self.showActive(user, start, end)
+        _self.showActive(user, _start, _end)
       $.when.apply($, @calcUserDfds).done =>
         @calcStats()
 
     showActive: (user, start, end) ->
       if user.get("active") is "true"
-        view = new UserView(
+        _view = new UserView(
           model: user
           endDate: end
           startDate: start
         )
-        @ui.users.append view.render().el
-        @userCount++
-        @calcUserDfds.push view.userLoaded
+        @ui.users.append _view.render().el
+        @calcUserDfds.push _view.userLoaded
 
     calcStats: ->
       @stats =
@@ -75,18 +74,15 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       @$el.find(".stats-billable span").text(@stats.allBillableHours.toFixed(1)).removeClass "pending"
       @$el.find(".stats-percent span").html(@stats.percentBillable + "<sup>%</sup>").removeClass().addClass percentClass
 
-    getEnd: ->
-      moment()
-
     filterRange: (e) ->
-      @$el.find(".totals span").text("").addClass "pending"
+      @ui.totals.text("").addClass "pending"
       @timeUnit = ($(e.currentTarget).data("range"))
       @range.start = @getStart(@timeUnit)
-      @range.end = @getEnd()
-      @$("li").removeClass "active"
+      @range.end = moment()
+      @ui.filtersLi.removeClass "active"
       $(e.currentTarget).parent("li").addClass "active"
       @render()
-      @showRange(@range.start, @range.end)
+      @showRange()
 
     getStart: (unit) ->
       switch unit

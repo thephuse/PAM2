@@ -8,8 +8,10 @@
         "click .adjust-range": "adjustRange"
       },
       ui: {
-        users: this.$("#users"),
-        date: this.$("#date")
+        users: $("#users"),
+        date: $("#date"),
+        totals: $(".totals span"),
+        filtersLi: $(".filters li")
       },
       initialize: function() {
         moment.lang("en", {
@@ -20,9 +22,7 @@
         Users.fetch({
           reset: true
         });
-        this.statsEl = this.$(".totals tbdoy");
         this.calcUserDfds = [];
-        this.userCount = 0;
         this.timeUnit = "week";
         this.range = {
           start: this.getStart(this.timeUnit),
@@ -37,30 +37,29 @@
         }), 60000);
       },
       render: function() {
-        var end, self, start,
+        var _end, _self, _start,
           _this = this;
         this.ui.users.find("tbody").html("");
-        end = this.range.end.format("YYYYMMDD");
-        start = this.range.start.format("YYYYMMDD");
-        self = this;
+        _end = this.range.end.format("YYYYMMDD");
+        _start = this.range.start.format("YYYYMMDD");
+        _self = this;
         Users.each(function(user) {
-          return self.showActive(user, start, end);
+          return _self.showActive(user, _start, _end);
         });
         return $.when.apply($, this.calcUserDfds).done(function() {
           return _this.calcStats();
         });
       },
       showActive: function(user, start, end) {
-        var view;
+        var _view;
         if (user.get("active") === "true") {
-          view = new UserView({
+          _view = new UserView({
             model: user,
             endDate: end,
             startDate: start
           });
-          this.ui.users.append(view.render().el);
-          this.userCount++;
-          return this.calcUserDfds.push(view.userLoaded);
+          this.ui.users.append(_view.render().el);
+          return this.calcUserDfds.push(_view.userLoaded);
         }
       },
       calcStats: function() {
@@ -95,18 +94,15 @@
         this.$el.find(".stats-billable span").text(this.stats.allBillableHours.toFixed(1)).removeClass("pending");
         return this.$el.find(".stats-percent span").html(this.stats.percentBillable + "<sup>%</sup>").removeClass().addClass(percentClass);
       },
-      getEnd: function() {
-        return moment();
-      },
       filterRange: function(e) {
-        this.$el.find(".totals span").text("").addClass("pending");
+        this.ui.totals.text("").addClass("pending");
         this.timeUnit = $(e.currentTarget).data("range");
         this.range.start = this.getStart(this.timeUnit);
-        this.range.end = this.getEnd();
-        this.$("li").removeClass("active");
+        this.range.end = moment();
+        this.ui.filtersLi.removeClass("active");
         $(e.currentTarget).parent("li").addClass("active");
         this.render();
-        return this.showRange(this.range.start, this.range.end);
+        return this.showRange();
       },
       getStart: function(unit) {
         switch (unit) {
