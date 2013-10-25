@@ -22,9 +22,8 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       @timeUnit = "week"
       @range =
         start: @getStart(@timeUnit)
-        end: @getEnd()
+        end: moment()
       @listenTo Users, "reset", @render
-      @getEnd()
       @showRange()
       setInterval (->
         Users.fetch reset: true
@@ -101,21 +100,26 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           moment().startOf("week")
 
     showRange:  ->
+      _end = moment(@range.end)
       if @timeUnit is "day"
-        @ui.date.text @range.end.format("MMMM D")
+        _range = _end.format("MMMM D")
       else if @timeUnit is "week"
-        if @range.start.month() == @range.end.month()
-          @ui.date.text @range.start.format("MMMM D") + " to " + @range.end.endOf("week").format("D")
+        _start = @range.start.format("MMMM D")
+        _end.endOf('week')
+        if @range.start.month() is @range.end.month()
+          _end = _end.format("D")
         else
-          @ui.date.text @range.start.format("MMMM D") + " to " + @range.end.endOf("week").format("MMMM D")
+          _end = _end.format("MMMM D")
+        _range = "#{_start} to #{_end}"
       else
-        @ui.date.text @range.end.format("MMMM")
+        _range = _end.format("MMMM")
+      @ui.date.text(_range)
 
     adjustRange: (e) ->
       direction = $(e.currentTarget).data("direction")
       isToday = moment().isSame(@range.end, 'day')
       if direction is "future" and isToday is true
-        console.log "YOU CAN'T KNOW THE FUTURE"
+        console.log "YOU CAN'T KNOW THE FUTURE BRO"
       else
         moment.fn.manipulate = (if direction is "past" then moment.fn.subtract else moment.fn.add)
         if @timeUnit is "day"
