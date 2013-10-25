@@ -1,5 +1,5 @@
 (function() {
-  define(["backbone", "jquery", "md5", "collections/entries"], function(Backbone, $, md5, Entries) {
+  define(["backbone", "underscore", "jquery", "md5", "collections/entries"], function(Backbone, _, $, md5, Entries) {
     var UserView;
     UserView = Backbone.View.extend({
       tagName: "tr",
