@@ -59,10 +59,8 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
         percentBillable: 0
       Users.each (user) =>
         if user.get("active") is "true"
-          hours = user.get("hours")
-          billableHours = user.get("billableHours")
-          @stats.allHours += parseFloat(hours)
-          @stats.allBillableHours += parseFloat(billableHours)
+          @stats.allHours += parseFloat(user.get("hours"))
+          @stats.allBillableHours += parseFloat(user.get("billableHours"))
       @stats.percentBillable = (if @stats.allHours > 0 then (@stats.allBillableHours / @stats.allHours * 100).toFixed(0) else 0)
       @showStats()
 
@@ -118,12 +116,12 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       @ui.date.text(_range)
 
     adjustRange: (e) ->
-      direction = $(e.currentTarget).data("direction")
-      isToday = moment().isSame(@range.end, 'day')
-      if direction is "future" and isToday is true
+      _direction = $(e.currentTarget).data("direction")
+      _isToday = moment().isSame(@range.end, 'day')
+      if _direction is "future" and _isToday is true
         console.log "YOU CAN'T KNOW THE FUTURE BRO"
       else
-        moment.fn.manipulate = (if direction is "past" then moment.fn.subtract else moment.fn.add)
+        moment.fn.manipulate = (if _direction is "past" then moment.fn.subtract else moment.fn.add)
         if @timeUnit is "day"
           @range.start = @range.start.manipulate('days', 1)
           @range.end = @range.end.manipulate('days', 1)

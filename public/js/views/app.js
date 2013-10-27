@@ -72,12 +72,9 @@
           percentBillable: 0
         };
         Users.each(function(user) {
-          var billableHours, hours;
           if (user.get("active") === "true") {
-            hours = user.get("hours");
-            billableHours = user.get("billableHours");
-            _this.stats.allHours += parseFloat(hours);
-            return _this.stats.allBillableHours += parseFloat(billableHours);
+            _this.stats.allHours += parseFloat(user.get("hours"));
+            return _this.stats.allBillableHours += parseFloat(user.get("billableHours"));
           }
         });
         this.stats.percentBillable = (this.stats.allHours > 0 ? (this.stats.allBillableHours / this.stats.allHours * 100).toFixed(0) : 0);
@@ -141,13 +138,13 @@
         return this.ui.date.text(_range);
       },
       adjustRange: function(e) {
-        var direction, isToday;
-        direction = $(e.currentTarget).data("direction");
-        isToday = moment().isSame(this.range.end, 'day');
-        if (direction === "future" && isToday === true) {
+        var _direction, _isToday;
+        _direction = $(e.currentTarget).data("direction");
+        _isToday = moment().isSame(this.range.end, 'day');
+        if (_direction === "future" && _isToday === true) {
           return console.log("YOU CAN'T KNOW THE FUTURE BRO");
         } else {
-          moment.fn.manipulate = (direction === "past" ? moment.fn.subtract : moment.fn.add);
+          moment.fn.manipulate = (_direction === "past" ? moment.fn.subtract : moment.fn.add);
           if (this.timeUnit === "day") {
             this.range.start = this.range.start.manipulate('days', 1);
             this.range.end = this.range.end.manipulate('days', 1);
