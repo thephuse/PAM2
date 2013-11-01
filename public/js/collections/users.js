@@ -8,18 +8,20 @@
         var parsed;
         parsed = [];
         $(data).find("user").each(function(index) {
-          var dept, email, fname, isActive, uid;
+          var dept, email, fname, isActive, timezone, uid;
           fname = $(this).find("first-name").text();
           isActive = $(this).find("is-active").text();
           uid = $(this).find("id").text();
           dept = $(this).find("department").text();
           email = $(this).find("email").text();
+          timezone = $(this).find("timezone").text();
           return parsed.push({
             id: uid,
             name: fname,
             active: isActive,
             department: dept,
-            email: email
+            email: email,
+            timezone: timezone
           });
         });
         return parsed;

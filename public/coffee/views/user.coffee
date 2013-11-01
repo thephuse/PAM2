@@ -1,4 +1,4 @@
-define ["backbone", "underscore", "jquery", "md5", "collections/entries"], (Backbone, _, $, md5, Entries) ->
+define ["backbone", "underscore", "jquery", "md5", "collections/entries", "railsTimezone", "moment-timezone", "moment-timezone-data"], (Backbone, _, $, md5, Entries, railsTimezone, moment) ->
   UserView = Backbone.View.extend(
     tagName: "tr"
     template: _.template($("#person-template").html())
@@ -63,6 +63,8 @@ define ["backbone", "underscore", "jquery", "md5", "collections/entries"], (Back
 
     render: ->
       person = @model.toJSON()
+      timezone = railsTimezone.from(person.timezone)
+      person.localTime = moment().tz(timezone).format('h:mm a')
       person.gravatarUrl = "http://www.gravatar.com/avatar/" + md5(person.email)
       @$el.html @template(person)
       this

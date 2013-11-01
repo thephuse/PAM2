@@ -5,7 +5,10 @@
       backbone: "vendor/backbone-amd/backbone",
       underscore: "vendor/underscore-amd/underscore",
       moment: "vendor/momentjs/moment",
-      md5: "vendor/js-md5/js/md5"
+      "moment-timezone": "vendor/momentjs/moment-timezone",
+      "moment-timezone-data": "vendor/momentjs/moment-timezone-data",
+      md5: "vendor/js-md5/js/md5",
+      railsTimezone: "vendor/rails-timezone-js/rails-timezone"
     }
   });
 
