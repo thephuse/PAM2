@@ -1,5 +1,5 @@
 (function() {
-  define(["backbone", "underscore", "jquery", "md5", "collections/entries"], function(Backbone, _, $, md5, Entries) {
+  define(["backbone", "underscore", "jquery", "md5", "collections/entries", "railsTimezone", "moment-timezone", "moment-timezone-data"], function(Backbone, _, $, md5, Entries, railsTimezone, moment) {
     var UserView;
     UserView = Backbone.View.extend({
       tagName: "tr",
@@ -90,8 +90,10 @@
         });
       },
       render: function() {
-        var person;
+        var person, timezone;
         person = this.model.toJSON();
+        timezone = railsTimezone.from(person.timezone);
+        person.localTime = moment().tz(timezone).format('h:mm a');
         person.gravatarUrl = "http://www.gravatar.com/avatar/" + md5(person.email);
         this.$el.html(this.template(person));
         return this;

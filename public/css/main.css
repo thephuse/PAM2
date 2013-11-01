@@ -19,7 +19,7 @@ abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
 table{border-collapse:collapse;border-spacing:0;width:100%}
 hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
 input,select{vertical-align:middle}
-.totals,.users th,.users .timezone span{color:a1a8ad;font-size:12px;text-transform:uppercase}
+.totals,.users th,.users .timezone{color:a1a8ad;font-size:12px;text-transform:uppercase}
 a{color:#303c48;}
 a:visited{color:#303c48}
 a:hover{color:#0498d4}
@@ -48,7 +48,7 @@ th{font-weight:400}
 .totals .stats-percent span{font-size:60px}
 .users th,.users td{vertical-align:middle}
 .users th{text-align:left;padding-bottom:10px;width:20%}
-.users td{background-color:#fff;border-bottom:2px solid #ecf0f1;color:#a1a8ad;font-size:24px;}
+.users td{background-color:#fff;border-bottom:2px solid #ecf0f1;color:#83888c;font-size:24px;}
 .users td:first-child{color:#303c48;font-size:18px}
 .users td.pending:before,.users td.pending:after{display:inline-block;content:"";width:10px;height:10px;border-radius:50%;margin:5px;-webkit-animation-name:fadeToggle;-webkit-animation-duration:.6s;-webkit-animation-timing-function:ease;-webkit-animation-iteration-count:infinite}
 .users td.pending:before{background:#cd0000}

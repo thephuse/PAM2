@@ -10,12 +10,14 @@ define ["backbone", "models/user"], (Backbone, User) ->
         uid = $(this).find("id").text()
         dept = $(this).find("department").text()
         email = $(this).find("email").text()
+        timezone = $(this).find("timezone").text()
         parsed.push
           id: uid
           name: fname
           active: isActive
           department: dept
           email: email
+          timezone: timezone
       parsed
 
     fetch: (options) ->
