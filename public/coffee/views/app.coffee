@@ -1,21 +1,21 @@
 define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Backbone, $, moment, Users, UserView) ->
   AppView = Backbone.View.extend(
-
+    
     el: "body"
-
+    
     events:
       "click .filter": "filterRange"
       "click .adjust-range" : "adjustRange"
-
+    
     ui:
       users: $("#users")
       date: $("#date")
       stats: $(".totals ul")
       total: $(".totals span")
       filtersLi: $(".filters li")
-
+    
     statsTemplate: _.template($("#stats-template").html())
-
+    
     initialize: ->
       moment.lang "en",
         week:
@@ -31,17 +31,20 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       setInterval (->
         Users.fetch reset: true
       ), 60000
-
+    
     render: ->
       @ui.users.find("tbody").html ""
       _end = @range.end.format "YYYYMMDD"
       _start = @range.start.format "YYYYMMDD"
       _self = @
+      
+      $('.totals li span').html('').addClass('pending')
+      
       Users.each (user) ->
         _self.showActive(user, _start, _end)
       $.when.apply($, @calcUserDfds).done =>
         @calcStats()
-
+    
     showActive: (user, start, end) ->
       if user.get("active") is "true"
         _view = new UserView(
@@ -51,7 +54,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
         )
         @ui.users.append _view.render().el
         @calcUserDfds.push _view.userLoaded
-
+    
     calcStats: ->
       @stats =
         allHours: 0
@@ -63,7 +66,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           @stats.allBillableHours += parseFloat(user.get("billableHours"))
       @stats.percentBillable = (if @stats.allHours > 0 then (@stats.allBillableHours / @stats.allHours * 100).toFixed(0) else 0)
       @showStats()
-
+    
     showStats: ->
       _stats =
         hours: @stats.allHours.toFixed(1)
@@ -76,8 +79,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       else
         _stats.percentClass = "offTarget"
       @ui.stats.html(@statsTemplate(_stats))
-
-
+    
     filterRange: (e) ->
       @ui.total.text("").addClass "pending"
       @timeUnit = ($(e.currentTarget).data("range"))
@@ -87,7 +89,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       $(e.currentTarget).parent("li").addClass "active"
       @render()
       @showRange()
-
+    
     getStart: (unit) ->
       switch unit
         when "day"
@@ -98,7 +100,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           moment().startOf("week")
         else
           moment().startOf("week")
-
+    
     showRange:  ->
       _end = moment(@range.end)
       if @timeUnit is "day"
@@ -114,7 +116,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       else
         _range = _end.format("MMMM")
       @ui.date.text(_range)
-
+    
     adjustRange: (e) ->
       _direction = $(e.currentTarget).data("direction")
       _isToday = moment().isSame(@range.end, 'day')
@@ -133,7 +135,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           @range.end = @range.end.endOf('month').manipulate('months', 1)
         @render()
         @showRange()
-
+    
   )
 
   AppView

@@ -45,6 +45,7 @@
         _end = this.range.end.format("YYYYMMDD");
         _start = this.range.start.format("YYYYMMDD");
         _self = this;
+        $('.totals li span').html('').addClass('pending');
         Users.each(function(user) {
           return _self.showActive(user, _start, _end);
         });
