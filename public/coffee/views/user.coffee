@@ -14,7 +14,7 @@ define ["backbone", "underscore", "jquery", "md5", "collections/entries", "rails
       @getStatus()
       $.when(hoursDfd, billableHoursDfd).then ->
         self.calcPercent()
-
+    
     getTotalHours: (hoursDfd) ->
       self = this
       entries = new Entries()
@@ -27,7 +27,7 @@ define ["backbone", "underscore", "jquery", "md5", "collections/entries", "rails
         self.model.set hours: totalHours
         self.$el.find(".hours").html(self.model.get("hours")).removeClass "pending"
         hoursDfd.resolve()
-
+    
     getBillableHours: (billableHoursDfd) ->
       self = this
       billableEntries = new Entries()
@@ -40,14 +40,14 @@ define ["backbone", "underscore", "jquery", "md5", "collections/entries", "rails
         self.model.set billableHours: billableHours
         self.$el.find(".billable").html(self.model.get("billableHours")).removeClass "pending"
         billableHoursDfd.resolve()
-
+    
     calcPercent: ->
       total = @model.get("hours")
       billable = @model.get("billableHours")
       percentBillable = ((if total > 0 then (billable / total) * 100 else 0))
       @$el.find(".percent").html(percentBillable.toFixed(0) + "%").removeClass "pending"
       @userLoaded.resolve()
-
+    
     getStatus: ->
       userId = @model.get("id")
       self = this
@@ -60,7 +60,7 @@ define ["backbone", "underscore", "jquery", "md5", "collections/entries", "rails
           self.model.set isActive: false
           self.$el.find(".status").addClass "status-false"
           self.$el.find(".status").removeClass "status-true"
-
+    
     render: ->
       person = @model.toJSON()
       timezone = railsTimezone.from(person.timezone)
@@ -68,5 +68,6 @@ define ["backbone", "underscore", "jquery", "md5", "collections/entries", "rails
       person.gravatarUrl = "http://www.gravatar.com/avatar/" + md5(person.email)
       @$el.html @template(person)
       this
+    
   )
   UserView
