@@ -37,6 +37,9 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       _end = @range.end.format "YYYYMMDD"
       _start = @range.start.format "YYYYMMDD"
       _self = @
+      
+      $('.totals li span').html('').addClass('pending')
+      
       Users.each (user) ->
         _self.showActive(user, _start, _end)
       $.when.apply($, @calcUserDfds).done =>
