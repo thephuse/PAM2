@@ -24,15 +24,15 @@ if (process.env.NODE_ENV === 'production') {
   var harvestUsername = process.env.HARVEST_USERNAME;
   var harvestPassword = process.env.HARVEST_PASSWORD;
   var rootUrl = 'http://pam.thephuse.com/';
-  var harvestCID = 'IZ/QNmA6y4+9qWirCgJ01g==';
-  var harvestSecret = 'rC3Rtf3ZXiTQYP47BqGVdGT0dtpAvs17sNrYup6NcnLmADRDFiYG9PFY77VKuR/7nSTtnbgcwBXneUjbkIOfow==';
+  var harvestCID = process.env.HARVEST_CID;
+  var harvestSecret = process.env.HARVEST_SECRET;
 } else {
   var appConfig = JSON.parse(fs.readFileSync("config.json"));
   var harvestUsername = appConfig.username;
   var harvestPassword = appConfig.password;
   var rootUrl = 'http://127.0.0.1:1234/';
-  var harvestCID = '75B7rnyuX1RYshk54trLiw==';
-  var harvestSecret = '8EYB1TV6goSe15JMB3mPrdxzwSu4EYastoqXnli+ydbVhSDYOtDPhhKa+rWeTiUS+7SI3Sv6SAND6fYVQoLshA==';
+  var harvestCID = appConfig.harvest_cid;
+  var harvestSecret = appConfig.harvest_secret;
 }
 
 app.use(function staticsPlaceholder(req, res, next) {

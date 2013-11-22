@@ -1,0 +1,6 @@
+{
+  "username" : "your_harvest_email",
+  "password" : "your_harvest_password",
+  "harvest_cid": "your_harvest_cid",
+  "harvest_secret": "your_harvest_secret"
+}
