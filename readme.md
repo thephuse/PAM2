@@ -2,22 +2,21 @@ Phuse Activity Monitor (PAM) v.2.0
 ====================================
 
 ###Setup:
+- `npm install -g grunt-cli`
 - `npm install`
 - create a config.json file (see below)
 - `node server`
 - `grunt watch`
-- open at http://127.0.0.1/1234
+- open at http://127.0.0.1:1234
 
 ###config.json
 Required to run locally (uses env vars on heroku). Get creds from password archive or ask James.
-
-    {
-      "username" : //james' username,
-      "password" : //james' password
-    }
+{
+  "username" : //james' username,
+  "password" : //james' password
+}
 
 ###Deployment
-
 - get yourself added as contributor
 - `git@heroku.com:phusepam2.git`
 - `grunt`
