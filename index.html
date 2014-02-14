@@ -73,6 +73,7 @@
         </thead>
         <tbody>
           <script type="text/template" id="person-template">
+          <tr id=<%- hash %>>
             <td>
               <span class="status status-false"><img src=<%- gravatarUrl %> width="70"/></span>
               <div class="info">
@@ -80,9 +81,10 @@
                 <span class="timezone"><%= localTime %></span>
               </div>
             </td>
-            <td class="hours pending"></td>
-            <td class="billable pending"></td>
-            <td class="percent pending"></td>
+            <td class="hours"></td>
+            <td class="billable"></td>
+            <td class="percent"></td>
+          </tr>
           </script>
         </tbody>
       </table>

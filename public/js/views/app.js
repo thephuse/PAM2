@@ -36,12 +36,11 @@
           return Users.fetch({
             reset: true
           });
-        }), 60000);
+        }), 600000);
       },
       render: function() {
         var _end, _self, _start,
           _this = this;
-        this.ui.users.find("tbody").html("");
         _end = this.range.end.format("YYYYMMDD");
         _start = this.range.start.format("YYYYMMDD");
         _self = this;
@@ -97,7 +96,6 @@
         return this.ui.stats.html(this.statsTemplate(_stats));
       },
       filterRange: function(e) {
-        this.ui.total.text("").addClass("pending");
         this.timeUnit = $(e.currentTarget).data("range");
         this.range.start = this.getStart(this.timeUnit);
         this.range.end = moment();

@@ -2,7 +2,7 @@
   define(["backbone", "underscore", "jquery", "md5", "collections/entries", "railsTimezone", "moment-timezone", "moment-timezone-data"], function(Backbone, _, $, md5, Entries, railsTimezone, moment) {
     var UserView;
     UserView = Backbone.View.extend({
-      tagName: "tr",
+      el: $("#users tbody"),
       template: _.template($("#person-template").html()),
       initialize: function(attrs) {
         var billableHoursDfd, hoursDfd, self;
@@ -20,8 +20,9 @@
         });
       },
       getTotalHours: function(hoursDfd) {
-        var entries, self;
+        var entries, self, userId;
         self = this;
+        userId = this.model.get("id");
         entries = new Entries();
         entries.url = "/users/" + this.model.get("id") + "/" + this.start + "/" + this.end;
         return entries.fetch({
@@ -35,16 +36,17 @@
             self.model.set({
               hours: totalHours
             });
-            self.$el.find(".hours").html(self.model.get("hours")).removeClass("pending");
+            self.$el.find("tr#" + userId).find(".hours").html(self.model.get("hours")).removeClass("pending");
             return hoursDfd.resolve();
           }
         });
       },
       getBillableHours: function(billableHoursDfd) {
-        var billableEntries, self;
+        var billableEntries, self, userId;
         self = this;
+        userId = this.model.get("id");
         billableEntries = new Entries();
-        billableEntries.url = "/users/" + this.model.get("id") + "/billable/" + this.start + "/" + this.end;
+        billableEntries.url = "/users/" + userId + "/billable/" + this.start + "/" + this.end;
         return billableEntries.fetch({
           success: function() {
             var billableHours;
@@ -56,46 +58,50 @@
             self.model.set({
               billableHours: billableHours
             });
-            self.$el.find(".billable").html(self.model.get("billableHours")).removeClass("pending");
+            self.$el.find("tr#" + userId).find(".billable").html(self.model.get("billableHours")).removeClass("pending");
             return billableHoursDfd.resolve();
           }
         });
       },
       calcPercent: function() {
-        var billable, percentBillable, total;
+        var billable, percentBillable, self, total, userId;
+        self = this;
+        userId = this.model.get("id");
         total = this.model.get("hours");
         billable = this.model.get("billableHours");
         percentBillable = (total > 0 ? (billable / total) * 100 : 0);
-        this.$el.find(".percent").html(percentBillable.toFixed(0) + "%").removeClass("pending");
+        this.$el.find("tr#" + userId).find(".percent").html(percentBillable.toFixed(0) + "%").removeClass("pending");
         return this.userLoaded.resolve();
       },
       getStatus: function() {
         var self, userId;
-        userId = this.model.get("id");
         self = this;
+        userId = this.model.get("id");
         return $.get("/daily/" + userId, function(response) {
           if ($(response).find("timer_started_at").length > 0) {
             self.model.set({
               isActive: true
             });
-            self.$el.find(".status").addClass("status-true");
-            return self.$el.find(".status").removeClass("status-false");
+            return self.$el.find("tr#" + userId).find(".status").addClass("status-true").removeClass("status-false");
           } else {
             self.model.set({
               isActive: false
             });
-            self.$el.find(".status").addClass("status-false");
-            return self.$el.find(".status").removeClass("status-true");
+            return self.$el.find("tr#" + userId).find(".status").addClass("status-false").removeClass("status-true");
           }
         });
       },
       render: function() {
-        var person, timezone;
+        var person, timezone, userId;
+        userId = this.model.get("id");
         person = this.model.toJSON();
         timezone = railsTimezone.from(person.timezone);
         person.localTime = moment().tz(timezone).format('h:mm a');
+        person.hash = userId;
         person.gravatarUrl = "http://www.gravatar.com/avatar/" + md5(person.email);
-        this.$el.html(this.template(person));
+        if (this.$el.find("tr#" + userId).length === 0) {
+          this.$el.append(this.template(person));
+        }
         return this;
       }
     });

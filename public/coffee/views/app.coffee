@@ -30,10 +30,9 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
       @showRange()
       setInterval (->
         Users.fetch reset: true
-      ), 60000
+      ), 600000
 
     render: ->
-      @ui.users.find("tbody").html ""
       _end = @range.end.format "YYYYMMDD"
       _start = @range.start.format "YYYYMMDD"
       _self = @
@@ -79,7 +78,6 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
 
 
     filterRange: (e) ->
-      @ui.total.text("").addClass "pending"
       @timeUnit = ($(e.currentTarget).data("range"))
       @range.start = @getStart(@timeUnit)
       @range.end = moment()
