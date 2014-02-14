@@ -153,7 +153,7 @@
             this.range.end = this.range.end.endOf('week').manipulate('weeks', 1);
           } else if (this.timeUnit === "month") {
             this.range.start = this.range.start.manipulate('months', 1);
-            this.range.end = this.range.end.endOf('month').manipulate('months', 1);
+            this.range.end = this.range.end.endOf('month').manipulate('months', 1).endOf('month');
           }
           this.render();
           return this.showRange();

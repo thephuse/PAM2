@@ -130,7 +130,7 @@ define ["backbone", "jquery", "moment", "collections/users", "views/user"], (Bac
           @range.end = @range.end.endOf('week').manipulate('weeks', 1)
         else if @timeUnit is "month"
           @range.start = @range.start.manipulate('months', 1)
-          @range.end = @range.end.endOf('month').manipulate('months', 1)
+          @range.end = @range.end.endOf('month').manipulate('months', 1).endOf('month')
         @render()
         @showRange()
 
