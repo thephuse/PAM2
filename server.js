@@ -13,7 +13,7 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.cookieParser());
   app.use(express.bodyParser());
-  app.use(express.session({ secret: 'keyboard cat' }));
+  app.use(express.session({ secret: 'keyboard cat', cookie: { maxAge: 3600 * 24 * 30 * 1000 } }));
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(app.router);
