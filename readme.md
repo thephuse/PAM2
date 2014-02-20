@@ -24,11 +24,14 @@ Required to connect to Harvest API to gather data. PAM is set up to connect to o
 
 ###Deployment
 
-- get yourself added as contributor
-- `git@heroku.com:phusepam2.git`
-- `grunt`
-- `git push heroku master && heroku ps:scale web=1`
-- `heroku open` or go to [phusepam2.herokuapp.com](http://phusepam2.herokuapp.com/)
+At The Phuse, we use Heroku to host our instance of PAM. Heroku has a wealth of documentation on how to setup their command line interface (https://toolbelt.herokuapp.com/) and deploy code to heroku from Git or SVN (https://devcenter.heroku.com/articles/git).
+
+If you are deploying to an exising project, such as our instance of PAM, use the following steps:
+1. Contact James to get yourself added as contributor
+2. From your local PAM directory, run `heroku git:remote -a phusepam2` from the command line.
+3. To build your code for production, run `grunt` from the command line.
+4. Deploy your code: `git push heroku master && heroku ps:scale web=1`
+5. Running `heroku open` from the command line will open the site. Alternatively, go to [phusepam2.herokuapp.com](http://phusepam2.herokuapp.com/)
 
 ###Tech:
 - Node.js (with Express.js) in the back
