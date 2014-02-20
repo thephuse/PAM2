@@ -32,12 +32,12 @@ and the second is the production instance hosted on Heroku:
 When you click create you'll be redirected to a page with auto-generated **Client Parameters**. With this information in hand, create a `config.json` file that contains the following:
 
     {
-      "harvest_username" : // Harvest admin username
-      "harvest_password" : // Harvest admin password
-      "harvest_webaddress": // Your team's URL at Harvest, e.g. 'https://thephuse.harvestapp.com/', with the trailing slash
-      "local_rooturl": "http://127.0.0.1:1234/"
-      "local_harvest_clientsecret": // Harvest Client Secret key (89-character key)
-      "local_harvest_clientid": // Harvest Client ID (25-character key)
+      "harvest_username" : // Harvest admin username,
+      "harvest_password" : // Harvest admin password,
+      "harvest_webaddress": // Your team's URL at Harvest, e.g. 'https://thephuse.harvestapp.com/', with the trailing slash,
+      "local_rooturl": "http://127.0.0.1:1234/",
+      "local_harvest_clientsecret": // Harvest Client Secret key (89-character key),
+      "local_harvest_clientid": // Harvest Client ID (25-character key),
       "secret_session": // A random string to protect the session cookie, for example 'keyboard cat' (see below)
     }
 

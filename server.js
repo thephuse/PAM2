@@ -49,8 +49,8 @@ app.use(function staticsPlaceholder(req, res, next) {
 var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 
 passport.use('harvest', new OAuth2Strategy({
-  authorizationURL: harvest_webaddress + 'oauth2/authorize',
-  tokenURL: harvest_webaddress + 'oauth2/authorize',
+  authorizationURL: harvestWebAddress + 'oauth2/authorize',
+  tokenURL: harvestWebAddress + 'oauth2/authorize',
   clientID: harvestCID,
   clientSecret: harvestSecret,
   callbackURL: rootUrl + 'auth/harvest/callback'
@@ -95,7 +95,7 @@ app.get('/logout', function(req, res){
 });
 
 app.get('/users', ensureAuthenticated, function(req, res) {
-  request.get(harvest_webaddress + 'people/', {
+  request.get(harvestWebAddress + 'people/', {
     headers: headers
   },function(error, response, body){
     res.send(body);
@@ -104,7 +104,7 @@ app.get('/users', ensureAuthenticated, function(req, res) {
 
 // this route sucks but haven't figured out how to do query string routes
 app.get('/users/:id/billable/:start/:end', ensureAuthenticated, function(req, res) {
-  request.get(harvest_webaddress + 'people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end + '&billable=yes', {
+  request.get(harvestWebAddress + 'people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end + '&billable=yes', {
     headers: headers
   }, function(error, response, body){
     res.send(body);
@@ -115,7 +115,7 @@ app.get('/users/:id/billable/:start/:end', ensureAuthenticated, function(req, re
 });
 
 app.get('/users/:id/:start/:end', ensureAuthenticated, function(req, res) {
-  request.get(harvest_webaddress + 'people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end, {
+  request.get(harvestWebAddress + 'people/' + req.params.id + '/entries?from=' + req.params.start + '&to=' + req.params.end, {
     headers: headers
   }, function(error, response, body){
     res.send(body);
@@ -123,7 +123,7 @@ app.get('/users/:id/:start/:end', ensureAuthenticated, function(req, res) {
 });
 
 app.get('/daily/:id', ensureAuthenticated, function(req,res) {
-  request.get(harvest_webaddress + '/daily?of_user=' + req.params.id, {
+  request.get(harvestWebAddress + '/daily?of_user=' + req.params.id, {
     headers: headers
   }, function(error, response, body) {
     res.send(body);
