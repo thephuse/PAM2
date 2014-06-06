@@ -7,7 +7,7 @@ var passport = require('passport');
 
 app.use(express.logger());
 
-/* Grab all the sensitive information either from environment variables, if we're on Heroku, 
+/* Grab all the sensitive information either from environment variables, if we're on Heroku,
  * or from the config.json file.
  */
 if (process.env.NODE_ENV === 'production') {
@@ -85,7 +85,7 @@ app.get('/', ensureAuthenticated, function(req,res){
   if (process.env.NODE_ENV === 'production') {
     res.sendfile('dist/index.html');
   } else {
-    res.sendfile('index.html')
+    res.sendfile('index.html');
   }
 });
 
@@ -111,7 +111,7 @@ app.get('/users/:id/billable/:start/:end', ensureAuthenticated, function(req, re
     if (error) {
       console.log(error);
     }
-  })
+  });
 });
 
 app.get('/users/:id/:start/:end', ensureAuthenticated, function(req, res) {
@@ -119,7 +119,7 @@ app.get('/users/:id/:start/:end', ensureAuthenticated, function(req, res) {
     headers: headers
   }, function(error, response, body){
     res.send(body);
-  })
+  });
 });
 
 app.get('/daily/:id', ensureAuthenticated, function(req,res) {
@@ -127,7 +127,7 @@ app.get('/daily/:id', ensureAuthenticated, function(req,res) {
     headers: headers
   }, function(error, response, body) {
     res.send(body);
-  })
+  });
 });
 
 function ensureAuthenticated(req, res, next) {
