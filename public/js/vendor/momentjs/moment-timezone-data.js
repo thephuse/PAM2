@@ -1,6 +1,286 @@
 define(["moment-timezone"], function (moment) {
     moment.tz.add({
         "zones": {
+            "Africa/Abidjan": [
+                "-0:16:8 - LMT 1912 -0:16:8",
+                "0 - GMT"
+            ],
+            "Africa/Accra": [
+                "-0:0:52 - LMT 1918 -0:0:52",
+                "0 Ghana %s"
+            ],
+            "Africa/Addis_Ababa": [
+                "2:34:48 - LMT 1870 2:34:48",
+                "2:35:20 - ADMT 1936_4_5 2:35:20",
+                "3 - EAT"
+            ],
+            "Africa/Algiers": [
+                "0:12:12 - LMT 1891_2_15_0_1 0:12:12",
+                "0:9:21 - PMT 1911_2_11 0:9:21",
+                "0 Algeria WE%sT 1940_1_25_2",
+                "1 Algeria CE%sT 1946_9_7 1",
+                "0 - WET 1956_0_29",
+                "1 - CET 1963_3_14 1",
+                "0 Algeria WE%sT 1977_9_21 1",
+                "1 Algeria CE%sT 1979_9_26 1",
+                "0 Algeria WE%sT 1981_4",
+                "1 - CET"
+            ],
+            "Africa/Asmara": [
+                "2:35:32 - LMT 1870 2:35:32",
+                "2:35:32 - AMT 1890 2:35:32",
+                "2:35:20 - ADMT 1936_4_5 2:35:20",
+                "3 - EAT"
+            ],
+            "Africa/Bamako": [
+                "-0:32 - LMT 1912 -0:32",
+                "0 - GMT 1934_1_26",
+                "-1 - WAT 1960_5_20 -1",
+                "0 - GMT"
+            ],
+            "Africa/Bangui": [
+                "1:14:20 - LMT 1912 1:14:20",
+                "1 - WAT"
+            ],
+            "Africa/Banjul": [
+                "-1:6:36 - LMT 1912 -1:6:36",
+                "-1:6:36 - BMT 1935 -1:6:36",
+                "-1 - WAT 1964 -1",
+                "0 - GMT"
+            ],
+            "Africa/Bissau": [
+                "-1:2:20 - LMT 1911_4_26 -1:2:20",
+                "-1 - WAT 1975 -1",
+                "0 - GMT"
+            ],
+            "Africa/Blantyre": [
+                "2:20 - LMT 1903_2 2:20",
+                "2 - CAT"
+            ],
+            "Africa/Brazzaville": [
+                "1:1:8 - LMT 1912 1:1:8",
+                "1 - WAT"
+            ],
+            "Africa/Bujumbura": [
+                "1:57:28 - LMT 1890 1:57:28",
+                "2 - CAT"
+            ],
+            "Africa/Cairo": [
+                "2:5:9 - LMT 1900_9 2:5:9",
+                "2 Egypt EE%sT"
+            ],
+            "Africa/Casablanca": [
+                "-0:30:20 - LMT 1913_9_26 -0:30:20",
+                "0 Morocco WE%sT 1984_2_16",
+                "1 - CET 1986 1",
+                "0 Morocco WE%sT"
+            ],
+            "Africa/Ceuta": [
+                "-0:21:16 - LMT 1901 -0:21:16",
+                "0 - WET 1918_4_6_23",
+                "1 - WEST 1918_9_7_23 1",
+                "0 - WET 1924",
+                "0 Spain WE%sT 1929",
+                "0 SpainAfrica WE%sT 1984_2_16",
+                "1 - CET 1986 1",
+                "1 EU CE%sT"
+            ],
+            "Africa/Conakry": [
+                "-0:54:52 - LMT 1912 -0:54:52",
+                "0 - GMT 1934_1_26",
+                "-1 - WAT 1960 -1",
+                "0 - GMT"
+            ],
+            "Africa/Dakar": [
+                "-1:9:44 - LMT 1912 -1:9:44",
+                "-1 - WAT 1941_5 -1",
+                "0 - GMT"
+            ],
+            "Africa/Dar_es_Salaam": [
+                "2:37:8 - LMT 1931 2:37:8",
+                "3 - EAT 1948 3",
+                "2:45 - BEAUT 1961 2:45",
+                "3 - EAT"
+            ],
+            "Africa/Djibouti": [
+                "2:52:36 - LMT 1911_6 2:52:36",
+                "3 - EAT"
+            ],
+            "Africa/Douala": [
+                "0:38:48 - LMT 1912 0:38:48",
+                "1 - WAT"
+            ],
+            "Africa/El_Aaiun": [
+                "-0:52:48 - LMT 1934_0 -0:52:48",
+                "-1 - WAT 1976_3_14 -1",
+                "0 - WET"
+            ],
+            "Africa/Freetown": [
+                "-0:53 - LMT 1882 -0:53",
+                "-0:53 - FMT 1913_5 -0:53",
+                "-1 SL %s 1957 -1",
+                "0 SL %s"
+            ],
+            "Africa/Gaborone": [
+                "1:43:40 - LMT 1885 1:43:40",
+                "1:30 - SAST 1903_2 1:30",
+                "2 - CAT 1943_8_19_2 2",
+                "3 - CAST 1944_2_19_2 3",
+                "2 - CAT"
+            ],
+            "Africa/Harare": [
+                "2:4:12 - LMT 1903_2 2:4:12",
+                "2 - CAT"
+            ],
+            "Africa/Johannesburg": [
+                "1:52 - LMT 1892_1_8 1:52",
+                "1:30 - SAST 1903_2 1:30",
+                "2 SA SAST"
+            ],
+            "Africa/Juba": [
+                "2:6:24 - LMT 1931 2:6:24",
+                "2 Sudan CA%sT 2000_0_15_12 2",
+                "3 - EAT"
+            ],
+            "Africa/Kampala": [
+                "2:9:40 - LMT 1928_6 2:9:40",
+                "3 - EAT 1930 3",
+                "2:30 - BEAT 1948 2:30",
+                "2:45 - BEAUT 1957 2:45",
+                "3 - EAT"
+            ],
+            "Africa/Khartoum": [
+                "2:10:8 - LMT 1931 2:10:8",
+                "2 Sudan CA%sT 2000_0_15_12 2",
+                "3 - EAT"
+            ],
+            "Africa/Kigali": [
+                "2:0:16 - LMT 1935_5 2:0:16",
+                "2 - CAT"
+            ],
+            "Africa/Kinshasa": [
+                "1:1:12 - LMT 1897_10_9 1:1:12",
+                "1 - WAT"
+            ],
+            "Africa/Lagos": [
+                "0:13:36 - LMT 1919_8 0:13:36",
+                "1 - WAT"
+            ],
+            "Africa/Libreville": [
+                "0:37:48 - LMT 1912 0:37:48",
+                "1 - WAT"
+            ],
+            "Africa/Lome": [
+                "0:4:52 - LMT 1893 0:4:52",
+                "0 - GMT"
+            ],
+            "Africa/Luanda": [
+                "0:52:56 - LMT 1892 0:52:56",
+                "0:52:4 - AOT 1911_4_26 0:52:4",
+                "1 - WAT"
+            ],
+            "Africa/Lubumbashi": [
+                "1:49:52 - LMT 1897_10_9 1:49:52",
+                "2 - CAT"
+            ],
+            "Africa/Lusaka": [
+                "1:53:8 - LMT 1903_2 1:53:8",
+                "2 - CAT"
+            ],
+            "Africa/Malabo": [
+                "0:35:8 - LMT 1912 0:35:8",
+                "0 - GMT 1963_11_15",
+                "1 - WAT"
+            ],
+            "Africa/Maputo": [
+                "2:10:20 - LMT 1903_2 2:10:20",
+                "2 - CAT"
+            ],
+            "Africa/Maseru": [
+                "1:50 - LMT 1903_2 1:50",
+                "2 - SAST 1943_8_19_2 2",
+                "3 - SAST 1944_2_19_2 3",
+                "2 - SAST"
+            ],
+            "Africa/Mbabane": [
+                "2:4:24 - LMT 1903_2 2:4:24",
+                "2 - SAST"
+            ],
+            "Africa/Mogadishu": [
+                "3:1:28 - LMT 1893_10 3:1:28",
+                "3 - EAT 1931 3",
+                "2:30 - BEAT 1957 2:30",
+                "3 - EAT"
+            ],
+            "Africa/Monrovia": [
+                "-0:43:8 - LMT 1882 -0:43:8",
+                "-0:43:8 - MMT 1919_2 -0:43:8",
+                "-0:44:30 - LRT 1972_4 -0:44:30",
+                "0 - GMT"
+            ],
+            "Africa/Nairobi": [
+                "2:27:16 - LMT 1928_6 2:27:16",
+                "3 - EAT 1930 3",
+                "2:30 - BEAT 1940 2:30",
+                "2:45 - BEAUT 1960 2:45",
+                "3 - EAT"
+            ],
+            "Africa/Ndjamena": [
+                "1:0:12 - LMT 1912 1:0:12",
+                "1 - WAT 1979_9_14 1",
+                "2 - WAST 1980_2_8 2",
+                "1 - WAT"
+            ],
+            "Africa/Niamey": [
+                "0:8:28 - LMT 1912 0:8:28",
+                "-1 - WAT 1934_1_26 -1",
+                "0 - GMT 1960",
+                "1 - WAT"
+            ],
+            "Africa/Nouakchott": [
+                "-1:3:48 - LMT 1912 -1:3:48",
+                "0 - GMT 1934_1_26",
+                "-1 - WAT 1960_10_28 -1",
+                "0 - GMT"
+            ],
+            "Africa/Ouagadougou": [
+                "-0:6:4 - LMT 1912 -0:6:4",
+                "0 - GMT"
+            ],
+            "Africa/Porto-Novo": [
+                "0:10:28 - LMT 1912 0:10:28",
+                "0 - GMT 1934_1_26",
+                "1 - WAT"
+            ],
+            "Africa/Sao_Tome": [
+                "0:26:56 - LMT 1884 0:26:56",
+                "-0:36:32 - LMT 1912 -0:36:32",
+                "0 - GMT"
+            ],
+            "Africa/Tripoli": [
+                "0:52:44 - LMT 1920 0:52:44",
+                "1 Libya CE%sT 1959 1",
+                "2 - EET 1982 2",
+                "1 Libya CE%sT 1990_4_4 1",
+                "2 - EET 1996_8_30 2",
+                "1 Libya CE%sT 1997_9_4 2",
+                "2 - EET 2012_10_10_2 2",
+                "1 Libya CE%sT"
+            ],
+            "Africa/Tunis": [
+                "0:40:44 - LMT 1881_4_12 0:40:44",
+                "0:9:21 - PMT 1911_2_11 0:9:21",
+                "1 Tunisia CE%sT"
+            ],
+            "Africa/Windhoek": [
+                "1:8:24 - LMT 1892_1_8 1:8:24",
+                "1:30 - SWAT 1903_2 1:30",
+                "2 - SAST 1942_8_20_2 2",
+                "3 - SAST 1943_2_21_2 3",
+                "2 - SAST 1990_2_21 2",
+                "2 - CAT 1994_3_3 2",
+                "1 Namibia WA%sT"
+            ],
             "America/Adak": [
                 "12:13:21 - LMT 1867_9_18 12:13:21",
                 "-11:46:38 - LMT 1900_7_20_12 -11:46:38",
@@ -1118,6 +1398,925 @@ define(["moment-timezone"], function (moment) {
                 "-7 NT_YK M%sT 1980 -7",
                 "-7 Canada M%sT"
             ],
+            "Antarctica/Casey": [
+                "0 - zzz 1969",
+                "8 - WST 2009_9_18_2 8",
+                "11 - CAST 2010_2_5_2 11",
+                "8 - WST 2011_9_28_2 8",
+                "11 - CAST 2012_1_21_17",
+                "8 - WST"
+            ],
+            "Antarctica/Davis": [
+                "0 - zzz 1957_0_13",
+                "7 - DAVT 1964_10 7",
+                "0 - zzz 1969_1",
+                "7 - DAVT 2009_9_18_2 7",
+                "5 - DAVT 2010_2_10_20",
+                "7 - DAVT 2011_9_28_2 7",
+                "5 - DAVT 2012_1_21_20",
+                "7 - DAVT"
+            ],
+            "Antarctica/DumontDUrville": [
+                "0 - zzz 1947",
+                "10 - PMT 1952_0_14 10",
+                "0 - zzz 1956_10",
+                "10 - DDUT"
+            ],
+            "Antarctica/Macquarie": [
+                "0 - zzz 1899_10",
+                "10 - EST 1916_9_1_2 10",
+                "11 - EST 1917_1 11",
+                "10 Aus EST 1919_3 10",
+                "0 - zzz 1948_2_25",
+                "10 Aus EST 1967 10",
+                "10 AT EST 2010_3_4_3 11",
+                "11 - MIST"
+            ],
+            "Antarctica/Mawson": [
+                "0 - zzz 1954_1_13",
+                "6 - MAWT 2009_9_18_2 6",
+                "5 - MAWT"
+            ],
+            "Antarctica/McMurdo": [
+                "0 - zzz 1956",
+                "12 NZAQ NZ%sT"
+            ],
+            "Antarctica/Palmer": [
+                "0 - zzz 1965",
+                "-4 ArgAQ AR%sT 1969_9_5 -4",
+                "-3 ArgAQ AR%sT 1982_4 -3",
+                "-4 ChileAQ CL%sT"
+            ],
+            "Antarctica/Rothera": [
+                "0 - zzz 1976_11_1",
+                "-3 - ROTT"
+            ],
+            "Antarctica/Syowa": [
+                "0 - zzz 1957_0_29",
+                "3 - SYOT"
+            ],
+            "Antarctica/Vostok": [
+                "0 - zzz 1957_11_16",
+                "6 - VOST"
+            ],
+            "Europe/Oslo": [
+                "0:43 - LMT 1895_0_1 0:43",
+                "1 Norway CE%sT 1940_7_10_23 1",
+                "1 C-Eur CE%sT 1945_3_2_2 1",
+                "1 Norway CE%sT 1980 1",
+                "1 EU CE%sT"
+            ],
+            "Asia/Aden": [
+                "2:59:54 - LMT 1950 2:59:54",
+                "3 - AST"
+            ],
+            "Asia/Almaty": [
+                "5:7:48 - LMT 1924_4_2 5:7:48",
+                "5 - ALMT 1930_5_21 5",
+                "6 RussiaAsia ALM%sT 1991 6",
+                "6 - ALMT 1992 6",
+                "6 RussiaAsia ALM%sT 2005_2_15 6",
+                "6 - ALMT"
+            ],
+            "Asia/Amman": [
+                "2:23:44 - LMT 1931 2:23:44",
+                "2 Jordan EE%sT"
+            ],
+            "Asia/Anadyr": [
+                "11:49:56 - LMT 1924_4_2 11:49:56",
+                "12 - ANAT 1930_5_21 12",
+                "13 Russia ANA%sT 1982_3_1_0 13",
+                "12 Russia ANA%sT 1991_2_31_2 12",
+                "11 Russia ANA%sT 1992_0_19_2 11",
+                "12 Russia ANA%sT 2010_2_28_2 12",
+                "11 Russia ANA%sT 2011_2_27_2 11",
+                "12 - ANAT"
+            ],
+            "Asia/Aqtau": [
+                "3:21:4 - LMT 1924_4_2 3:21:4",
+                "4 - FORT 1930_5_21 4",
+                "5 - FORT 1963 5",
+                "5 - SHET 1981_9_1 5",
+                "6 - SHET 1982_3_1 6",
+                "5 RussiaAsia SHE%sT 1991 5",
+                "5 - SHET 1991_11_16 5",
+                "5 RussiaAsia AQT%sT 1995_2_26_2 5",
+                "4 RussiaAsia AQT%sT 2005_2_15 4",
+                "5 - AQTT"
+            ],
+            "Asia/Aqtobe": [
+                "3:48:40 - LMT 1924_4_2 3:48:40",
+                "4 - AKTT 1930_5_21 4",
+                "5 - AKTT 1981_3_1 5",
+                "6 - AKTST 1981_9_1 6",
+                "6 - AKTT 1982_3_1 6",
+                "5 RussiaAsia AKT%sT 1991 5",
+                "5 - AKTT 1991_11_16 5",
+                "5 RussiaAsia AQT%sT 2005_2_15 5",
+                "5 - AQTT"
+            ],
+            "Asia/Ashgabat": [
+                "3:53:32 - LMT 1924_4_2 3:53:32",
+                "4 - ASHT 1930_5_21 4",
+                "5 RussiaAsia ASH%sT 1991_2_31_2 5",
+                "4 RussiaAsia ASH%sT 1991_9_27 4",
+                "4 RussiaAsia TM%sT 1992_0_19_2 4",
+                "5 - TMT"
+            ],
+            "Asia/Baghdad": [
+                "2:57:40 - LMT 1890 2:57:40",
+                "2:57:36 - BMT 1918 2:57:36",
+                "3 - AST 1982_4 3",
+                "3 Iraq A%sT"
+            ],
+            "Asia/Bahrain": [
+                "3:22:20 - LMT 1920 3:22:20",
+                "4 - GST 1972_5 4",
+                "3 - AST"
+            ],
+            "Asia/Baku": [
+                "3:19:24 - LMT 1924_4_2 3:19:24",
+                "3 - BAKT 1957_2 3",
+                "4 RussiaAsia BAK%sT 1991_2_31_2 4",
+                "4 - BAKST 1991_7_30 4",
+                "3 RussiaAsia AZ%sT 1992_8_26_23 4",
+                "4 - AZT 1996 4",
+                "4 EUAsia AZ%sT 1997 4",
+                "4 Azer AZ%sT"
+            ],
+            "Asia/Bangkok": [
+                "6:42:4 - LMT 1880 6:42:4",
+                "6:42:4 - BMT 1920_3 6:42:4",
+                "7 - ICT"
+            ],
+            "Asia/Beirut": [
+                "2:22 - LMT 1880 2:22",
+                "2 Lebanon EE%sT"
+            ],
+            "Asia/Bishkek": [
+                "4:58:24 - LMT 1924_4_2 4:58:24",
+                "5 - FRUT 1930_5_21 5",
+                "6 RussiaAsia FRU%sT 1991_2_31_2 6",
+                "6 - FRUST 1991_7_31_2 6",
+                "5 Kyrgyz KG%sT 2005_7_12 6",
+                "6 - KGT"
+            ],
+            "Asia/Brunei": [
+                "7:39:40 - LMT 1926_2 7:39:40",
+                "7:30 - BNT 1933 7:30",
+                "8 - BNT"
+            ],
+            "Asia/Choibalsan": [
+                "7:38 - LMT 1905_7 7:38",
+                "7 - ULAT 1978 7",
+                "8 - ULAT 1983_3 8",
+                "9 Mongol CHO%sT 2008_2_31 9",
+                "8 Mongol CHO%sT"
+            ],
+            "Asia/Chongqing": [
+                "7:6:20 - LMT 1928 7:6:20",
+                "7 - LONT 1980_4 7",
+                "8 PRC C%sT"
+            ],
+            "Asia/Colombo": [
+                "5:19:24 - LMT 1880 5:19:24",
+                "5:19:32 - MMT 1906 5:19:32",
+                "5:30 - IST 1942_0_5 5:30",
+                "6 - IHST 1942_8 6",
+                "6:30 - IST 1945_9_16_2 6:30",
+                "5:30 - IST 1996_4_25_0 5:30",
+                "6:30 - LKT 1996_9_26_0_30 6:30",
+                "6 - LKT 2006_3_15_0_30 6",
+                "5:30 - IST"
+            ],
+            "Asia/Damascus": [
+                "2:25:12 - LMT 1920 2:25:12",
+                "2 Syria EE%sT"
+            ],
+            "Asia/Dhaka": [
+                "6:1:40 - LMT 1890 6:1:40",
+                "5:53:20 - HMT 1941_9 5:53:20",
+                "6:30 - BURT 1942_4_15 6:30",
+                "5:30 - IST 1942_8 5:30",
+                "6:30 - BURT 1951_8_30 6:30",
+                "6 - DACT 1971_2_26 6",
+                "6 - BDT 2009 6",
+                "6 Dhaka BD%sT"
+            ],
+            "Asia/Dili": [
+                "8:22:20 - LMT 1912 8:22:20",
+                "8 - TLT 1942_1_21_23 8",
+                "9 - JST 1945_8_23 9",
+                "9 - TLT 1976_4_3 9",
+                "8 - CIT 2000_8_17_00 8",
+                "9 - TLT"
+            ],
+            "Asia/Dubai": [
+                "3:41:12 - LMT 1920 3:41:12",
+                "4 - GST"
+            ],
+            "Asia/Dushanbe": [
+                "4:35:12 - LMT 1924_4_2 4:35:12",
+                "5 - DUST 1930_5_21 5",
+                "6 RussiaAsia DUS%sT 1991_2_31_2 6",
+                "6 - DUSST 1991_8_9_2 5",
+                "5 - TJT"
+            ],
+            "Asia/Gaza": [
+                "2:17:52 - LMT 1900_9 2:17:52",
+                "2 Zion EET 1948_4_15 2",
+                "2 EgyptAsia EE%sT 1967_5_5 3",
+                "2 Zion I%sT 1996 2",
+                "2 Jordan EE%sT 1999 2",
+                "2 Palestine EE%sT 2008_7_29_0 3",
+                "2 - EET 2008_8 2",
+                "2 Palestine EE%sT 2010 2",
+                "2 - EET 2010_2_27_0_1 2",
+                "2 Palestine EE%sT 2011_7_1 3",
+                "2 - EET 2012 2",
+                "2 Palestine EE%sT"
+            ],
+            "Asia/Harbin": [
+                "8:26:44 - LMT 1928 8:26:44",
+                "8:30 - CHAT 1932_2 8:30",
+                "8 - CST 1940 8",
+                "9 - CHAT 1966_4 9",
+                "8:30 - CHAT 1980_4 8:30",
+                "8 PRC C%sT"
+            ],
+            "Asia/Hebron": [
+                "2:20:23 - LMT 1900_9 2:20:23",
+                "2 Zion EET 1948_4_15 2",
+                "2 EgyptAsia EE%sT 1967_5_5 3",
+                "2 Zion I%sT 1996 2",
+                "2 Jordan EE%sT 1999 2",
+                "2 Palestine EE%sT"
+            ],
+            "Asia/Ho_Chi_Minh": [
+                "7:6:40 - LMT 1906_5_9 7:6:40",
+                "7:6:20 - SMT 1911_2_11_0_1 7:6:20",
+                "7 - ICT 1912_4 7",
+                "8 - ICT 1931_4 8",
+                "7 - ICT"
+            ],
+            "Asia/Hong_Kong": [
+                "7:36:42 - LMT 1904_9_30 7:36:42",
+                "8 HK HK%sT 1941_11_25 8",
+                "9 - JST 1945_8_15 9",
+                "8 HK HK%sT"
+            ],
+            "Asia/Hovd": [
+                "6:6:36 - LMT 1905_7 6:6:36",
+                "6 - HOVT 1978 6",
+                "7 Mongol HOV%sT"
+            ],
+            "Asia/Irkutsk": [
+                "6:57:20 - LMT 1880 6:57:20",
+                "6:57:20 - IMT 1920_0_25 6:57:20",
+                "7 - IRKT 1930_5_21 7",
+                "8 Russia IRK%sT 1991_2_31_2 8",
+                "7 Russia IRK%sT 1992_0_19_2 7",
+                "8 Russia IRK%sT 2011_2_27_2 8",
+                "9 - IRKT"
+            ],
+            "Asia/Jakarta": [
+                "7:7:12 - LMT 1867_7_10 7:7:12",
+                "7:7:12 - JMT 1923_11_31_23_47_12 7:7:12",
+                "7:20 - JAVT 1932_10 7:20",
+                "7:30 - WIT 1942_2_23 7:30",
+                "9 - JST 1945_8_23 9",
+                "7:30 - WIT 1948_4 7:30",
+                "8 - WIT 1950_4 8",
+                "7:30 - WIT 1964 7:30",
+                "7 - WIT"
+            ],
+            "Asia/Jayapura": [
+                "9:22:48 - LMT 1932_10 9:22:48",
+                "9 - EIT 1944_8_1 9",
+                "9:30 - CST 1964 9:30",
+                "9 - EIT"
+            ],
+            "Asia/Jerusalem": [
+                "2:20:56 - LMT 1880 2:20:56",
+                "2:20:40 - JMT 1918 2:20:40",
+                "2 Zion I%sT"
+            ],
+            "Asia/Kabul": [
+                "4:36:48 - LMT 1890 4:36:48",
+                "4 - AFT 1945 4",
+                "4:30 - AFT"
+            ],
+            "Asia/Kamchatka": [
+                "10:34:36 - LMT 1922_10_10 10:34:36",
+                "11 - PETT 1930_5_21 11",
+                "12 Russia PET%sT 1991_2_31_2 12",
+                "11 Russia PET%sT 1992_0_19_2 11",
+                "12 Russia PET%sT 2010_2_28_2 12",
+                "11 Russia PET%sT 2011_2_27_2 11",
+                "12 - PETT"
+            ],
+            "Asia/Karachi": [
+                "4:28:12 - LMT 1907 4:28:12",
+                "5:30 - IST 1942_8 5:30",
+                "6:30 - IST 1945_9_15 6:30",
+                "5:30 - IST 1951_8_30 5:30",
+                "5 - KART 1971_2_26 5",
+                "5 Pakistan PK%sT"
+            ],
+            "Asia/Kashgar": [
+                "5:3:56 - LMT 1928 5:3:56",
+                "5:30 - KAST 1940 5:30",
+                "5 - KAST 1980_4 5",
+                "8 PRC C%sT"
+            ],
+            "Asia/Kathmandu": [
+                "5:41:16 - LMT 1920 5:41:16",
+                "5:30 - IST 1986 5:30",
+                "5:45 - NPT"
+            ],
+            "Asia/Khandyga": [
+                "9:2:13 - LMT 1919_11_15 9:2:13",
+                "8 - YAKT 1930_5_21 8",
+                "9 Russia YAK%sT 1991_2_31_2 9",
+                "8 Russia YAK%sT 1992_0_19_2 8",
+                "9 Russia YAK%sT 2004 9",
+                "10 Russia VLA%sT 2011_2_27_2 10",
+                "11 - VLAT 2011_8_13_0 11",
+                "10 - YAKT"
+            ],
+            "Asia/Kolkata": [
+                "5:53:28 - LMT 1880 5:53:28",
+                "5:53:20 - HMT 1941_9 5:53:20",
+                "6:30 - BURT 1942_4_15 6:30",
+                "5:30 - IST 1942_8 5:30",
+                "6:30 - IST 1945_9_15 6:30",
+                "5:30 - IST"
+            ],
+            "Asia/Krasnoyarsk": [
+                "6:11:20 - LMT 1920_0_6 6:11:20",
+                "6 - KRAT 1930_5_21 6",
+                "7 Russia KRA%sT 1991_2_31_2 7",
+                "6 Russia KRA%sT 1992_0_19_2 6",
+                "7 Russia KRA%sT 2011_2_27_2 7",
+                "8 - KRAT"
+            ],
+            "Asia/Kuala_Lumpur": [
+                "6:46:46 - LMT 1901_0_1 6:46:46",
+                "6:55:25 - SMT 1905_5_1 6:55:25",
+                "7 - MALT 1933_0_1 7",
+                "7:20 - MALST 1936_0_1 7:20",
+                "7:20 - MALT 1941_8_1 7:20",
+                "7:30 - MALT 1942_1_16 7:30",
+                "9 - JST 1945_8_12 9",
+                "7:30 - MALT 1982_0_1 7:30",
+                "8 - MYT"
+            ],
+            "Asia/Kuching": [
+                "7:21:20 - LMT 1926_2 7:21:20",
+                "7:30 - BORT 1933 7:30",
+                "8 NBorneo BOR%sT 1942_1_16 8",
+                "9 - JST 1945_8_12 9",
+                "8 - BORT 1982_0_1 8",
+                "8 - MYT"
+            ],
+            "Asia/Kuwait": [
+                "3:11:56 - LMT 1950 3:11:56",
+                "3 - AST"
+            ],
+            "Asia/Macau": [
+                "7:34:20 - LMT 1912 7:34:20",
+                "8 Macau MO%sT 1999_11_20 8",
+                "8 PRC C%sT"
+            ],
+            "Asia/Magadan": [
+                "10:3:12 - LMT 1924_4_2 10:3:12",
+                "10 - MAGT 1930_5_21 10",
+                "11 Russia MAG%sT 1991_2_31_2 11",
+                "10 Russia MAG%sT 1992_0_19_2 10",
+                "11 Russia MAG%sT 2011_2_27_2 11",
+                "12 - MAGT"
+            ],
+            "Asia/Makassar": [
+                "7:57:36 - LMT 1920 7:57:36",
+                "7:57:36 - MMT 1932_10 7:57:36",
+                "8 - CIT 1942_1_9 8",
+                "9 - JST 1945_8_23 9",
+                "8 - CIT"
+            ],
+            "Asia/Manila": [
+                "-15:56 - LMT 1844_11_31 -15:56",
+                "8:4 - LMT 1899_4_11 8:4",
+                "8 Phil PH%sT 1942_4 8",
+                "9 - JST 1944_10 9",
+                "8 Phil PH%sT"
+            ],
+            "Asia/Muscat": [
+                "3:54:24 - LMT 1920 3:54:24",
+                "4 - GST"
+            ],
+            "Asia/Nicosia": [
+                "2:13:28 - LMT 1921_10_14 2:13:28",
+                "2 Cyprus EE%sT 1998_8 3",
+                "2 EUAsia EE%sT"
+            ],
+            "Asia/Novokuznetsk": [
+                "5:48:48 - NMT 1920_0_6 5:48:48",
+                "6 - KRAT 1930_5_21 6",
+                "7 Russia KRA%sT 1991_2_31_2 7",
+                "6 Russia KRA%sT 1992_0_19_2 6",
+                "7 Russia KRA%sT 2010_2_28_2 7",
+                "6 Russia NOV%sT 2011_2_27_2 6",
+                "7 - NOVT"
+            ],
+            "Asia/Novosibirsk": [
+                "5:31:40 - LMT 1919_11_14_6 5:31:40",
+                "6 - NOVT 1930_5_21 6",
+                "7 Russia NOV%sT 1991_2_31_2 7",
+                "6 Russia NOV%sT 1992_0_19_2 6",
+                "7 Russia NOV%sT 1993_4_23 8",
+                "6 Russia NOV%sT 2011_2_27_2 6",
+                "7 - NOVT"
+            ],
+            "Asia/Omsk": [
+                "4:53:36 - LMT 1919_10_14 4:53:36",
+                "5 - OMST 1930_5_21 5",
+                "6 Russia OMS%sT 1991_2_31_2 6",
+                "5 Russia OMS%sT 1992_0_19_2 5",
+                "6 Russia OMS%sT 2011_2_27_2 6",
+                "7 - OMST"
+            ],
+            "Asia/Oral": [
+                "3:25:24 - LMT 1924_4_2 3:25:24",
+                "4 - URAT 1930_5_21 4",
+                "5 - URAT 1981_3_1 5",
+                "6 - URAST 1981_9_1 6",
+                "6 - URAT 1982_3_1 6",
+                "5 RussiaAsia URA%sT 1989_2_26_2 5",
+                "4 RussiaAsia URA%sT 1991 4",
+                "4 - URAT 1991_11_16 4",
+                "4 RussiaAsia ORA%sT 2005_2_15 4",
+                "5 - ORAT"
+            ],
+            "Asia/Phnom_Penh": [
+                "6:59:40 - LMT 1906_5_9 6:59:40",
+                "7:6:20 - SMT 1911_2_11_0_1 7:6:20",
+                "7 - ICT 1912_4 7",
+                "8 - ICT 1931_4 8",
+                "7 - ICT"
+            ],
+            "Asia/Pontianak": [
+                "7:17:20 - LMT 1908_4 7:17:20",
+                "7:17:20 - PMT 1932_10 7:17:20",
+                "7:30 - WIT 1942_0_29 7:30",
+                "9 - JST 1945_8_23 9",
+                "7:30 - WIT 1948_4 7:30",
+                "8 - WIT 1950_4 8",
+                "7:30 - WIT 1964 7:30",
+                "8 - CIT 1988_0_1 8",
+                "7 - WIT"
+            ],
+            "Asia/Pyongyang": [
+                "8:23 - LMT 1890 8:23",
+                "8:30 - KST 1904_11 8:30",
+                "9 - KST 1928 9",
+                "8:30 - KST 1932 8:30",
+                "9 - KST 1954_2_21 9",
+                "8 - KST 1961_7_10 8",
+                "9 - KST"
+            ],
+            "Asia/Qatar": [
+                "3:26:8 - LMT 1920 3:26:8",
+                "4 - GST 1972_5 4",
+                "3 - AST"
+            ],
+            "Asia/Qyzylorda": [
+                "4:21:52 - LMT 1924_4_2 4:21:52",
+                "4 - KIZT 1930_5_21 4",
+                "5 - KIZT 1981_3_1 5",
+                "6 - KIZST 1981_9_1 6",
+                "6 - KIZT 1982_3_1 6",
+                "5 RussiaAsia KIZ%sT 1991 5",
+                "5 - KIZT 1991_11_16 5",
+                "5 - QYZT 1992_0_19_2 5",
+                "6 RussiaAsia QYZ%sT 2005_2_15 6",
+                "6 - QYZT"
+            ],
+            "Asia/Rangoon": [
+                "6:24:40 - LMT 1880 6:24:40",
+                "6:24:40 - RMT 1920 6:24:40",
+                "6:30 - BURT 1942_4 6:30",
+                "9 - JST 1945_4_3 9",
+                "6:30 - MMT"
+            ],
+            "Asia/Riyadh": [
+                "3:6:52 - LMT 1950 3:6:52",
+                "3 - AST"
+            ],
+            "Asia/Sakhalin": [
+                "9:30:48 - LMT 1905_7_23 9:30:48",
+                "9 - CJT 1938 9",
+                "9 - JST 1945_7_25 9",
+                "11 Russia SAK%sT 1991_2_31_2 11",
+                "10 Russia SAK%sT 1992_0_19_2 10",
+                "11 Russia SAK%sT 1997_2_30_2 11",
+                "10 Russia SAK%sT 2011_2_27_2 10",
+                "11 - SAKT"
+            ],
+            "Asia/Samarkand": [
+                "4:27:12 - LMT 1924_4_2 4:27:12",
+                "4 - SAMT 1930_5_21 4",
+                "5 - SAMT 1981_3_1 5",
+                "6 - SAMST 1981_9_1 6",
+                "6 - TAST 1982_3_1 6",
+                "5 RussiaAsia SAM%sT 1991_8_1 6",
+                "5 RussiaAsia UZ%sT 1992 5",
+                "5 - UZT"
+            ],
+            "Asia/Seoul": [
+                "8:27:52 - LMT 1890 8:27:52",
+                "8:30 - KST 1904_11 8:30",
+                "9 - KST 1928 9",
+                "8:30 - KST 1932 8:30",
+                "9 - KST 1954_2_21 9",
+                "8 ROK K%sT 1961_7_10 8",
+                "8:30 - KST 1968_9 8:30",
+                "9 ROK K%sT"
+            ],
+            "Asia/Shanghai": [
+                "8:5:57 - LMT 1928 8:5:57",
+                "8 Shang C%sT 1949 8",
+                "8 PRC C%sT"
+            ],
+            "Asia/Singapore": [
+                "6:55:25 - LMT 1901_0_1 6:55:25",
+                "6:55:25 - SMT 1905_5_1 6:55:25",
+                "7 - MALT 1933_0_1 7",
+                "7:20 - MALST 1936_0_1 7:20",
+                "7:20 - MALT 1941_8_1 7:20",
+                "7:30 - MALT 1942_1_16 7:30",
+                "9 - JST 1945_8_12 9",
+                "7:30 - MALT 1965_7_9 7:30",
+                "7:30 - SGT 1982_0_1 7:30",
+                "8 - SGT"
+            ],
+            "Asia/Taipei": [
+                "8:6 - LMT 1896 8:6",
+                "8 Taiwan C%sT"
+            ],
+            "Asia/Tashkent": [
+                "4:37:12 - LMT 1924_4_2 4:37:12",
+                "5 - TAST 1930_5_21 5",
+                "6 RussiaAsia TAS%sT 1991_2_31_2 6",
+                "5 RussiaAsia TAS%sT 1991_8_1 6",
+                "5 RussiaAsia UZ%sT 1992 5",
+                "5 - UZT"
+            ],
+            "Asia/Tbilisi": [
+                "2:59:16 - LMT 1880 2:59:16",
+                "2:59:16 - TBMT 1924_4_2 2:59:16",
+                "3 - TBIT 1957_2 3",
+                "4 RussiaAsia TBI%sT 1991_2_31_2 4",
+                "4 - TBIST 1991_3_9 4",
+                "3 RussiaAsia GE%sT 1992 3",
+                "3 E-EurAsia GE%sT 1994_8_25 4",
+                "4 E-EurAsia GE%sT 1996_9_27 5",
+                "5 - GEST 1997_2_30 5",
+                "4 E-EurAsia GE%sT 2004_5_27 5",
+                "3 RussiaAsia GE%sT 2005_2_27_2 3",
+                "4 - GET"
+            ],
+            "Asia/Tehran": [
+                "3:25:44 - LMT 1916 3:25:44",
+                "3:25:44 - TMT 1946 3:25:44",
+                "3:30 - IRST 1977_10 3:30",
+                "4 Iran IR%sT 1979 4",
+                "3:30 Iran IR%sT"
+            ],
+            "Asia/Thimphu": [
+                "5:58:36 - LMT 1947_7_15 5:58:36",
+                "5:30 - IST 1987_9 5:30",
+                "6 - BTT"
+            ],
+            "Asia/Tokyo": [
+                "9:18:59 - LMT 1887_11_31_15",
+                "9 - JST 1896 9",
+                "9 - CJT 1938 9",
+                "9 Japan J%sT"
+            ],
+            "Asia/Ulaanbaatar": [
+                "7:7:32 - LMT 1905_7 7:7:32",
+                "7 - ULAT 1978 7",
+                "8 Mongol ULA%sT"
+            ],
+            "Asia/Urumqi": [
+                "5:50:20 - LMT 1928 5:50:20",
+                "6 - URUT 1980_4 6",
+                "8 PRC C%sT"
+            ],
+            "Asia/Ust-Nera": [
+                "9:32:54 - LMT 1919_11_15 9:32:54",
+                "8 - YAKT 1930_5_21 8",
+                "9 Russia YAKT 1981_3_1 9",
+                "11 Russia MAG%sT 1991_2_31_2 11",
+                "10 Russia MAG%sT 1992_0_19_2 10",
+                "11 Russia MAG%sT 2011_2_27_2 11",
+                "12 - MAGT 2011_8_13_0 12",
+                "11 - VLAT"
+            ],
+            "Asia/Vientiane": [
+                "6:50:24 - LMT 1906_5_9 6:50:24",
+                "7:6:20 - SMT 1911_2_11_0_1 7:6:20",
+                "7 - ICT 1912_4 7",
+                "8 - ICT 1931_4 8",
+                "7 - ICT"
+            ],
+            "Asia/Vladivostok": [
+                "8:47:44 - LMT 1922_10_15 8:47:44",
+                "9 - VLAT 1930_5_21 9",
+                "10 Russia VLA%sT 1991_2_31_2 10",
+                "9 Russia VLA%sST 1992_0_19_2 9",
+                "10 Russia VLA%sT 2011_2_27_2 10",
+                "11 - VLAT"
+            ],
+            "Asia/Yakutsk": [
+                "8:38:40 - LMT 1919_11_15 8:38:40",
+                "8 - YAKT 1930_5_21 8",
+                "9 Russia YAK%sT 1991_2_31_2 9",
+                "8 Russia YAK%sT 1992_0_19_2 8",
+                "9 Russia YAK%sT 2011_2_27_2 9",
+                "10 - YAKT"
+            ],
+            "Asia/Yekaterinburg": [
+                "4:2:24 - LMT 1919_6_15_4 4:2:24",
+                "4 - SVET 1930_5_21 4",
+                "5 Russia SVE%sT 1991_2_31_2 5",
+                "4 Russia SVE%sT 1992_0_19_2 4",
+                "5 Russia YEK%sT 2011_2_27_2 5",
+                "6 - YEKT"
+            ],
+            "Asia/Yerevan": [
+                "2:58 - LMT 1924_4_2 2:58",
+                "3 - YERT 1957_2 3",
+                "4 RussiaAsia YER%sT 1991_2_31_2 4",
+                "4 - YERST 1991_8_23 4",
+                "3 RussiaAsia AM%sT 1995_8_24_2 3",
+                "4 - AMT 1997 4",
+                "4 RussiaAsia AM%sT 2012_2_25_2 4",
+                "4 - AMT"
+            ],
+            "Atlantic/Azores": [
+                "-1:42:40 - LMT 1884 -1:42:40",
+                "-1:54:32 - HMT 1911_4_24 -1:54:32",
+                "-2 Port AZO%sT 1966_3_3_2 -2",
+                "-1 Port AZO%sT 1983_8_25_1 -1",
+                "-1 W-Eur AZO%sT 1992_8_27_1 -1",
+                "0 EU WE%sT 1993_2_28_1",
+                "-1 EU AZO%sT"
+            ],
+            "Atlantic/Bermuda": [
+                "-4:19:18 - LMT 1930_0_1_2 -4:19:18",
+                "-4 - AST 1974_3_28_2 -4",
+                "-4 Bahamas A%sT 1976 -4",
+                "-4 US A%sT"
+            ],
+            "Atlantic/Canary": [
+                "-1:1:36 - LMT 1922_2 -1:1:36",
+                "-1 - CANT 1946_8_30_1 -1",
+                "0 - WET 1980_3_6_0",
+                "1 - WEST 1980_8_28_0",
+                "0 EU WE%sT"
+            ],
+            "Atlantic/Cape_Verde": [
+                "-1:34:4 - LMT 1907 -1:34:4",
+                "-2 - CVT 1942_8 -2",
+                "-1 - CVST 1945_9_15 -1",
+                "-2 - CVT 1975_10_25_2 -2",
+                "-1 - CVT"
+            ],
+            "Atlantic/Faroe": [
+                "-0:27:4 - LMT 1908_0_11 -0:27:4",
+                "0 - WET 1981",
+                "0 EU WE%sT"
+            ],
+            "Atlantic/Madeira": [
+                "-1:7:36 - LMT 1884 -1:7:36",
+                "-1:7:36 - FMT 1911_4_24 -1:7:36",
+                "-1 Port MAD%sT 1966_3_3_2 -1",
+                "0 Port WE%sT 1983_8_25_1",
+                "0 EU WE%sT"
+            ],
+            "Atlantic/Reykjavik": [
+                "-1:27:24 - LMT 1837 -1:27:24",
+                "-1:27:48 - RMT 1908 -1:27:48",
+                "-1 Iceland IS%sT 1968_3_7_1 -1",
+                "0 - GMT"
+            ],
+            "Atlantic/South_Georgia": [
+                "-2:26:8 - LMT 1890 -2:26:8",
+                "-2 - GST"
+            ],
+            "Atlantic/St_Helena": [
+                "-0:22:48 - LMT 1890 -0:22:48",
+                "-0:22:48 - JMT 1951 -0:22:48",
+                "0 - GMT"
+            ],
+            "Atlantic/Stanley": [
+                "-3:51:24 - LMT 1890 -3:51:24",
+                "-3:51:24 - SMT 1912_2_12 -3:51:24",
+                "-4 Falk FK%sT 1983_4 -4",
+                "-3 Falk FK%sT 1985_8_15 -3",
+                "-4 Falk FK%sT 2010_8_5_02 -4",
+                "-3 - FKST"
+            ],
+            "Australia/Adelaide": [
+                "9:14:20 - LMT 1895_1 9:14:20",
+                "9 - CST 1899_4 9",
+                "9:30 Aus CST 1971 9:30",
+                "9:30 AS CST"
+            ],
+            "Australia/Brisbane": [
+                "10:12:8 - LMT 1895 10:12:8",
+                "10 Aus EST 1971 10",
+                "10 AQ EST"
+            ],
+            "Australia/Broken_Hill": [
+                "9:25:48 - LMT 1895_1 9:25:48",
+                "10 - EST 1896_7_23 10",
+                "9 - CST 1899_4 9",
+                "9:30 Aus CST 1971 9:30",
+                "9:30 AN CST 2000 10:30",
+                "9:30 AS CST"
+            ],
+            "Australia/Currie": [
+                "9:35:28 - LMT 1895_8 9:35:28",
+                "10 - EST 1916_9_1_2 10",
+                "11 - EST 1917_1 11",
+                "10 Aus EST 1971_6 10",
+                "10 AT EST"
+            ],
+            "Australia/Darwin": [
+                "8:43:20 - LMT 1895_1 8:43:20",
+                "9 - CST 1899_4 9",
+                "9:30 Aus CST"
+            ],
+            "Australia/Eucla": [
+                "8:35:28 - LMT 1895_11 8:35:28",
+                "8:45 Aus CWST 1943_6 8:45",
+                "8:45 AW CWST"
+            ],
+            "Australia/Hobart": [
+                "9:49:16 - LMT 1895_8 9:49:16",
+                "10 - EST 1916_9_1_2 10",
+                "11 - EST 1917_1 11",
+                "10 Aus EST 1967 10",
+                "10 AT EST"
+            ],
+            "Australia/Lindeman": [
+                "9:55:56 - LMT 1895 9:55:56",
+                "10 Aus EST 1971 10",
+                "10 AQ EST 1992_6 10",
+                "10 Holiday EST"
+            ],
+            "Australia/Lord_Howe": [
+                "10:36:20 - LMT 1895_1 10:36:20",
+                "10 - EST 1981_2 10",
+                "10:30 LH LHST"
+            ],
+            "Australia/Melbourne": [
+                "9:39:52 - LMT 1895_1 9:39:52",
+                "10 Aus EST 1971 10",
+                "10 AV EST"
+            ],
+            "Australia/Perth": [
+                "7:43:24 - LMT 1895_11 7:43:24",
+                "8 Aus WST 1943_6 8",
+                "8 AW WST"
+            ],
+            "Australia/Sydney": [
+                "10:4:52 - LMT 1895_1 10:4:52",
+                "10 Aus EST 1971 10",
+                "10 AN EST"
+            ],
+            "CET": [
+                "1 C-Eur CE%sT"
+            ],
+            "CST6CDT": [
+                "-6 US C%sT"
+            ],
+            "EET": [
+                "2 EU EE%sT"
+            ],
+            "EST": [
+                "-5 - EST"
+            ],
+            "EST5EDT": [
+                "-5 US E%sT"
+            ],
+            "HST": [
+                "-10 - HST"
+            ],
+            "MET": [
+                "1 C-Eur ME%sT"
+            ],
+            "MST": [
+                "-7 - MST"
+            ],
+            "MST7MDT": [
+                "-7 US M%sT"
+            ],
+            "PST8PDT": [
+                "-8 US P%sT"
+            ],
+            "WET": [
+                "0 EU WE%sT"
+            ],
+            "Etc/GMT": [
+                "0 - GMT"
+            ],
+            "Etc/GMT+1": [
+                "-1 - GMT+1"
+            ],
+            "Etc/GMT+10": [
+                "-10 - GMT+10"
+            ],
+            "Etc/GMT+11": [
+                "-11 - GMT+11"
+            ],
+            "Etc/GMT+12": [
+                "-12 - GMT+12"
+            ],
+            "Etc/GMT+2": [
+                "-2 - GMT+2"
+            ],
+            "Etc/GMT+3": [
+                "-3 - GMT+3"
+            ],
+            "Etc/GMT+4": [
+                "-4 - GMT+4"
+            ],
+            "Etc/GMT+5": [
+                "-5 - GMT+5"
+            ],
+            "Etc/GMT+6": [
+                "-6 - GMT+6"
+            ],
+            "Etc/GMT+7": [
+                "-7 - GMT+7"
+            ],
+            "Etc/GMT+8": [
+                "-8 - GMT+8"
+            ],
+            "Etc/GMT+9": [
+                "-9 - GMT+9"
+            ],
+            "Etc/GMT-1": [
+                "1 - GMT-1"
+            ],
+            "Etc/GMT-10": [
+                "10 - GMT-10"
+            ],
+            "Etc/GMT-11": [
+                "11 - GMT-11"
+            ],
+            "Etc/GMT-12": [
+                "12 - GMT-12"
+            ],
+            "Etc/GMT-13": [
+                "13 - GMT-13"
+            ],
+            "Etc/GMT-14": [
+                "14 - GMT-14"
+            ],
+            "Etc/GMT-2": [
+                "2 - GMT-2"
+            ],
+            "Etc/GMT-3": [
+                "3 - GMT-3"
+            ],
+            "Etc/GMT-4": [
+                "4 - GMT-4"
+            ],
+            "Etc/GMT-5": [
+                "5 - GMT-5"
+            ],
+            "Etc/GMT-6": [
+                "6 - GMT-6"
+            ],
+            "Etc/GMT-7": [
+                "7 - GMT-7"
+            ],
+            "Etc/GMT-8": [
+                "8 - GMT-8"
+            ],
+            "Etc/GMT-9": [
+                "9 - GMT-9"
+            ],
+            "Etc/UCT": [
+                "0 - UCT"
+            ],
+            "Etc/UTC": [
+                "0 - UTC"
+            ],
             "Europe/Amsterdam": [
                 "0:19:32 - LMT 1835 0:19:32",
                 "0:19:32 Neth %s 1937_6_1 1:19:32",
@@ -1348,13 +2547,6 @@ define(["moment-timezone"], function (moment) {
                 "3 Russia MSK/MSD 2011_2_27_2 3",
                 "4 - MSK"
             ],
-            "Europe/Oslo": [
-                "0:43 - LMT 1895_0_1 0:43",
-                "1 Norway CE%sT 1940_7_10_23 1",
-                "1 C-Eur CE%sT 1945_3_2_2 1",
-                "1 Norway CE%sT 1980 1",
-                "1 EU CE%sT"
-            ],
             "Europe/Paris": [
                 "0:9:21 - LMT 1891_2_15_0_1 0:9:21",
                 "0:9:21 - PMT 1911_2_11_0_1 0:9:21",
@@ -1534,9 +2726,481 @@ define(["moment-timezone"], function (moment) {
                 "3 Russia MSK/MSD 1991_2_31_2 3",
                 "2 E-Eur EE%sT 1995 2",
                 "2 EU EE%sT"
+            ],
+            "Indian/Antananarivo": [
+                "3:10:4 - LMT 1911_6 3:10:4",
+                "3 - EAT 1954_1_27_23 3",
+                "4 - EAST 1954_4_29_23 3",
+                "3 - EAT"
+            ],
+            "Indian/Chagos": [
+                "4:49:40 - LMT 1907 4:49:40",
+                "5 - IOT 1996 5",
+                "6 - IOT"
+            ],
+            "Indian/Christmas": [
+                "7:2:52 - LMT 1895_1 7:2:52",
+                "7 - CXT"
+            ],
+            "Indian/Cocos": [
+                "6:27:40 - LMT 1900 6:27:40",
+                "6:30 - CCT"
+            ],
+            "Indian/Comoro": [
+                "2:53:4 - LMT 1911_6 2:53:4",
+                "3 - EAT"
+            ],
+            "Indian/Kerguelen": [
+                "0 - zzz 1950",
+                "5 - TFT"
+            ],
+            "Indian/Mahe": [
+                "3:41:48 - LMT 1906_5 3:41:48",
+                "4 - SCT"
+            ],
+            "Indian/Maldives": [
+                "4:54 - LMT 1880 4:54",
+                "4:54 - MMT 1960 4:54",
+                "5 - MVT"
+            ],
+            "Indian/Mauritius": [
+                "3:50 - LMT 1907 3:50",
+                "4 Mauritius MU%sT"
+            ],
+            "Indian/Mayotte": [
+                "3:0:56 - LMT 1911_6 3:0:56",
+                "3 - EAT"
+            ],
+            "Indian/Reunion": [
+                "3:41:52 - LMT 1911_5 3:41:52",
+                "4 - RET"
+            ],
+            "Pacific/Apia": [
+                "12:33:4 - LMT 1879_6_5 12:33:4",
+                "-11:26:56 - LMT 1911 -11:26:56",
+                "-11:30 - SAMT 1950 -11:30",
+                "-11 - WST 2010_8_26 -11",
+                "-10 - WSDT 2011_3_2_4 -10",
+                "-11 - WST 2011_8_24_3 -11",
+                "-10 - WSDT 2011_11_30 -10",
+                "14 - WSDT 2012_3_1_4 14",
+                "13 WS WS%sT"
+            ],
+            "Pacific/Auckland": [
+                "11:39:4 - LMT 1868_10_2 11:39:4",
+                "11:30 NZ NZ%sT 1946_0_1 12",
+                "12 NZ NZ%sT"
+            ],
+            "Pacific/Chatham": [
+                "12:13:48 - LMT 1957_0_1 12:13:48",
+                "12:45 Chatham CHA%sT"
+            ],
+            "Pacific/Chuuk": [
+                "10:7:8 - LMT 1901 10:7:8",
+                "10 - CHUT"
+            ],
+            "Pacific/Easter": [
+                "-7:17:44 - LMT 1890 -7:17:44",
+                "-7:17:28 - EMT 1932_8 -7:17:28",
+                "-7 Chile EAS%sT 1982_2_13_21 -6",
+                "-6 Chile EAS%sT"
+            ],
+            "Pacific/Efate": [
+                "11:13:16 - LMT 1912_0_13 11:13:16",
+                "11 Vanuatu VU%sT"
+            ],
+            "Pacific/Enderbury": [
+                "-11:24:20 - LMT 1901 -11:24:20",
+                "-12 - PHOT 1979_9 -12",
+                "-11 - PHOT 1995 -11",
+                "13 - PHOT"
+            ],
+            "Pacific/Fakaofo": [
+                "-11:24:56 - LMT 1901 -11:24:56",
+                "-11 - TKT 2011_11_30 -11",
+                "13 - TKT"
+            ],
+            "Pacific/Fiji": [
+                "11:55:44 - LMT 1915_9_26 11:55:44",
+                "12 Fiji FJ%sT"
+            ],
+            "Pacific/Funafuti": [
+                "11:56:52 - LMT 1901 11:56:52",
+                "12 - TVT"
+            ],
+            "Pacific/Galapagos": [
+                "-5:58:24 - LMT 1931 -5:58:24",
+                "-5 - ECT 1986 -5",
+                "-6 - GALT"
+            ],
+            "Pacific/Gambier": [
+                "-8:59:48 - LMT 1912_9 -8:59:48",
+                "-9 - GAMT"
+            ],
+            "Pacific/Guadalcanal": [
+                "10:39:48 - LMT 1912_9 10:39:48",
+                "11 - SBT"
+            ],
+            "Pacific/Guam": [
+                "-14:21 - LMT 1844_11_31 -14:21",
+                "9:39 - LMT 1901 9:39",
+                "10 - GST 2000_11_23 10",
+                "10 - ChST"
+            ],
+            "Pacific/Honolulu": [
+                "-10:31:26 - LMT 1896_0_13_12 -10:31:26",
+                "-10:30 - HST 1933_3_30_2 -10:30",
+                "-9:30 - HDT 1933_4_21_12 -9:30",
+                "-10:30 - HST 1942_1_09_2 -10:30",
+                "-9:30 - HDT 1945_8_30_2 -9:30",
+                "-10:30 - HST 1947_5_8_2 -10:30",
+                "-10 - HST"
+            ],
+            "Pacific/Johnston": [
+                "-10 - HST"
+            ],
+            "Pacific/Kiritimati": [
+                "-10:29:20 - LMT 1901 -10:29:20",
+                "-10:40 - LINT 1979_9 -10:40",
+                "-10 - LINT 1995 -10",
+                "14 - LINT"
+            ],
+            "Pacific/Kosrae": [
+                "10:51:56 - LMT 1901 10:51:56",
+                "11 - KOST 1969_9 11",
+                "12 - KOST 1999 12",
+                "11 - KOST"
+            ],
+            "Pacific/Kwajalein": [
+                "11:9:20 - LMT 1901 11:9:20",
+                "11 - MHT 1969_9 11",
+                "-12 - KWAT 1993_7_20 -12",
+                "12 - MHT"
+            ],
+            "Pacific/Majuro": [
+                "11:24:48 - LMT 1901 11:24:48",
+                "11 - MHT 1969_9 11",
+                "12 - MHT"
+            ],
+            "Pacific/Marquesas": [
+                "-9:18 - LMT 1912_9 -9:18",
+                "-9:30 - MART"
+            ],
+            "Pacific/Midway": [
+                "-11:49:28 - LMT 1901 -11:49:28",
+                "-11 - NST 1956_5_3 -11",
+                "-10 - NDT 1956_8_2 -10",
+                "-11 - NST 1967_3 -11",
+                "-11 - BST 1983_10_30 -11",
+                "-11 - SST"
+            ],
+            "Pacific/Nauru": [
+                "11:7:40 - LMT 1921_0_15 11:7:40",
+                "11:30 - NRT 1942_2_15 11:30",
+                "9 - JST 1944_7_15 9",
+                "11:30 - NRT 1979_4 11:30",
+                "12 - NRT"
+            ],
+            "Pacific/Niue": [
+                "-11:19:40 - LMT 1901 -11:19:40",
+                "-11:20 - NUT 1951 -11:20",
+                "-11:30 - NUT 1978_9_1 -11:30",
+                "-11 - NUT"
+            ],
+            "Pacific/Norfolk": [
+                "11:11:52 - LMT 1901 11:11:52",
+                "11:12 - NMT 1951 11:12",
+                "11:30 - NFT"
+            ],
+            "Pacific/Noumea": [
+                "11:5:48 - LMT 1912_0_13 11:5:48",
+                "11 NC NC%sT"
+            ],
+            "Pacific/Pago_Pago": [
+                "12:37:12 - LMT 1879_6_5 12:37:12",
+                "-11:22:48 - LMT 1911 -11:22:48",
+                "-11:30 - SAMT 1950 -11:30",
+                "-11 - NST 1967_3 -11",
+                "-11 - BST 1983_10_30 -11",
+                "-11 - SST"
+            ],
+            "Pacific/Palau": [
+                "8:57:56 - LMT 1901 8:57:56",
+                "9 - PWT"
+            ],
+            "Pacific/Pitcairn": [
+                "-8:40:20 - LMT 1901 -8:40:20",
+                "-8:30 - PNT 1998_3_27_00 -8:30",
+                "-8 - PST"
+            ],
+            "Pacific/Pohnpei": [
+                "10:32:52 - LMT 1901 10:32:52",
+                "11 - PONT"
+            ],
+            "Pacific/Port_Moresby": [
+                "9:48:40 - LMT 1880 9:48:40",
+                "9:48:32 - PMMT 1895 9:48:32",
+                "10 - PGT"
+            ],
+            "Pacific/Rarotonga": [
+                "-10:39:4 - LMT 1901 -10:39:4",
+                "-10:30 - CKT 1978_10_12 -10:30",
+                "-10 Cook CK%sT"
+            ],
+            "Pacific/Saipan": [
+                "-14:17 - LMT 1844_11_31 -14:17",
+                "9:43 - LMT 1901 9:43",
+                "9 - MPT 1969_9 9",
+                "10 - MPT 2000_11_23 10",
+                "10 - ChST"
+            ],
+            "Pacific/Tahiti": [
+                "-9:58:16 - LMT 1912_9 -9:58:16",
+                "-10 - TAHT"
+            ],
+            "Pacific/Tarawa": [
+                "11:32:4 - LMT 1901 11:32:4",
+                "12 - GILT"
+            ],
+            "Pacific/Tongatapu": [
+                "12:19:20 - LMT 1901 12:19:20",
+                "12:20 - TOT 1941 12:20",
+                "13 - TOT 1999 13",
+                "13 Tonga TO%sT"
+            ],
+            "Pacific/Wake": [
+                "11:6:28 - LMT 1901 11:6:28",
+                "12 - WAKT"
+            ],
+            "Pacific/Wallis": [
+                "12:15:20 - LMT 1901 12:15:20",
+                "12 - WFT"
             ]
         },
         "rules": {
+            "Ghana": [
+                "1936 1942 8 1 7 0 0 0:20 GHST",
+                "1936 1942 11 31 7 0 0 0 GMT"
+            ],
+            "Algeria": [
+                "1916 1916 5 14 7 23 2 1 S",
+                "1916 1919 9 1 0 23 2 0",
+                "1917 1917 2 24 7 23 2 1 S",
+                "1918 1918 2 9 7 23 2 1 S",
+                "1919 1919 2 1 7 23 2 1 S",
+                "1920 1920 1 14 7 23 2 1 S",
+                "1920 1920 9 23 7 23 2 0",
+                "1921 1921 2 14 7 23 2 1 S",
+                "1921 1921 5 21 7 23 2 0",
+                "1939 1939 8 11 7 23 2 1 S",
+                "1939 1939 10 19 7 1 0 0",
+                "1944 1945 3 1 1 2 0 1 S",
+                "1944 1944 9 8 7 2 0 0",
+                "1945 1945 8 16 7 1 0 0",
+                "1971 1971 3 25 7 23 2 1 S",
+                "1971 1971 8 26 7 23 2 0",
+                "1977 1977 4 6 7 0 0 1 S",
+                "1977 1977 9 21 7 0 0 0",
+                "1978 1978 2 24 7 1 0 1 S",
+                "1978 1978 8 22 7 3 0 0",
+                "1980 1980 3 25 7 0 0 1 S",
+                "1980 1980 9 31 7 2 0 0"
+            ],
+            "Egypt": [
+                "1940 1940 6 15 7 0 0 1 S",
+                "1940 1940 9 1 7 0 0 0",
+                "1941 1941 3 15 7 0 0 1 S",
+                "1941 1941 8 16 7 0 0 0",
+                "1942 1944 3 1 7 0 0 1 S",
+                "1942 1942 9 27 7 0 0 0",
+                "1943 1945 10 1 7 0 0 0",
+                "1945 1945 3 16 7 0 0 1 S",
+                "1957 1957 4 10 7 0 0 1 S",
+                "1957 1958 9 1 7 0 0 0",
+                "1958 1958 4 1 7 0 0 1 S",
+                "1959 1981 4 1 7 1 0 1 S",
+                "1959 1965 8 30 7 3 0 0",
+                "1966 1994 9 1 7 3 0 0",
+                "1982 1982 6 25 7 1 0 1 S",
+                "1983 1983 6 12 7 1 0 1 S",
+                "1984 1988 4 1 7 1 0 1 S",
+                "1989 1989 4 6 7 1 0 1 S",
+                "1990 1994 4 1 7 1 0 1 S",
+                "1995 2010 3 5 8 0 2 1 S",
+                "1995 2005 8 4 8 23 2 0",
+                "2006 2006 8 21 7 23 2 0",
+                "2007 2007 8 1 4 23 2 0",
+                "2008 2008 7 4 8 23 2 0",
+                "2009 2009 7 20 7 23 2 0",
+                "2010 2010 7 11 7 0 0 0",
+                "2010 2010 8 10 7 0 0 1 S",
+                "2010 2010 8 4 8 23 2 0"
+            ],
+            "Morocco": [
+                "1939 1939 8 12 7 0 0 1 S",
+                "1939 1939 10 19 7 0 0 0",
+                "1940 1940 1 25 7 0 0 1 S",
+                "1945 1945 10 18 7 0 0 0",
+                "1950 1950 5 11 7 0 0 1 S",
+                "1950 1950 9 29 7 0 0 0",
+                "1967 1967 5 3 7 12 0 1 S",
+                "1967 1967 9 1 7 0 0 0",
+                "1974 1974 5 24 7 0 0 1 S",
+                "1974 1974 8 1 7 0 0 0",
+                "1976 1977 4 1 7 0 0 1 S",
+                "1976 1976 7 1 7 0 0 0",
+                "1977 1977 8 28 7 0 0 0",
+                "1978 1978 5 1 7 0 0 1 S",
+                "1978 1978 7 4 7 0 0 0",
+                "2008 2008 5 1 7 0 0 1 S",
+                "2008 2008 8 1 7 0 0 0",
+                "2009 2009 5 1 7 0 0 1 S",
+                "2009 2009 7 21 7 0 0 0",
+                "2010 2010 4 2 7 0 0 1 S",
+                "2010 2010 7 8 7 0 0 0",
+                "2011 2011 3 3 7 0 0 1 S",
+                "2011 2011 6 31 7 0 0 0",
+                "2012 2019 3 0 8 2 0 1 S",
+                "2012 9999 8 0 8 3 0 0",
+                "2012 2012 6 20 7 3 0 0",
+                "2012 2012 7 20 7 2 0 1 S",
+                "2013 2013 6 9 7 3 0 0",
+                "2013 2013 7 8 7 2 0 1 S",
+                "2014 2014 5 29 7 3 0 0",
+                "2014 2014 6 29 7 2 0 1 S",
+                "2015 2015 5 18 7 3 0 0",
+                "2015 2015 6 18 7 2 0 1 S",
+                "2016 2016 5 7 7 3 0 0",
+                "2016 2016 6 7 7 2 0 1 S",
+                "2017 2017 4 27 7 3 0 0",
+                "2017 2017 5 26 7 2 0 1 S",
+                "2018 2018 4 16 7 3 0 0",
+                "2018 2018 5 15 7 2 0 1 S",
+                "2019 2019 4 6 7 3 0 0",
+                "2019 2019 5 5 7 2 0 1 S",
+                "2020 2020 4 24 7 2 0 1 S",
+                "2021 2021 4 13 7 2 0 1 S",
+                "2022 2022 4 3 7 2 0 1 S",
+                "2023 9999 3 0 8 2 0 1 S"
+            ],
+            "Spain": [
+                "1917 1917 4 5 7 23 2 1 S",
+                "1917 1919 9 6 7 23 2 0",
+                "1918 1918 3 15 7 23 2 1 S",
+                "1919 1919 3 5 7 23 2 1 S",
+                "1924 1924 3 16 7 23 2 1 S",
+                "1924 1924 9 4 7 23 2 0",
+                "1926 1926 3 17 7 23 2 1 S",
+                "1926 1929 9 1 6 23 2 0",
+                "1927 1927 3 9 7 23 2 1 S",
+                "1928 1928 3 14 7 23 2 1 S",
+                "1929 1929 3 20 7 23 2 1 S",
+                "1937 1937 4 22 7 23 2 1 S",
+                "1937 1939 9 1 6 23 2 0",
+                "1938 1938 2 22 7 23 2 1 S",
+                "1939 1939 3 15 7 23 2 1 S",
+                "1940 1940 2 16 7 23 2 1 S",
+                "1942 1942 4 2 7 22 2 2 M",
+                "1942 1942 8 1 7 22 2 1 S",
+                "1943 1946 3 13 6 22 2 2 M",
+                "1943 1943 9 3 7 22 2 1 S",
+                "1944 1944 9 10 7 22 2 1 S",
+                "1945 1945 8 30 7 1 0 1 S",
+                "1946 1946 8 30 7 0 0 0",
+                "1949 1949 3 30 7 23 0 1 S",
+                "1949 1949 8 30 7 1 0 0",
+                "1974 1975 3 13 6 23 0 1 S",
+                "1974 1975 9 1 0 1 0 0",
+                "1976 1976 2 27 7 23 0 1 S",
+                "1976 1977 8 0 8 1 0 0",
+                "1977 1978 3 2 7 23 0 1 S",
+                "1978 1978 9 1 7 1 0 0"
+            ],
+            "SpainAfrica": [
+                "1967 1967 5 3 7 12 0 1 S",
+                "1967 1967 9 1 7 0 0 0",
+                "1974 1974 5 24 7 0 0 1 S",
+                "1974 1974 8 1 7 0 0 0",
+                "1976 1977 4 1 7 0 0 1 S",
+                "1976 1976 7 1 7 0 0 0",
+                "1977 1977 8 28 7 0 0 0",
+                "1978 1978 5 1 7 0 0 1 S",
+                "1978 1978 7 4 7 0 0 0"
+            ],
+            "EU": [
+                "1977 1980 3 1 0 1 1 1 S",
+                "1977 1977 8 0 8 1 1 0",
+                "1978 1978 9 1 7 1 1 0",
+                "1979 1995 8 0 8 1 1 0",
+                "1981 9999 2 0 8 1 1 1 S",
+                "1996 9999 9 0 8 1 1 0"
+            ],
+            "SL": [
+                "1935 1942 5 1 7 0 0 0:40 SLST",
+                "1935 1942 9 1 7 0 0 0 WAT",
+                "1957 1962 5 1 7 0 0 1 SLST",
+                "1957 1962 8 1 7 0 0 0 GMT"
+            ],
+            "SA": [
+                "1942 1943 8 15 0 2 0 1",
+                "1943 1944 2 15 0 2 0 0"
+            ],
+            "Sudan": [
+                "1970 1970 4 1 7 0 0 1 S",
+                "1970 1985 9 15 7 0 0 0",
+                "1971 1971 3 30 7 0 0 1 S",
+                "1972 1985 3 0 8 0 0 1 S"
+            ],
+            "Libya": [
+                "1951 1951 9 14 7 2 0 1 S",
+                "1952 1952 0 1 7 0 0 0",
+                "1953 1953 9 9 7 2 0 1 S",
+                "1954 1954 0 1 7 0 0 0",
+                "1955 1955 8 30 7 0 0 1 S",
+                "1956 1956 0 1 7 0 0 0",
+                "1982 1984 3 1 7 0 0 1 S",
+                "1982 1985 9 1 7 0 0 0",
+                "1985 1985 3 6 7 0 0 1 S",
+                "1986 1986 3 4 7 0 0 1 S",
+                "1986 1986 9 3 7 0 0 0",
+                "1987 1989 3 1 7 0 0 1 S",
+                "1987 1989 9 1 7 0 0 0",
+                "1997 1997 3 4 7 0 0 1 S",
+                "1997 1997 9 4 7 0 0 0",
+                "2013 9999 2 5 8 1 0 1 S",
+                "2013 9999 9 5 8 2 0 0"
+            ],
+            "Tunisia": [
+                "1939 1939 3 15 7 23 2 1 S",
+                "1939 1939 10 18 7 23 2 0",
+                "1940 1940 1 25 7 23 2 1 S",
+                "1941 1941 9 6 7 0 0 0",
+                "1942 1942 2 9 7 0 0 1 S",
+                "1942 1942 10 2 7 3 0 0",
+                "1943 1943 2 29 7 2 0 1 S",
+                "1943 1943 3 17 7 2 0 0",
+                "1943 1943 3 25 7 2 0 1 S",
+                "1943 1943 9 4 7 2 0 0",
+                "1944 1945 3 1 1 2 0 1 S",
+                "1944 1944 9 8 7 0 0 0",
+                "1945 1945 8 16 7 0 0 0",
+                "1977 1977 3 30 7 0 2 1 S",
+                "1977 1977 8 24 7 0 2 0",
+                "1978 1978 4 1 7 0 2 1 S",
+                "1978 1978 9 1 7 0 2 0",
+                "1988 1988 5 1 7 0 2 1 S",
+                "1988 1990 8 0 8 0 2 0",
+                "1989 1989 2 26 7 0 2 1 S",
+                "1990 1990 4 1 7 0 2 1 S",
+                "2005 2005 4 1 7 0 2 1 S",
+                "2005 2005 8 30 7 1 2 0",
+                "2006 2008 2 0 8 2 2 1 S",
+                "2006 2008 9 0 8 2 2 0"
+            ],
+            "Namibia": [
+                "1994 9999 8 1 0 2 0 1 S",
+                "1995 9999 3 1 0 2 0 0"
+            ],
             "US": [
                 "1918 1919 2 0 8 2 0 1 D",
                 "1918 1919 9 0 8 2 0 0 S",
@@ -1752,14 +3416,6 @@ define(["moment-timezone"], function (moment) {
                 "1991 1992 0 15 6 0 0 1 D",
                 "1991 1991 6 1 7 0 0 0 S",
                 "1992 1992 2 15 7 0 0 0 S"
-            ],
-            "EU": [
-                "1977 1980 3 1 0 1 1 1 S",
-                "1977 1977 8 0 8 1 1 0",
-                "1978 1978 9 1 7 1 1 0",
-                "1979 1995 8 0 8 1 1 0",
-                "1981 9999 2 0 8 1 1 1 S",
-                "1996 9999 9 0 8 1 1 0"
             ],
             "Vanc": [
                 "1918 1918 3 14 7 2 0 1 D",
@@ -2290,6 +3946,719 @@ define(["moment-timezone"], function (moment) {
                 "1966 2005 9 0 8 2 2 0 S",
                 "1987 2005 3 1 0 2 2 1 D"
             ],
+            "Aus": [
+                "1917 1917 0 1 7 0:1 0 1",
+                "1917 1917 2 25 7 2 0 0",
+                "1942 1942 0 1 7 2 0 1",
+                "1942 1942 2 29 7 2 0 0",
+                "1942 1942 8 27 7 2 0 1",
+                "1943 1944 2 0 8 2 0 0",
+                "1943 1943 9 3 7 2 0 1"
+            ],
+            "AT": [
+                "1967 1967 9 1 0 2 2 1",
+                "1968 1968 2 0 8 2 2 0",
+                "1968 1985 9 0 8 2 2 1",
+                "1969 1971 2 8 0 2 2 0",
+                "1972 1972 1 0 8 2 2 0",
+                "1973 1981 2 1 0 2 2 0",
+                "1982 1983 2 0 8 2 2 0",
+                "1984 1986 2 1 0 2 2 0",
+                "1986 1986 9 15 0 2 2 1",
+                "1987 1990 2 15 0 2 2 0",
+                "1987 1987 9 22 0 2 2 1",
+                "1988 1990 9 0 8 2 2 1",
+                "1991 1999 9 1 0 2 2 1",
+                "1991 2005 2 0 8 2 2 0",
+                "2000 2000 7 0 8 2 2 1",
+                "2001 9999 9 1 0 2 2 1",
+                "2006 2006 3 1 0 2 2 0",
+                "2007 2007 2 0 8 2 2 0",
+                "2008 9999 3 1 0 2 2 0"
+            ],
+            "NZAQ": [
+                "1974 1974 10 3 7 2 2 1 D",
+                "1975 1988 9 0 8 2 2 1 D",
+                "1989 1989 9 8 7 2 2 1 D",
+                "1990 2006 9 1 0 2 2 1 D",
+                "1975 1975 1 23 7 2 2 0 S",
+                "1976 1989 2 1 0 2 2 0 S",
+                "1990 2007 2 15 0 2 2 0 S",
+                "2007 9999 8 0 8 2 2 1 D",
+                "2008 9999 3 1 0 2 2 0 S"
+            ],
+            "ArgAQ": [
+                "1964 1966 2 1 7 0 0 0",
+                "1964 1966 9 15 7 0 0 1 S",
+                "1967 1967 3 2 7 0 0 0",
+                "1967 1968 9 1 0 0 0 1 S",
+                "1968 1969 3 1 0 0 0 0",
+                "1974 1974 0 23 7 0 0 1 S",
+                "1974 1974 4 1 7 0 0 0"
+            ],
+            "ChileAQ": [
+                "1972 1986 2 9 0 3 1 0",
+                "1974 1987 9 9 0 4 1 1 S",
+                "1987 1987 3 12 7 3 1 0",
+                "1988 1989 2 9 0 3 1 0",
+                "1988 1988 9 1 0 4 1 1 S",
+                "1989 1989 9 9 0 4 1 1 S",
+                "1990 1990 2 18 7 3 1 0",
+                "1990 1990 8 16 7 4 1 1 S",
+                "1991 1996 2 9 0 3 1 0",
+                "1991 1997 9 9 0 4 1 1 S",
+                "1997 1997 2 30 7 3 1 0",
+                "1998 1998 2 9 0 3 1 0",
+                "1998 1998 8 27 7 4 1 1 S",
+                "1999 1999 3 4 7 3 1 0",
+                "1999 2010 9 9 0 4 1 1 S",
+                "2000 2007 2 9 0 3 1 0",
+                "2008 2008 2 30 7 3 1 0",
+                "2009 2009 2 9 0 3 1 0",
+                "2010 2010 3 1 0 3 1 0",
+                "2011 2011 4 2 0 3 1 0",
+                "2011 2011 7 16 0 4 1 1 S",
+                "2012 9999 3 23 0 3 1 0",
+                "2012 9999 8 2 0 4 1 1 S"
+            ],
+            "Norway": [
+                "1916 1916 4 22 7 1 0 1 S",
+                "1916 1916 8 30 7 0 0 0",
+                "1945 1945 3 2 7 2 2 1 S",
+                "1945 1945 9 1 7 2 2 0",
+                "1959 1964 2 15 0 2 2 1 S",
+                "1959 1965 8 15 0 2 2 0",
+                "1965 1965 3 25 7 2 2 1 S"
+            ],
+            "RussiaAsia": [
+                "1981 1984 3 1 7 0 0 1 S",
+                "1981 1983 9 1 7 0 0 0",
+                "1984 1991 8 0 8 2 2 0",
+                "1985 1991 2 0 8 2 2 1 S",
+                "1992 1992 2 6 8 23 0 1 S",
+                "1992 1992 8 6 8 23 0 0",
+                "1993 9999 2 0 8 2 2 1 S",
+                "1993 1995 8 0 8 2 2 0",
+                "1996 9999 9 0 8 2 2 0"
+            ],
+            "Jordan": [
+                "1973 1973 5 6 7 0 0 1 S",
+                "1973 1975 9 1 7 0 0 0",
+                "1974 1977 4 1 7 0 0 1 S",
+                "1976 1976 10 1 7 0 0 0",
+                "1977 1977 9 1 7 0 0 0",
+                "1978 1978 3 30 7 0 0 1 S",
+                "1978 1978 8 30 7 0 0 0",
+                "1985 1985 3 1 7 0 0 1 S",
+                "1985 1985 9 1 7 0 0 0",
+                "1986 1988 3 1 5 0 0 1 S",
+                "1986 1990 9 1 5 0 0 0",
+                "1989 1989 4 8 7 0 0 1 S",
+                "1990 1990 3 27 7 0 0 1 S",
+                "1991 1991 3 17 7 0 0 1 S",
+                "1991 1991 8 27 7 0 0 0",
+                "1992 1992 3 10 7 0 0 1 S",
+                "1992 1993 9 1 5 0 0 0",
+                "1993 1998 3 1 5 0 0 1 S",
+                "1994 1994 8 15 5 0 0 0",
+                "1995 1998 8 15 5 0 2 0",
+                "1999 1999 6 1 7 0 2 1 S",
+                "1999 2002 8 5 8 0 2 0",
+                "2000 2001 2 4 8 0 2 1 S",
+                "2002 9999 2 4 8 24 0 1 S",
+                "2003 2003 9 24 7 0 2 0",
+                "2004 2004 9 15 7 0 2 0",
+                "2005 2005 8 5 8 0 2 0",
+                "2006 2011 9 5 8 0 2 0",
+                "2013 9999 9 5 8 0 2 0"
+            ],
+            "Russia": [
+                "1917 1917 6 1 7 23 0 1 MST",
+                "1917 1917 11 28 7 0 0 0 MMT",
+                "1918 1918 4 31 7 22 0 2 MDST",
+                "1918 1918 8 16 7 1 0 1 MST",
+                "1919 1919 4 31 7 23 0 2 MDST",
+                "1919 1919 6 1 7 2 0 1 S",
+                "1919 1919 7 16 7 0 0 0",
+                "1921 1921 1 14 7 23 0 1 S",
+                "1921 1921 2 20 7 23 0 2 M",
+                "1921 1921 8 1 7 0 0 1 S",
+                "1921 1921 9 1 7 0 0 0",
+                "1981 1984 3 1 7 0 0 1 S",
+                "1981 1983 9 1 7 0 0 0",
+                "1984 1991 8 0 8 2 2 0",
+                "1985 1991 2 0 8 2 2 1 S",
+                "1992 1992 2 6 8 23 0 1 S",
+                "1992 1992 8 6 8 23 0 0",
+                "1993 2010 2 0 8 2 2 1 S",
+                "1993 1995 8 0 8 2 2 0",
+                "1996 2010 9 0 8 2 2 0"
+            ],
+            "Iraq": [
+                "1982 1982 4 1 7 0 0 1 D",
+                "1982 1984 9 1 7 0 0 0 S",
+                "1983 1983 2 31 7 0 0 1 D",
+                "1984 1985 3 1 7 0 0 1 D",
+                "1985 1990 8 0 8 1 2 0 S",
+                "1986 1990 2 0 8 1 2 1 D",
+                "1991 2007 3 1 7 3 2 1 D",
+                "1991 2007 9 1 7 3 2 0 S"
+            ],
+            "EUAsia": [
+                "1981 9999 2 0 8 1 1 1 S",
+                "1979 1995 8 0 8 1 1 0",
+                "1996 9999 9 0 8 1 1 0"
+            ],
+            "Azer": [
+                "1997 9999 2 0 8 4 0 1 S",
+                "1997 9999 9 0 8 5 0 0"
+            ],
+            "Lebanon": [
+                "1920 1920 2 28 7 0 0 1 S",
+                "1920 1920 9 25 7 0 0 0",
+                "1921 1921 3 3 7 0 0 1 S",
+                "1921 1921 9 3 7 0 0 0",
+                "1922 1922 2 26 7 0 0 1 S",
+                "1922 1922 9 8 7 0 0 0",
+                "1923 1923 3 22 7 0 0 1 S",
+                "1923 1923 8 16 7 0 0 0",
+                "1957 1961 4 1 7 0 0 1 S",
+                "1957 1961 9 1 7 0 0 0",
+                "1972 1972 5 22 7 0 0 1 S",
+                "1972 1977 9 1 7 0 0 0",
+                "1973 1977 4 1 7 0 0 1 S",
+                "1978 1978 3 30 7 0 0 1 S",
+                "1978 1978 8 30 7 0 0 0",
+                "1984 1987 4 1 7 0 0 1 S",
+                "1984 1991 9 16 7 0 0 0",
+                "1988 1988 5 1 7 0 0 1 S",
+                "1989 1989 4 10 7 0 0 1 S",
+                "1990 1992 4 1 7 0 0 1 S",
+                "1992 1992 9 4 7 0 0 0",
+                "1993 9999 2 0 8 0 0 1 S",
+                "1993 1998 8 0 8 0 0 0",
+                "1999 9999 9 0 8 0 0 0"
+            ],
+            "Kyrgyz": [
+                "1992 1996 3 7 0 0 2 1 S",
+                "1992 1996 8 0 8 0 0 0",
+                "1997 2005 2 0 8 2:30 0 1 S",
+                "1997 2004 9 0 8 2:30 0 0"
+            ],
+            "Mongol": [
+                "1983 1984 3 1 7 0 0 1 S",
+                "1983 1983 9 1 7 0 0 0",
+                "1985 1998 2 0 8 0 0 1 S",
+                "1984 1998 8 0 8 0 0 0",
+                "2001 2001 3 6 8 2 0 1 S",
+                "2001 2006 8 6 8 2 0 0",
+                "2002 2006 2 6 8 2 0 1 S"
+            ],
+            "PRC": [
+                "1986 1986 4 4 7 0 0 1 D",
+                "1986 1991 8 11 0 0 0 0 S",
+                "1987 1991 3 10 0 0 0 1 D"
+            ],
+            "Syria": [
+                "1920 1923 3 15 0 2 0 1 S",
+                "1920 1923 9 1 0 2 0 0",
+                "1962 1962 3 29 7 2 0 1 S",
+                "1962 1962 9 1 7 2 0 0",
+                "1963 1965 4 1 7 2 0 1 S",
+                "1963 1963 8 30 7 2 0 0",
+                "1964 1964 9 1 7 2 0 0",
+                "1965 1965 8 30 7 2 0 0",
+                "1966 1966 3 24 7 2 0 1 S",
+                "1966 1976 9 1 7 2 0 0",
+                "1967 1978 4 1 7 2 0 1 S",
+                "1977 1978 8 1 7 2 0 0",
+                "1983 1984 3 9 7 2 0 1 S",
+                "1983 1984 9 1 7 2 0 0",
+                "1986 1986 1 16 7 2 0 1 S",
+                "1986 1986 9 9 7 2 0 0",
+                "1987 1987 2 1 7 2 0 1 S",
+                "1987 1988 9 31 7 2 0 0",
+                "1988 1988 2 15 7 2 0 1 S",
+                "1989 1989 2 31 7 2 0 1 S",
+                "1989 1989 9 1 7 2 0 0",
+                "1990 1990 3 1 7 2 0 1 S",
+                "1990 1990 8 30 7 2 0 0",
+                "1991 1991 3 1 7 0 0 1 S",
+                "1991 1992 9 1 7 0 0 0",
+                "1992 1992 3 8 7 0 0 1 S",
+                "1993 1993 2 26 7 0 0 1 S",
+                "1993 1993 8 25 7 0 0 0",
+                "1994 1996 3 1 7 0 0 1 S",
+                "1994 2005 9 1 7 0 0 0",
+                "1997 1998 2 1 8 0 0 1 S",
+                "1999 2006 3 1 7 0 0 1 S",
+                "2006 2006 8 22 7 0 0 0",
+                "2007 2007 2 5 8 0 0 1 S",
+                "2007 2007 10 1 5 0 0 0",
+                "2008 2008 3 1 5 0 0 1 S",
+                "2008 2008 10 1 7 0 0 0",
+                "2009 2009 2 5 8 0 0 1 S",
+                "2010 2011 3 1 5 0 0 1 S",
+                "2012 9999 2 5 8 0 0 1 S",
+                "2009 9999 9 5 8 0 0 0"
+            ],
+            "Dhaka": [
+                "2009 2009 5 19 7 23 0 1 S",
+                "2009 2009 11 31 7 23:59 0 0"
+            ],
+            "Zion": [
+                "1940 1940 5 1 7 0 0 1 D",
+                "1942 1944 10 1 7 0 0 0 S",
+                "1943 1943 3 1 7 2 0 1 D",
+                "1944 1944 3 1 7 0 0 1 D",
+                "1945 1945 3 16 7 0 0 1 D",
+                "1945 1945 10 1 7 2 0 0 S",
+                "1946 1946 3 16 7 2 0 1 D",
+                "1946 1946 10 1 7 0 0 0 S",
+                "1948 1948 4 23 7 0 0 2 DD",
+                "1948 1948 8 1 7 0 0 1 D",
+                "1948 1949 10 1 7 2 0 0 S",
+                "1949 1949 4 1 7 0 0 1 D",
+                "1950 1950 3 16 7 0 0 1 D",
+                "1950 1950 8 15 7 3 0 0 S",
+                "1951 1951 3 1 7 0 0 1 D",
+                "1951 1951 10 11 7 3 0 0 S",
+                "1952 1952 3 20 7 2 0 1 D",
+                "1952 1952 9 19 7 3 0 0 S",
+                "1953 1953 3 12 7 2 0 1 D",
+                "1953 1953 8 13 7 3 0 0 S",
+                "1954 1954 5 13 7 0 0 1 D",
+                "1954 1954 8 12 7 0 0 0 S",
+                "1955 1955 5 11 7 2 0 1 D",
+                "1955 1955 8 11 7 0 0 0 S",
+                "1956 1956 5 3 7 0 0 1 D",
+                "1956 1956 8 30 7 3 0 0 S",
+                "1957 1957 3 29 7 2 0 1 D",
+                "1957 1957 8 22 7 0 0 0 S",
+                "1974 1974 6 7 7 0 0 1 D",
+                "1974 1974 9 13 7 0 0 0 S",
+                "1975 1975 3 20 7 0 0 1 D",
+                "1975 1975 7 31 7 0 0 0 S",
+                "1985 1985 3 14 7 0 0 1 D",
+                "1985 1985 8 15 7 0 0 0 S",
+                "1986 1986 4 18 7 0 0 1 D",
+                "1986 1986 8 7 7 0 0 0 S",
+                "1987 1987 3 15 7 0 0 1 D",
+                "1987 1987 8 13 7 0 0 0 S",
+                "1988 1988 3 9 7 0 0 1 D",
+                "1988 1988 8 3 7 0 0 0 S",
+                "1989 1989 3 30 7 0 0 1 D",
+                "1989 1989 8 3 7 0 0 0 S",
+                "1990 1990 2 25 7 0 0 1 D",
+                "1990 1990 7 26 7 0 0 0 S",
+                "1991 1991 2 24 7 0 0 1 D",
+                "1991 1991 8 1 7 0 0 0 S",
+                "1992 1992 2 29 7 0 0 1 D",
+                "1992 1992 8 6 7 0 0 0 S",
+                "1993 1993 3 2 7 0 0 1 D",
+                "1993 1993 8 5 7 0 0 0 S",
+                "1994 1994 3 1 7 0 0 1 D",
+                "1994 1994 7 28 7 0 0 0 S",
+                "1995 1995 2 31 7 0 0 1 D",
+                "1995 1995 8 3 7 0 0 0 S",
+                "1996 1996 2 15 7 0 0 1 D",
+                "1996 1996 8 16 7 0 0 0 S",
+                "1997 1997 2 21 7 0 0 1 D",
+                "1997 1997 8 14 7 0 0 0 S",
+                "1998 1998 2 20 7 0 0 1 D",
+                "1998 1998 8 6 7 0 0 0 S",
+                "1999 1999 3 2 7 2 0 1 D",
+                "1999 1999 8 3 7 2 0 0 S",
+                "2000 2000 3 14 7 2 0 1 D",
+                "2000 2000 9 6 7 1 0 0 S",
+                "2001 2001 3 9 7 1 0 1 D",
+                "2001 2001 8 24 7 1 0 0 S",
+                "2002 2002 2 29 7 1 0 1 D",
+                "2002 2002 9 7 7 1 0 0 S",
+                "2003 2003 2 28 7 1 0 1 D",
+                "2003 2003 9 3 7 1 0 0 S",
+                "2004 2004 3 7 7 1 0 1 D",
+                "2004 2004 8 22 7 1 0 0 S",
+                "2005 2005 3 1 7 2 0 1 D",
+                "2005 2005 9 9 7 2 0 0 S",
+                "2006 2010 2 26 5 2 0 1 D",
+                "2006 2006 9 1 7 2 0 0 S",
+                "2007 2007 8 16 7 2 0 0 S",
+                "2008 2008 9 5 7 2 0 0 S",
+                "2009 2009 8 27 7 2 0 0 S",
+                "2010 2010 8 12 7 2 0 0 S",
+                "2011 2011 3 1 7 2 0 1 D",
+                "2011 2011 9 2 7 2 0 0 S",
+                "2012 2012 2 26 5 2 0 1 D",
+                "2012 2012 8 23 7 2 0 0 S",
+                "2013 9999 2 23 5 2 0 1 D",
+                "2013 2026 9 2 0 2 0 0 S",
+                "2027 2027 9 3 1 2 0 0 S",
+                "2028 9999 9 2 0 2 0 0 S"
+            ],
+            "EgyptAsia": [
+                "1957 1957 4 10 7 0 0 1 S",
+                "1957 1958 9 1 7 0 0 0",
+                "1958 1958 4 1 7 0 0 1 S",
+                "1959 1967 4 1 7 1 0 1 S",
+                "1959 1965 8 30 7 3 0 0",
+                "1966 1966 9 1 7 3 0 0"
+            ],
+            "Palestine": [
+                "1999 2005 3 15 5 0 0 1 S",
+                "1999 2003 9 15 5 0 0 0",
+                "2004 2004 9 1 7 1 0 0",
+                "2005 2005 9 4 7 2 0 0",
+                "2006 2007 3 1 7 0 0 1 S",
+                "2006 2006 8 22 7 0 0 0",
+                "2007 2007 8 8 4 2 0 0",
+                "2008 2009 2 5 8 0 0 1 S",
+                "2008 2008 8 1 7 0 0 0",
+                "2009 2009 8 1 5 1 0 0",
+                "2010 2010 2 26 7 0 0 1 S",
+                "2010 2010 7 11 7 0 0 0",
+                "2011 2011 3 1 7 0:1 0 1 S",
+                "2011 2011 7 1 7 0 0 0",
+                "2011 2011 7 30 7 0 0 1 S",
+                "2011 2011 8 30 7 0 0 0",
+                "2012 9999 2 4 8 24 0 1 S",
+                "2012 9999 8 21 5 1 0 0"
+            ],
+            "HK": [
+                "1941 1941 3 1 7 3:30 0 1 S",
+                "1941 1941 8 30 7 3:30 0 0",
+                "1946 1946 3 20 7 3:30 0 1 S",
+                "1946 1946 11 1 7 3:30 0 0",
+                "1947 1947 3 13 7 3:30 0 1 S",
+                "1947 1947 11 30 7 3:30 0 0",
+                "1948 1948 4 2 7 3:30 0 1 S",
+                "1948 1951 9 0 8 3:30 0 0",
+                "1952 1952 9 25 7 3:30 0 0",
+                "1949 1953 3 1 0 3:30 0 1 S",
+                "1953 1953 10 1 7 3:30 0 0",
+                "1954 1964 2 18 0 3:30 0 1 S",
+                "1954 1954 9 31 7 3:30 0 0",
+                "1955 1964 10 1 0 3:30 0 0",
+                "1965 1976 3 16 0 3:30 0 1 S",
+                "1965 1976 9 16 0 3:30 0 0",
+                "1973 1973 11 30 7 3:30 0 1 S",
+                "1979 1979 4 8 0 3:30 0 1 S",
+                "1979 1979 9 16 0 3:30 0 0"
+            ],
+            "Pakistan": [
+                "2002 2002 3 2 0 0:1 0 1 S",
+                "2002 2002 9 2 0 0:1 0 0",
+                "2008 2008 5 1 7 0 0 1 S",
+                "2008 2008 10 1 7 0 0 0",
+                "2009 2009 3 15 7 0 0 1 S",
+                "2009 2009 10 1 7 0 0 0"
+            ],
+            "NBorneo": [
+                "1935 1941 8 14 7 0 0 0:20 TS",
+                "1935 1941 11 14 7 0 0 0"
+            ],
+            "Macau": [
+                "1961 1962 2 16 0 3:30 0 1 S",
+                "1961 1964 10 1 0 3:30 0 0",
+                "1963 1963 2 16 0 0 0 1 S",
+                "1964 1964 2 16 0 3:30 0 1 S",
+                "1965 1965 2 16 0 0 0 1 S",
+                "1965 1965 9 31 7 0 0 0",
+                "1966 1971 3 16 0 3:30 0 1 S",
+                "1966 1971 9 16 0 3:30 0 0",
+                "1972 1974 3 15 0 0 0 1 S",
+                "1972 1973 9 15 0 0 0 0",
+                "1974 1977 9 15 0 3:30 0 0",
+                "1975 1977 3 15 0 3:30 0 1 S",
+                "1978 1980 3 15 0 0 0 1 S",
+                "1978 1980 9 15 0 0 0 0"
+            ],
+            "Phil": [
+                "1936 1936 10 1 7 0 0 1 S",
+                "1937 1937 1 1 7 0 0 0",
+                "1954 1954 3 12 7 0 0 1 S",
+                "1954 1954 6 1 7 0 0 0",
+                "1978 1978 2 22 7 0 0 1 S",
+                "1978 1978 8 21 7 0 0 0"
+            ],
+            "Cyprus": [
+                "1975 1975 3 13 7 0 0 1 S",
+                "1975 1975 9 12 7 0 0 0",
+                "1976 1976 4 15 7 0 0 1 S",
+                "1976 1976 9 11 7 0 0 0",
+                "1977 1980 3 1 0 0 0 1 S",
+                "1977 1977 8 25 7 0 0 0",
+                "1978 1978 9 2 7 0 0 0",
+                "1979 1997 8 0 8 0 0 0",
+                "1981 1998 2 0 8 0 0 1 S"
+            ],
+            "ROK": [
+                "1960 1960 4 15 7 0 0 1 D",
+                "1960 1960 8 13 7 0 0 0 S",
+                "1987 1988 4 8 0 0 0 1 D",
+                "1987 1988 9 8 0 0 0 0 S"
+            ],
+            "Shang": [
+                "1940 1940 5 3 7 0 0 1 D",
+                "1940 1941 9 1 7 0 0 0 S",
+                "1941 1941 2 16 7 0 0 1 D"
+            ],
+            "Taiwan": [
+                "1945 1951 4 1 7 0 0 1 D",
+                "1945 1951 9 1 7 0 0 0 S",
+                "1952 1952 2 1 7 0 0 1 D",
+                "1952 1954 10 1 7 0 0 0 S",
+                "1953 1959 3 1 7 0 0 1 D",
+                "1955 1961 9 1 7 0 0 0 S",
+                "1960 1961 5 1 7 0 0 1 D",
+                "1974 1975 3 1 7 0 0 1 D",
+                "1974 1975 9 1 7 0 0 0 S",
+                "1979 1979 5 30 7 0 0 1 D",
+                "1979 1979 8 30 7 0 0 0 S"
+            ],
+            "E-EurAsia": [
+                "1981 9999 2 0 8 0 0 1 S",
+                "1979 1995 8 0 8 0 0 0",
+                "1996 9999 9 0 8 0 0 0"
+            ],
+            "Iran": [
+                "1978 1980 2 21 7 0 0 1 D",
+                "1978 1978 9 21 7 0 0 0 S",
+                "1979 1979 8 19 7 0 0 0 S",
+                "1980 1980 8 23 7 0 0 0 S",
+                "1991 1991 4 3 7 0 0 1 D",
+                "1992 1995 2 22 7 0 0 1 D",
+                "1991 1995 8 22 7 0 0 0 S",
+                "1996 1996 2 21 7 0 0 1 D",
+                "1996 1996 8 21 7 0 0 0 S",
+                "1997 1999 2 22 7 0 0 1 D",
+                "1997 1999 8 22 7 0 0 0 S",
+                "2000 2000 2 21 7 0 0 1 D",
+                "2000 2000 8 21 7 0 0 0 S",
+                "2001 2003 2 22 7 0 0 1 D",
+                "2001 2003 8 22 7 0 0 0 S",
+                "2004 2004 2 21 7 0 0 1 D",
+                "2004 2004 8 21 7 0 0 0 S",
+                "2005 2005 2 22 7 0 0 1 D",
+                "2005 2005 8 22 7 0 0 0 S",
+                "2008 2008 2 21 7 0 0 1 D",
+                "2008 2008 8 21 7 0 0 0 S",
+                "2009 2011 2 22 7 0 0 1 D",
+                "2009 2011 8 22 7 0 0 0 S",
+                "2012 2012 2 21 7 0 0 1 D",
+                "2012 2012 8 21 7 0 0 0 S",
+                "2013 2015 2 22 7 0 0 1 D",
+                "2013 2015 8 22 7 0 0 0 S",
+                "2016 2016 2 21 7 0 0 1 D",
+                "2016 2016 8 21 7 0 0 0 S",
+                "2017 2019 2 22 7 0 0 1 D",
+                "2017 2019 8 22 7 0 0 0 S",
+                "2020 2020 2 21 7 0 0 1 D",
+                "2020 2020 8 21 7 0 0 0 S",
+                "2021 2023 2 22 7 0 0 1 D",
+                "2021 2023 8 22 7 0 0 0 S",
+                "2024 2024 2 21 7 0 0 1 D",
+                "2024 2024 8 21 7 0 0 0 S",
+                "2025 2027 2 22 7 0 0 1 D",
+                "2025 2027 8 22 7 0 0 0 S",
+                "2028 2029 2 21 7 0 0 1 D",
+                "2028 2029 8 21 7 0 0 0 S",
+                "2030 2031 2 22 7 0 0 1 D",
+                "2030 2031 8 22 7 0 0 0 S",
+                "2032 2033 2 21 7 0 0 1 D",
+                "2032 2033 8 21 7 0 0 0 S",
+                "2034 2035 2 22 7 0 0 1 D",
+                "2034 2035 8 22 7 0 0 0 S",
+                "2036 2037 2 21 7 0 0 1 D",
+                "2036 2037 8 21 7 0 0 0 S"
+            ],
+            "Japan": [
+                "1948 1948 4 1 0 2 0 1 D",
+                "1948 1951 8 8 6 2 0 0 S",
+                "1949 1949 3 1 0 2 0 1 D",
+                "1950 1951 4 1 0 2 0 1 D"
+            ],
+            "Port": [
+                "1916 1916 5 17 7 23 0 1 S",
+                "1916 1916 10 1 7 1 0 0",
+                "1917 1917 1 28 7 23 2 1 S",
+                "1917 1921 9 14 7 23 2 0",
+                "1918 1918 2 1 7 23 2 1 S",
+                "1919 1919 1 28 7 23 2 1 S",
+                "1920 1920 1 29 7 23 2 1 S",
+                "1921 1921 1 28 7 23 2 1 S",
+                "1924 1924 3 16 7 23 2 1 S",
+                "1924 1924 9 14 7 23 2 0",
+                "1926 1926 3 17 7 23 2 1 S",
+                "1926 1929 9 1 6 23 2 0",
+                "1927 1927 3 9 7 23 2 1 S",
+                "1928 1928 3 14 7 23 2 1 S",
+                "1929 1929 3 20 7 23 2 1 S",
+                "1931 1931 3 18 7 23 2 1 S",
+                "1931 1932 9 1 6 23 2 0",
+                "1932 1932 3 2 7 23 2 1 S",
+                "1934 1934 3 7 7 23 2 1 S",
+                "1934 1938 9 1 6 23 2 0",
+                "1935 1935 2 30 7 23 2 1 S",
+                "1936 1936 3 18 7 23 2 1 S",
+                "1937 1937 3 3 7 23 2 1 S",
+                "1938 1938 2 26 7 23 2 1 S",
+                "1939 1939 3 15 7 23 2 1 S",
+                "1939 1939 10 18 7 23 2 0",
+                "1940 1940 1 24 7 23 2 1 S",
+                "1940 1941 9 5 7 23 2 0",
+                "1941 1941 3 5 7 23 2 1 S",
+                "1942 1945 2 8 6 23 2 1 S",
+                "1942 1942 3 25 7 22 2 2 M",
+                "1942 1942 7 15 7 22 2 1 S",
+                "1942 1945 9 24 6 23 2 0",
+                "1943 1943 3 17 7 22 2 2 M",
+                "1943 1945 7 25 6 22 2 1 S",
+                "1944 1945 3 21 6 22 2 2 M",
+                "1946 1946 3 1 6 23 2 1 S",
+                "1946 1946 9 1 6 23 2 0",
+                "1947 1949 3 1 0 2 2 1 S",
+                "1947 1949 9 1 0 2 2 0",
+                "1951 1965 3 1 0 2 2 1 S",
+                "1951 1965 9 1 0 2 2 0",
+                "1977 1977 2 27 7 0 2 1 S",
+                "1977 1977 8 25 7 0 2 0",
+                "1978 1979 3 1 0 0 2 1 S",
+                "1978 1978 9 1 7 0 2 0",
+                "1979 1982 8 0 8 1 2 0",
+                "1980 1980 2 0 8 0 2 1 S",
+                "1981 1982 2 0 8 1 2 1 S",
+                "1983 1983 2 0 8 2 2 1 S"
+            ],
+            "W-Eur": [
+                "1977 1980 3 1 0 1 2 1 S",
+                "1977 1977 8 0 8 1 2 0",
+                "1978 1978 9 1 7 1 2 0",
+                "1979 1995 8 0 8 1 2 0",
+                "1981 9999 2 0 8 1 2 1 S",
+                "1996 9999 9 0 8 1 2 0"
+            ],
+            "Iceland": [
+                "1917 1918 1 19 7 23 0 1 S",
+                "1917 1917 9 21 7 1 0 0",
+                "1918 1918 10 16 7 1 0 0",
+                "1939 1939 3 29 7 23 0 1 S",
+                "1939 1939 10 29 7 2 0 0",
+                "1940 1940 1 25 7 2 0 1 S",
+                "1940 1940 10 3 7 2 0 0",
+                "1941 1941 2 2 7 1 2 1 S",
+                "1941 1941 10 2 7 1 2 0",
+                "1942 1942 2 8 7 1 2 1 S",
+                "1942 1942 9 25 7 1 2 0",
+                "1943 1946 2 1 0 1 2 1 S",
+                "1943 1948 9 22 0 1 2 0",
+                "1947 1967 3 1 0 1 2 1 S",
+                "1949 1949 9 30 7 1 2 0",
+                "1950 1966 9 22 0 1 2 0",
+                "1967 1967 9 29 7 1 2 0"
+            ],
+            "Falk": [
+                "1937 1938 8 0 8 0 0 1 S",
+                "1938 1942 2 19 0 0 0 0",
+                "1939 1939 9 1 7 0 0 1 S",
+                "1940 1942 8 0 8 0 0 1 S",
+                "1943 1943 0 1 7 0 0 0",
+                "1983 1983 8 0 8 0 0 1 S",
+                "1984 1985 3 0 8 0 0 0",
+                "1984 1984 8 16 7 0 0 1 S",
+                "1985 2000 8 9 0 0 0 1 S",
+                "1986 2000 3 16 0 0 0 0",
+                "2001 2010 3 15 0 2 0 0",
+                "2001 2010 8 1 0 2 0 1 S"
+            ],
+            "AS": [
+                "1971 1985 9 0 8 2 2 1",
+                "1986 1986 9 19 7 2 2 1",
+                "1987 2007 9 0 8 2 2 1",
+                "1972 1972 1 27 7 2 2 0",
+                "1973 1985 2 1 0 2 2 0",
+                "1986 1990 2 15 0 2 2 0",
+                "1991 1991 2 3 7 2 2 0",
+                "1992 1992 2 22 7 2 2 0",
+                "1993 1993 2 7 7 2 2 0",
+                "1994 1994 2 20 7 2 2 0",
+                "1995 2005 2 0 8 2 2 0",
+                "2006 2006 3 2 7 2 2 0",
+                "2007 2007 2 0 8 2 2 0",
+                "2008 9999 3 1 0 2 2 0",
+                "2008 9999 9 1 0 2 2 1"
+            ],
+            "AQ": [
+                "1971 1971 9 0 8 2 2 1",
+                "1972 1972 1 0 8 2 2 0",
+                "1989 1991 9 0 8 2 2 1",
+                "1990 1992 2 1 0 2 2 0"
+            ],
+            "AN": [
+                "1971 1985 9 0 8 2 2 1",
+                "1972 1972 1 27 7 2 2 0",
+                "1973 1981 2 1 0 2 2 0",
+                "1982 1982 3 1 0 2 2 0",
+                "1983 1985 2 1 0 2 2 0",
+                "1986 1989 2 15 0 2 2 0",
+                "1986 1986 9 19 7 2 2 1",
+                "1987 1999 9 0 8 2 2 1",
+                "1990 1995 2 1 0 2 2 0",
+                "1996 2005 2 0 8 2 2 0",
+                "2000 2000 7 0 8 2 2 1",
+                "2001 2007 9 0 8 2 2 1",
+                "2006 2006 3 1 0 2 2 0",
+                "2007 2007 2 0 8 2 2 0",
+                "2008 9999 3 1 0 2 2 0",
+                "2008 9999 9 1 0 2 2 1"
+            ],
+            "AW": [
+                "1974 1974 9 0 8 2 2 1",
+                "1975 1975 2 1 0 2 2 0",
+                "1983 1983 9 0 8 2 2 1",
+                "1984 1984 2 1 0 2 2 0",
+                "1991 1991 10 17 7 2 2 1",
+                "1992 1992 2 1 0 2 2 0",
+                "2006 2006 11 3 7 2 2 1",
+                "2007 2009 2 0 8 2 2 0",
+                "2007 2008 9 0 8 2 2 1"
+            ],
+            "Holiday": [
+                "1992 1993 9 0 8 2 2 1",
+                "1993 1994 2 1 0 2 2 0"
+            ],
+            "LH": [
+                "1981 1984 9 0 8 2 0 1",
+                "1982 1985 2 1 0 2 0 0",
+                "1985 1985 9 0 8 2 0 0:30",
+                "1986 1989 2 15 0 2 0 0",
+                "1986 1986 9 19 7 2 0 0:30",
+                "1987 1999 9 0 8 2 0 0:30",
+                "1990 1995 2 1 0 2 0 0",
+                "1996 2005 2 0 8 2 0 0",
+                "2000 2000 7 0 8 2 0 0:30",
+                "2001 2007 9 0 8 2 0 0:30",
+                "2006 2006 3 1 0 2 0 0",
+                "2007 2007 2 0 8 2 0 0",
+                "2008 9999 3 1 0 2 0 0",
+                "2008 9999 9 1 0 2 0 0:30"
+            ],
+            "AV": [
+                "1971 1985 9 0 8 2 2 1",
+                "1972 1972 1 0 8 2 2 0",
+                "1973 1985 2 1 0 2 2 0",
+                "1986 1990 2 15 0 2 2 0",
+                "1986 1987 9 15 0 2 2 1",
+                "1988 1999 9 0 8 2 2 1",
+                "1991 1994 2 1 0 2 2 0",
+                "1995 2005 2 0 8 2 2 0",
+                "2000 2000 7 0 8 2 2 1",
+                "2001 2007 9 0 8 2 2 1",
+                "2006 2006 3 1 0 2 2 0",
+                "2007 2007 2 0 8 2 2 0",
+                "2008 9999 3 1 0 2 2 0",
+                "2008 9999 9 1 0 2 2 1"
+            ],
             "Neth": [
                 "1916 1916 4 1 7 0 0 1 NST",
                 "1916 1916 9 1 7 0 0 0 AMT",
@@ -2437,28 +4806,6 @@ define(["moment-timezone"], function (moment) {
             "Swiss": [
                 "1941 1942 4 1 1 1 0 1 S",
                 "1941 1942 9 1 1 2 0 0"
-            ],
-            "Russia": [
-                "1917 1917 6 1 7 23 0 1 MST",
-                "1917 1917 11 28 7 0 0 0 MMT",
-                "1918 1918 4 31 7 22 0 2 MDST",
-                "1918 1918 8 16 7 1 0 1 MST",
-                "1919 1919 4 31 7 23 0 2 MDST",
-                "1919 1919 6 1 7 2 0 1 S",
-                "1919 1919 7 16 7 0 0 0",
-                "1921 1921 1 14 7 23 0 1 S",
-                "1921 1921 2 20 7 23 0 2 M",
-                "1921 1921 8 1 7 0 0 1 S",
-                "1921 1921 9 1 7 0 0 0",
-                "1981 1984 3 1 7 0 0 1 S",
-                "1981 1983 9 1 7 0 0 0",
-                "1984 1991 8 0 8 2 2 0",
-                "1985 1991 2 0 8 2 2 1 S",
-                "1992 1992 2 6 8 23 0 1 S",
-                "1992 1992 8 6 8 23 0 0",
-                "1993 2010 2 0 8 2 2 1 S",
-                "1993 1995 8 0 8 2 2 0",
-                "1996 2010 9 0 8 2 2 0"
             ],
             "Denmark": [
                 "1916 1916 4 14 7 23 0 1 S",
@@ -2624,66 +4971,6 @@ define(["moment-timezone"], function (moment) {
                 "1961 1964 4 0 8 1 2 1 S",
                 "1962 1964 8 0 8 1 2 0"
             ],
-            "Port": [
-                "1916 1916 5 17 7 23 0 1 S",
-                "1916 1916 10 1 7 1 0 0",
-                "1917 1917 1 28 7 23 2 1 S",
-                "1917 1921 9 14 7 23 2 0",
-                "1918 1918 2 1 7 23 2 1 S",
-                "1919 1919 1 28 7 23 2 1 S",
-                "1920 1920 1 29 7 23 2 1 S",
-                "1921 1921 1 28 7 23 2 1 S",
-                "1924 1924 3 16 7 23 2 1 S",
-                "1924 1924 9 14 7 23 2 0",
-                "1926 1926 3 17 7 23 2 1 S",
-                "1926 1929 9 1 6 23 2 0",
-                "1927 1927 3 9 7 23 2 1 S",
-                "1928 1928 3 14 7 23 2 1 S",
-                "1929 1929 3 20 7 23 2 1 S",
-                "1931 1931 3 18 7 23 2 1 S",
-                "1931 1932 9 1 6 23 2 0",
-                "1932 1932 3 2 7 23 2 1 S",
-                "1934 1934 3 7 7 23 2 1 S",
-                "1934 1938 9 1 6 23 2 0",
-                "1935 1935 2 30 7 23 2 1 S",
-                "1936 1936 3 18 7 23 2 1 S",
-                "1937 1937 3 3 7 23 2 1 S",
-                "1938 1938 2 26 7 23 2 1 S",
-                "1939 1939 3 15 7 23 2 1 S",
-                "1939 1939 10 18 7 23 2 0",
-                "1940 1940 1 24 7 23 2 1 S",
-                "1940 1941 9 5 7 23 2 0",
-                "1941 1941 3 5 7 23 2 1 S",
-                "1942 1945 2 8 6 23 2 1 S",
-                "1942 1942 3 25 7 22 2 2 M",
-                "1942 1942 7 15 7 22 2 1 S",
-                "1942 1945 9 24 6 23 2 0",
-                "1943 1943 3 17 7 22 2 2 M",
-                "1943 1945 7 25 6 22 2 1 S",
-                "1944 1945 3 21 6 22 2 2 M",
-                "1946 1946 3 1 6 23 2 1 S",
-                "1946 1946 9 1 6 23 2 0",
-                "1947 1949 3 1 0 2 2 1 S",
-                "1947 1949 9 1 0 2 2 0",
-                "1951 1965 3 1 0 2 2 1 S",
-                "1951 1965 9 1 0 2 2 0",
-                "1977 1977 2 27 7 0 2 1 S",
-                "1977 1977 8 25 7 0 2 0",
-                "1978 1979 3 1 0 0 2 1 S",
-                "1978 1978 9 1 7 0 2 0",
-                "1979 1982 8 0 8 1 2 0",
-                "1980 1980 2 0 8 0 2 1 S",
-                "1981 1982 2 0 8 1 2 1 S",
-                "1983 1983 2 0 8 2 2 1 S"
-            ],
-            "W-Eur": [
-                "1977 1980 3 1 0 1 2 1 S",
-                "1977 1977 8 0 8 1 2 0",
-                "1978 1978 9 1 7 1 2 0",
-                "1979 1995 8 0 8 1 2 0",
-                "1981 9999 2 0 8 1 2 1 S",
-                "1996 9999 9 0 8 1 2 0"
-            ],
             "Lux": [
                 "1916 1916 4 14 7 23 0 1 S",
                 "1916 1916 9 1 7 1 0 0",
@@ -2708,39 +4995,6 @@ define(["moment-timezone"], function (moment) {
                 "1927 1927 3 9 7 23 0 1 S",
                 "1928 1928 3 14 7 23 0 1 S",
                 "1929 1929 3 20 7 23 0 1 S"
-            ],
-            "Spain": [
-                "1917 1917 4 5 7 23 2 1 S",
-                "1917 1919 9 6 7 23 2 0",
-                "1918 1918 3 15 7 23 2 1 S",
-                "1919 1919 3 5 7 23 2 1 S",
-                "1924 1924 3 16 7 23 2 1 S",
-                "1924 1924 9 4 7 23 2 0",
-                "1926 1926 3 17 7 23 2 1 S",
-                "1926 1929 9 1 6 23 2 0",
-                "1927 1927 3 9 7 23 2 1 S",
-                "1928 1928 3 14 7 23 2 1 S",
-                "1929 1929 3 20 7 23 2 1 S",
-                "1937 1937 4 22 7 23 2 1 S",
-                "1937 1939 9 1 6 23 2 0",
-                "1938 1938 2 22 7 23 2 1 S",
-                "1939 1939 3 15 7 23 2 1 S",
-                "1940 1940 2 16 7 23 2 1 S",
-                "1942 1942 4 2 7 22 2 2 M",
-                "1942 1942 8 1 7 22 2 1 S",
-                "1943 1946 3 13 6 22 2 2 M",
-                "1943 1943 9 3 7 22 2 1 S",
-                "1944 1944 9 10 7 22 2 1 S",
-                "1945 1945 8 30 7 1 0 1 S",
-                "1946 1946 8 30 7 0 0 0",
-                "1949 1949 3 30 7 23 0 1 S",
-                "1949 1949 8 30 7 1 0 0",
-                "1974 1975 3 13 6 23 0 1 S",
-                "1974 1975 9 1 0 1 0 0",
-                "1976 1976 2 27 7 23 0 1 S",
-                "1976 1977 8 0 8 1 0 0",
-                "1977 1978 3 2 7 23 0 1 S",
-                "1978 1978 9 1 7 1 0 0"
             ],
             "Italy": [
                 "1916 1916 5 3 7 0 2 1 S",
@@ -2833,15 +5087,6 @@ define(["moment-timezone"], function (moment) {
                 "1976 1976 2 28 7 1 0 1 S",
                 "1976 1976 8 26 7 1 0 0"
             ],
-            "Norway": [
-                "1916 1916 4 22 7 1 0 1 S",
-                "1916 1916 8 30 7 0 0 0",
-                "1945 1945 3 2 7 2 2 1 S",
-                "1945 1945 9 1 7 2 2 0",
-                "1959 1964 2 15 0 2 2 1 S",
-                "1959 1965 8 15 0 2 2 0",
-                "1965 1965 3 25 7 2 2 1 S"
-            ],
             "Latvia": [
                 "1989 1996 2 0 8 2 2 1 S",
                 "1989 1996 8 0 8 2 2 0"
@@ -2889,6 +5134,79 @@ define(["moment-timezone"], function (moment) {
                 "1948 1948 3 18 7 2 2 1 S",
                 "1980 1980 3 6 7 0 0 1 S",
                 "1980 1980 8 28 7 0 0 0"
+            ],
+            "Mauritius": [
+                "1982 1982 9 10 7 0 0 1 S",
+                "1983 1983 2 21 7 0 0 0",
+                "2008 2008 9 0 8 2 0 1 S",
+                "2009 2009 2 0 8 2 0 0"
+            ],
+            "WS": [
+                "2012 9999 8 0 8 3 0 1 D",
+                "2012 9999 3 1 0 4 0 0"
+            ],
+            "NZ": [
+                "1927 1927 10 6 7 2 0 1 S",
+                "1928 1928 2 4 7 2 0 0 M",
+                "1928 1933 9 8 0 2 0 0:30 S",
+                "1929 1933 2 15 0 2 0 0 M",
+                "1934 1940 3 0 8 2 0 0 M",
+                "1934 1940 8 0 8 2 0 0:30 S",
+                "1946 1946 0 1 7 0 0 0 S",
+                "1974 1974 10 1 0 2 2 1 D",
+                "1975 1975 1 0 8 2 2 0 S",
+                "1975 1988 9 0 8 2 2 1 D",
+                "1976 1989 2 1 0 2 2 0 S",
+                "1989 1989 9 8 0 2 2 1 D",
+                "1990 2006 9 1 0 2 2 1 D",
+                "1990 2007 2 15 0 2 2 0 S",
+                "2007 9999 8 0 8 2 2 1 D",
+                "2008 9999 3 1 0 2 2 0 S"
+            ],
+            "Chatham": [
+                "1974 1974 10 1 0 2:45 2 1 D",
+                "1975 1975 1 0 8 2:45 2 0 S",
+                "1975 1988 9 0 8 2:45 2 1 D",
+                "1976 1989 2 1 0 2:45 2 0 S",
+                "1989 1989 9 8 0 2:45 2 1 D",
+                "1990 2006 9 1 0 2:45 2 1 D",
+                "1990 2007 2 15 0 2:45 2 0 S",
+                "2007 9999 8 0 8 2:45 2 1 D",
+                "2008 9999 3 1 0 2:45 2 0 S"
+            ],
+            "Vanuatu": [
+                "1983 1983 8 25 7 0 0 1 S",
+                "1984 1991 2 23 0 0 0 0",
+                "1984 1984 9 23 7 0 0 1 S",
+                "1985 1991 8 23 0 0 0 1 S",
+                "1992 1993 0 23 0 0 0 0",
+                "1992 1992 9 23 0 0 0 1 S"
+            ],
+            "Fiji": [
+                "1998 1999 10 1 0 2 0 1 S",
+                "1999 2000 1 0 8 3 0 0",
+                "2009 2009 10 29 7 2 0 1 S",
+                "2010 2010 2 0 8 3 0 0",
+                "2010 9999 9 18 0 2 0 1 S",
+                "2011 2011 2 1 0 3 0 0",
+                "2012 9999 0 18 0 3 0 0"
+            ],
+            "NC": [
+                "1977 1978 11 1 0 0 0 1 S",
+                "1978 1979 1 27 7 0 0 0",
+                "1996 1996 11 1 7 2 2 1 S",
+                "1997 1997 2 2 7 2 2 0"
+            ],
+            "Cook": [
+                "1978 1978 10 12 7 0 0 0:30 HS",
+                "1979 1991 2 1 0 0 0 0",
+                "1979 1990 9 0 8 0 0 0:30 HS"
+            ],
+            "Tonga": [
+                "1999 1999 9 7 7 2 2 1 S",
+                "2000 2000 2 19 7 2 2 0",
+                "2000 2001 10 1 0 2 0 1 S",
+                "2001 2002 0 0 8 2 0 0"
             ]
         },
         "links": {
@@ -2897,6 +5215,8 @@ define(["moment-timezone"], function (moment) {
             "America/Marigot": "America/Guadeloupe",
             "America/Shiprock": "America/Denver",
             "America/St_Barthelemy": "America/Guadeloupe",
+            "Antarctica/South_Pole": "Antarctica/McMurdo",
+            "Arctic/Longyearbyen": "Europe/Oslo",
             "Europe/Bratislava": "Europe/Prague",
             "Europe/Busingen": "Europe/Zurich",
             "Europe/Guernsey": "Europe/London",
